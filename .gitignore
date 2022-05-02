@@ -1,0 +1,5 @@
+.DS_Store
+.firebase
+.idea
+.vscode
+firebaseAPI.js

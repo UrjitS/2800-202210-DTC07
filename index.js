@@ -39,6 +39,11 @@ app.get("/main", function (req, res) {
     }
 
 });
+app.get("/admin", function (req, res) {
+    if (!req.session.loggedIn) {
+        res.redirect("/");
+    }
+});
 app.get("/loginpage", function (req, res) {
     let profile = fs.readFileSync("./public/login.html", "utf8");
 
@@ -63,7 +68,7 @@ app.post("/login", function (req, res) {
     res.setHeader("Content-Type", "application/json");
 
     authenticate(req.body.email, req.body.password,
-        function (userRecord) {
+        function (userRecord, isadmin) {
             if (userRecord == null) {
                 res.send({
                     status: "fail",
@@ -73,13 +78,40 @@ app.post("/login", function (req, res) {
                 req.session.loggedIn = true;
                 req.session.email = userRecord.email;
                 req.session.name = userRecord.name;
-                res.send({
-                    status: "success",
-                    msg: "Logged in."
-                });
+                if (isadmin) {
+                    res.send({
+                        status: "admin",
+                        msg: "Logged in."
+                    });
+                } else {
+                    res.send({
+                        status: "success",
+                        msg: "Logged in."
+                    });
+                }
             }
         });
 
+});
+app.post("/getuseraccounts", function (req, res) {
+    res.setHeader("Content-Type", "application/json");
+
+    const mysql = require("mysql2");
+    const connection = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "",
+        database: "bridgethegap"
+    });
+    connection.connect();
+    connection.query("SELECT name, email FROM user",
+    function (error, results, fields) {
+        if (error) {
+            console.log(error);
+        }
+        res.send(results);
+    }
+);
 });
 app.post("/signup", function (req, res) {
     res.setHeader("Content-Type", "application/json");
@@ -118,24 +150,38 @@ function authenticate(email, pwd, callback) {
         database: "bridgethegap"
     });
     connection.connect();
-    connection.query(
-        //'SELECT * FROM user',
-        "SELECT * FROM user WHERE email = ? AND password = ?", [email, pwd],
+    connection.query( // Check for admin account first
+        "SELECT * FROM admin WHERE email = ? AND password = ?", [email, pwd],
         function (error, results, fields) {
 
             if (error) {
                 console.log(error);
             }
             if (results.length > 0) {
-                // email and password found
-                return callback(results[0]);
-            } else {
-                // user not found
-                return callback(null);
+                return callback(results[0], true);
+            } else { // Check User table
+                connection.query(
+                    "SELECT * FROM user WHERE email = ? AND password = ?", [email, pwd],
+                    function (error, results, fields) {
+
+                        if (error) {
+                            console.log(error);
+                        }
+                        if (results.length > 0) {
+                            // email and password found
+                            return callback(results[0], false);
+                        } else {
+                            // user not found
+                            return callback(null, false);
+                        }
+
+                    }
+                );
             }
 
         }
     );
+
 
 }
 async function init() {
@@ -153,16 +199,28 @@ async function init() {
         name varchar(30),
         email varchar(30),
         password varchar(30),
-        PRIMARY KEY (ID));`;
+        PRIMARY KEY (ID)
+        );
+        CREATE TABLE IF NOT EXISTS admin (
+            ID int NOT NULL AUTO_INCREMENT,
+            name varchar(30),
+            email varchar(30),
+            password varchar(30),
+            PRIMARY KEY (ID)
+            );`;
     await connection.query(createDBAndTables);
 
+    const [rows, fields] = await connection.query("SELECT * FROM admin");
+
+    if (rows.length == 0) {
+
+        let userRecords = "insert into admin (name, email, password) values ?";
+        let recordValues = [
+            ["Admin", "admin@bridgethegap.ca", "verysecretivepassword"]
+        ];
+        await connection.query(userRecords, [recordValues]);
+    }
 }
+
 // process.env.PORT is the port Heroku gives
 app.listen(process.env.PORT || 3000, init);
-
-
-
-
-
-
-

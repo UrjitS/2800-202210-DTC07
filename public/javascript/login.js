@@ -35,6 +35,8 @@ $(document).ready(function () {
                     let dataParsed = JSON.parse(data);
                     if (dataParsed.status == "fail") {
                         document.getElementById("errorMsg").innerHTML = dataParsed.msg;
+                    } else if (dataParsed.status == "admin"){
+                        window.location.replace("admin.html");
                     } else {
                         window.location.replace("main.html");
                     }

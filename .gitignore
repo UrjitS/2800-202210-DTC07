@@ -2,4 +2,4 @@
 .firebase
 .idea
 .vscode
-firebaseAPI.js
+node_modules

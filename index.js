@@ -50,6 +50,12 @@ app.get("/loginpage", function (req, res) {
     res.send(profile);
 
 });
+app.get("/signup", function (req, res) {
+    let profile = fs.readFileSync("./public/signup.html", "utf8");
+
+    res.send(profile);
+
+});
 app.get("/logout", function (req, res) {
 
     if (req.session) {
@@ -58,7 +64,9 @@ app.get("/logout", function (req, res) {
                 res.status(400).send("Unable to log out")
             } else {
                 // session deleted, redirect to home
-                res.redirect("/");
+                let profile = fs.readFileSync("./public/signedout.html", "utf8");
+
+                res.send(profile);
             }
         });
     }
@@ -138,6 +146,7 @@ app.post("/signup", function (req, res) {
             console.log(results);
         }
     );
+    res.send("success");
 });
 
 function authenticate(email, pwd, callback) {

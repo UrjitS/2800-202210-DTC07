@@ -23,44 +23,37 @@ $(document).ready(function () {
         xhr.send(params);
     }
 
-    function beginPostLogin() {
+   
+    function beginPostSignUp() {
         let email = document.getElementById("login_email");
         let password = document.getElementById("password");
-        let queryString = "email=" + email.value + "&password=" + password.value;
+        var user_name_input = document.getElementById("user_name")
+        let queryString = "email=" + email.value + "&password=" + password.value + "&uname=" + user_name_input.value;
 
-        if (email.value.length > 0 || password.value.length > 0) {
-            ajaxPOST("/login", function (data) {
+        if (email.value.length > 0 || password.value.length > 0 || user_name_input.value.length > 0) {
+            ajaxPOST("/signup", function (data) {
 
                 if (data) {
-                    let dataParsed = JSON.parse(data);
-                    if (dataParsed.status == "fail") {
-                        document.getElementById("errorMsg").innerHTML = dataParsed.msg;
-                    } else if (dataParsed.status == "admin") {
-                        window.location.replace("admin.html");
-                    } else {
+                    if (data == "success") {
                         window.location.replace("main.html");
+                    } else {
+                        document.getElementById("errorMsg").innerHTML = "Error Could Not Create Account";
                     }
                 }
             }, queryString);
         } else {
             document.getElementById("errorMsg").innerHTML = "Please fill out the Fields";
         }
-
     }
-
-
 
     document.querySelector("#login_button").addEventListener("click", function (e) {
         e.preventDefault();
-
-        beginPostLogin();
-
+        beginPostSignUp();
     });
 
 
     document.querySelector("#sign_up").addEventListener("click", function (e) {
-        window.location.replace("signup.html");
-
+        window.location.replace("login.html");
     });
 
 });

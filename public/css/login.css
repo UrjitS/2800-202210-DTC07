@@ -1,16 +1,16 @@
 html {
-  background-color: #12151F;
+  background-color: #d7dbe3;
 }
 
 body {
   font-family: 'Oswald', sans-serif;
   font-family: 'Roboto Condensed', sans-serif;
   height: 100vh;
-  background-color: #0d0d0dfa;
+  background-color: #f3f0f0fb;
 }
 
 a {
-  color: #92badd;
+  color: #0b0c0c;
   display: inline-block;
   text-decoration: none;
   font-weight: 400;
@@ -23,7 +23,7 @@ h2 {
   text-transform: uppercase;
   display: inline-block;
   margin: 40px 8px 10px 8px;
-  color: #05F4B7;
+  color: #0571f4;
 }
 
 button {
@@ -48,7 +48,7 @@ button {
   max-width: 450px;
   position: relative;
   padding: 0px;
-  box-shadow: 0 5px 20px 0 #371BB1;
+  box-shadow: 0 5px 20px 0 #076b96;
   text-align: center;
 }
 
@@ -67,7 +67,7 @@ button {
 input[type=button],
 #login_button,
 input[type=reset] {
-  background-color: #057;
+  background-color: rgb(17, 97, 126);
   border: none;
   color: white;
   padding: 15px 80px;
@@ -76,7 +76,7 @@ input[type=reset] {
   display: inline-block;
   text-transform: uppercase;
   font-size: 13px;
-  box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+  box-shadow: 0 10px 30px 0 rgba(78, 113, 228, 0.4);
   border-radius: 5px 5px 5px 5px;
   margin: 5px 20px 40px 20px;
 }
@@ -84,7 +84,7 @@ input[type=reset] {
 input[type=button]:hover,
 #login_button:hover,
 input[type=reset]:hover {
-  background-color: #371BB1;
+  background-color: #2f50e6c3;
 }
 
 input[type=text_area],
@@ -110,11 +110,11 @@ input[type=text_area]:focus,
 #login_button,
 input[type=password] {
   background-color: #ccc2c2;
-  outline-color: #371BB1;
+  outline-color: #15a4dc;
 }
 
 #login_button {
-  background-color: skyblue;
+  background-color: rgb(110, 146, 246);
 }
 
 a.nav-link {

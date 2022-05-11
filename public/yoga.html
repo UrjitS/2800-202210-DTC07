@@ -60,12 +60,9 @@
 
         <div class="d-flex justify-content-center" style="margin-top: 30px;">
 
-            <button type="button" data-toggle="modal" data-target="#heartModal" style="margin-right: 40px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                    class="bi bi-heart-fill" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-                </svg>
+            <button type="button" data-toggle="modal" data-target="#heartModal"
+                style="margin-right: 40px; background-color: white; border: none;">
+                <img src="./images/heart.png" alt="" width="80" height="80">
             </button>
 
             <div class="modal fade" id="heartModal" tabindex="-1" role="dialog"
@@ -73,29 +70,57 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Heart Health</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitle">Benifits to your Heart</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            ...
+                            "One of yoga’s clearest benefits to the heart is its ability to relax the body and mind.
+                            Emotional stress can cause a cascade of physical effects, including the release of hormones
+                            like cortisol and adrenaline, which narrow your arteries and increase blood pressure."
+                            <a href="https://www.hopkinsmedicine.org/health/wellness-and-prevention/the-yoga-heart-connection#:~:text=One%20of%20yoga's%20clearest%20benefits,arteries%20and%20increase%20blood%20pressure."
+                                target="_blank">More Information</a>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <button type="button" data-toggle="modal" data-target="#mindModal"
+                style="margin-right: 40px; background-color: white; border: none;">
+                <img src="./images/mind.jpeg" alt="" width="70" height="70">
+            </button>
 
-            <button type="button" data-toggle="modal" data-target="#bodyHealth">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                    class="bi bi-emoji-smile-fill" viewBox="0 0 16 16">
-                    <path
-                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zM4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM10 8c-.552 0-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5S10.552 8 10 8z" />
-                </svg>
+            <div class="modal fade" id="mindModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Benifits to your Mind</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            "Regular yoga practice creates mental clarity and calmness; increases body awareness;
+                            relieves chronic stress patterns; relaxes the mind; centers attention; and sharpens
+                            concentration"
+                            <a href="https://osteopathic.org/what-is-osteopathic-medicine/benefits-of-yoga/#:~:text=Yoga's%20incorporation%20of%20meditation%20and,Nevins."
+                                target="_blank">More Information</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" data-toggle="modal" data-target="#bodyHealth"
+                style="background-color: white; border: none;">
+                <img src="./images/smile.png" alt="" width="80" height="80">
             </button>
 
             <div class="modal fade" id="bodyHealth" tabindex="-1" role="dialog"
@@ -103,17 +128,19 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Body Health</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitle">Benifits to mood</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            ...
+                            "Yoga can affect mood by elevating levels of a brain chemical called gamma-aminobutyric acid
+                            (GABA), which is associated with better mood and decreased anxiety."
+                            <a href="https://www.health.harvard.edu/staying-healthy/yoga-for-better-mental-health#:~:text=Improved%20mood&text=But%20yoga%20may%20have%20additional,the%20brain%20dedicated%20to%20emotions."
+                                target="_blank">More Information</a>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>
@@ -135,7 +162,7 @@
                         <button type="button" data-toggle="modal" data-target="#cobraPose">
                             Start
                         </button>
-            
+
                         <div class="modal fade" id="cobraPose" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -147,11 +174,13 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                        <img src="./images/yoga/cobraPose.png" alt="" style="width: 80%; height: auto">
+                                        <p>Start the timer and then Enter the Position</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Start Timer</button>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +197,7 @@
                         <button type="button" data-toggle="modal" data-target="#warriorPose">
                             Start
                         </button>
-            
+
                         <div class="modal fade" id="warriorPose" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -180,11 +209,13 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                        <img src="./images/yoga/warrior.png" alt="" style="width: 80%; height: auto">
+                                        <p>Start the timer and then Enter the Position</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Start Timer</button>
                                     </div>
                                 </div>
                             </div>
@@ -201,7 +232,7 @@
                         <button type="button" data-toggle="modal" data-target="#downwardPose">
                             Start
                         </button>
-            
+
                         <div class="modal fade" id="downwardPose" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -213,11 +244,13 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                        <img src="./images/yoga/downward.png" alt="" style="width: 80%; height: auto">
+                                        <p>Start the timer and then Enter the Position</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Start Timer</button>
                                     </div>
                                 </div>
                             </div>
@@ -228,8 +261,8 @@
 
 
         </div>
-        
-       
+
+
     </main>
 
     <br>

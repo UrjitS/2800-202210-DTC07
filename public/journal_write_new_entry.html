@@ -45,25 +45,41 @@
         </div>
     </div>
 
-    <!-- Confirmation message displayed to user  -->
+    <!-- Container that has writing image and Title  -->
 
 
     <div class="container col-xxl-8 px-4 py-5">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="row flex-lg-row- align-items-left g-5 py-5">
             <div class="col-10 col-sm-8 col-lg-6">
-                <img src="./images/Journal_writing_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="600"
-                    height="400" loading="lazy">
+                <img src="./images/Journal_writing_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                    width="150" height="100" loading="lazy">
             </div>
             <div class="col-lg-6">
-                <h1 class="display-5 fw-bold lh-1 mb-3">Write a New Journal Entry Page</h1>
+                <h1 class="display-5 fw-bold lh-1 mb-3">Write a New Journal Entry</h1>
                 <p class="lead">Insert User Input Boxes here. </p>
+            </div>
+            <!-- Container that Users can fill up -->
+            <div class="form-container">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Title of Journal Entry</label>
+                        <input type="text" class="form-control" id="title" placeholder="Title">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Write your Journal submission here:</label>
+                        <textarea class="form-control" id="description" rows="6" columns="6"></textarea>
+                    </div>
+                </form>
+            </div>
 
-                <a class="btn btn-success" href="./journal_submission_confirmation_page.html" role="button">Submit</a>
+            <div class="Menu button options">
+                <a class="btn btn-success" href="./journal_submission_confirmation_page.html" role="button" onclick="writeReview()">Submit</a>
                 <a class="btn btn-secondary" href="./journal_edit_confirmation_page.html" role="button">Edit</a>
                 <a class="btn btn-danger" href="./journal_deletion_confirmation_page.html" role="button">Delete</a>
                 <a class="btn btn-primary" href="./journal_main_page.html" role="button">Back to Journal Home Page</a>
             </div>
         </div>
+    </div>
     </div>
 
 

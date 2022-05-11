@@ -19,6 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+    <script src="./javascript/timer.js"></script>
 </head>
 
 <body>
@@ -159,7 +160,7 @@
                     <img src="./images/yoga/cobraPose.png" alt="" style="width: 50%; height: auto">
 
                     <div style="margin-top: 20%;">
-                        <button type="button" data-toggle="modal" data-target="#cobraPose">
+                        <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#cobraPose">
                             Start
                         </button>
 
@@ -176,11 +177,13 @@
                                     <div class="modal-body">
                                         <img src="./images/yoga/cobraPose.png" alt="" style="width: 80%; height: auto">
                                         <p>Start the timer and then Enter the Position</p>
+                                        <h2 id="cobraPoseTimer" style="color: red;"></h2>
                                     </div>
                                     <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" onclick="createTimer(70, 'cobraPoseTimer')">Start Timer</button>
+
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Start Timer</button>
+                                            data-dismiss="modal" onclick="stopTimer('cobraPoseTimer')">Close Timer</button>
                                     </div>
                                 </div>
                             </div>
@@ -194,7 +197,7 @@
                     <img src="./images/yoga/warrior.png" alt="" style="width: 50%; height: auto">
 
                     <div style="margin-top: 20%;">
-                        <button type="button" data-toggle="modal" data-target="#warriorPose">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#warriorPose">
                             Start
                         </button>
 
@@ -211,11 +214,13 @@
                                     <div class="modal-body">
                                         <img src="./images/yoga/warrior.png" alt="" style="width: 80%; height: auto">
                                         <p>Start the timer and then Enter the Position</p>
+                                        <h2 id="warriorPoseTimer" style="color: red;"></h2>
                                     </div>
                                     <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" onclick="createTimer(70, 'warriorPoseTimer')">Start Timer</button>
+
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Start Timer</button>
+                                            data-dismiss="modal" onclick="stopTimer('warriorPoseTimer')">Close Timer</button>
                                     </div>
                                 </div>
                             </div>
@@ -229,7 +234,7 @@
                     <img src="./images/yoga/downward.png" alt="" style="width: 50%; height: auto">
 
                     <div style="margin-top: 20%;">
-                        <button type="button" data-toggle="modal" data-target="#downwardPose">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#downwardPose">
                             Start
                         </button>
 
@@ -246,11 +251,12 @@
                                     <div class="modal-body">
                                         <img src="./images/yoga/downward.png" alt="" style="width: 80%; height: auto">
                                         <p>Start the timer and then Enter the Position</p>
+                                        <h2 id="downwardPoseTimer" style="color: red;"></h2>
                                     </div>
                                     <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" onclick="createTimer(5, 'downwardPoseTimer')">Start Timer</button>
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Start Timer</button>
+                                            data-dismiss="modal" onclick="stopTimer('downwardPoseTimer')">Close Timer</button>
                                     </div>
                                 </div>
                             </div>

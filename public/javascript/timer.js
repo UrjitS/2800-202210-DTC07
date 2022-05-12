@@ -31,8 +31,7 @@ function startTimer(duration, displayName) {
             timer = 0;
             if (!alertedUser) {
                 alert("Timer has Ended!");
-                alertedUser = true;
-                activeTimer = false;
+                stopTimer(displayName);
             }
         }
 

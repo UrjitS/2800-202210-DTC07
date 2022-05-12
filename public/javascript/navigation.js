@@ -17,6 +17,7 @@ function addNavbar() {
                     <ul>
                         <li><span class="text-muted">Suggestions</span></li>
                         <li><span class="text-muted">Personal Tools</span></li>
+                        <li><a class="text-muted" href="./journal_main_page.html">Wellness Journal</a></li>
                     </ul>
                 </span>
 

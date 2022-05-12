@@ -20,39 +20,14 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script src="./javascript/timer.js"></script>
+
+    <link rel="stylesheet" href="./css/navbar.css">
+    <script src="./javascript/navigation.js"></script>
 </head>
 
 <body>
-    <div class="pos-f-t">
-        <nav class="navbar navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <button class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                </svg>
-            </button>
+    <div class="navbarLocation">
 
-        </nav>
-        <div class="collapse" id="navbarToggleExternalContent">
-
-            <div class="bg-dark p-4">
-                <h4 class="text-white">Menu</h4>
-                <span class="text-muted">
-                    <ul>
-                        <li><span class="text-muted">Suggestions</span></li>
-                        <li><span class="text-muted">Personal Tools</span></li>
-                    </ul>
-                </span>
-
-            </div>
-        </div>
     </div>
 
 
@@ -275,31 +250,9 @@
     <br>
     <br>
 
-    <footer class="fixed-bottom navbar justify-content-evenly bg-dark" style="height: 75px; padding: 0px;">
+    <div class="footerLocation">
 
-        <div class="bottom-nav-button">
-            <div class="btn bg-dark" onclick="window.location.href='profile.html'" style="padding-left:4em">
-                <a href="profile.html" class="material-icons"
-                    style="color: whitesmoke; text-decoration: unset; font-size: 35px; ">person</a>
-                <p style="color: white;">Profile</p>
-            </div>
-        </div>
-        <div class="bottom-nav-button">
-            <div class="btn bg-dark" onclick="window.location.href='home.html'">
-                <a href="home.html" class="material-icons"
-                    style="color: whitesmoke; text-decoration: unset; font-size: 35px;">home</a>
-                <p style="color: whitesmoke;">Home</p>
-            </div>
-        </div>
-        <div class="bottom-nav-button">
-            <div class="btn bg-dark" onclick="history.back()" style="padding-right:4em">
-                <a class="material-icons" style="color: whitesmoke; text-decoration: unset; font-size: 35px;"
-                    onclick="history.back()">arrow_back</a>
-                <p style="color: whitesmoke;">Back</p>
-            </div>
-        </div>
-
-    </footer>
+    </div>
 
 
 </body>

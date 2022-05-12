@@ -32,9 +32,9 @@ function initMap() {
     content:
         "<p style='font-weight: bold ;'>Bridge the gap Head Office</p>"
         + "<p>Thanks for using our demo App</p>"
-        + "<p>Address: 11 xxx St,Vancouver, BC Vxx 6Lx</p>"
+        + "<p>Address: 11 xxx St,Vancouver</p>"
         + "<p>Contact: 778-xxx-xxxx</p>"
-        + "<a href='bcit.ca'>Homepage</a>"
+        + "<a href='https://www.bcit.ca/'>Homepage</a>"
   });
 
 
@@ -65,9 +65,9 @@ var infoWindow2 = new google.maps.InfoWindow({
   content:
       "<p style='font-weight: bold ;'>Changwhi Center</p>"
       + "<p>One of the biggest place where you can mditate</p>"
-      + "<p>Address: 12 xxx St,Vancouver, BC Vxx 4Lx</p>"
+      + "<p>Address: 12 xxx St,Vancouver</p>"
       + "<p>Contact: 778-xxx-xxxx</p>"
-      + "<a href='bcit.ca'>Homepage</a>"
+      + "<a href='https://www.bcit.ca/'>Homepage</a>"
 });
 
 

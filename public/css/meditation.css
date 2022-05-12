@@ -68,6 +68,11 @@ h2{
         flex-direction: column;
         width: auto;
         
+        
+    }
+    .image_box p{
+        font-size: x-small;
+        font-weight: bold;
     }
     .methods{
         display: flex;
@@ -77,6 +82,10 @@ h2{
     hr{
         width:100%;text-align:left;margin-left:0}
 
+
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
 }
 
 /* meditation */
@@ -87,7 +96,7 @@ h2{
     -moz-user-select: none;
     user-select: none;
   }
-.a{
+/* .a{
     display: flex;
     justify-content: space-between;
     gap: 10px;
@@ -96,8 +105,4 @@ h2{
     height: 40px;
     
   }
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
-  }
+  */

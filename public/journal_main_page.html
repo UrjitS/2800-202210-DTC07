@@ -18,81 +18,51 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 
+    <!-- Script to display Navbar and Footer-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/navbar.css">
+    <script src="./javascript/navigation.js"></script>
 </head>
 
-<!-- Nav Bar -->
+
 
 <body>
-    <div class="pos-f-t">
-        <nav class="navbar navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </nav>
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <h4 class="text-white">Menu</h4>
-                <span class="text-muted">
-                    <ul>
-                        <li><span class="text-muted">Suggestions</span></li>
-                        <li><span class="text-muted">Personal Tools</span></li>
-                    </ul>
-                </span>
+    <main>
+    <!--Nav Bar-->
 
-            </div>
+        <div class="navbarLocation">
+ 
         </div>
-    </div>
+   
+        <!-- Confirmation message displayed to user  -->
 
-    <!-- Confirmation message displayed to user  -->
 
-
-    <div class="container col-xxl-8 px-4 py-5">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-            <div class="col-10 col-sm-8 col-lg-6">
-                <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="600"
-                    height="400" loading="lazy">
-            </div>
-            <div class="col-lg-6">
-                <h1 class="display-5 fw-bold lh-1 mb-3">Wellness Journal</h1>
-                <p class="lead">Write down your thoughts, emotions - and anything you wish to reflect on in this journal. </p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <a href="./journal_write_new_entry.html" button type="button"  class="btn btn-info btn-lg px-4 me-md-2">Write a New Journal Entry</a>
-                    <a href="./journal_entries_page.html" button type="button"  class="btn btn-outline-secondary btn-lg px-4">View Journal Entries</a>
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                        width="600" height="400" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold lh-1 mb-3">Wellness Journal</h1>
+                    <p class="lead">Write down your thoughts, emotions - and anything you wish to reflect on in this
+                        journal. </p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <a href="./journal_write_new_entry.html" button type="button"
+                            class="btn btn-info btn-lg px-4 me-md-2">Write a New Journal Entry</a>
+                        <a href="./journal_entries_page.html" button type="button"
+                            class="btn btn-outline-secondary btn-lg px-4">View Journal Entries</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </main>
 
     <!-- Footer -->
 
-    <footer class="fixed-bottom navbar justify-content-evenly bg-dark" style="height: 75px; padding: 0px;">
-
-        <div class="bottom-nav-button">
-            <div class="btn bg-dark" onclick="window.location.href='profile.html'" style="padding-left:4em">
-                <a href="profile.html" class="material-icons"
-                    style="color: whitesmoke; text-decoration: unset; font-size: 35px; ">person</a>
-                <p style="color: white;">Profile</p>
-            </div>
-        </div>
-        <div class="bottom-nav-button">
-            <div class="btn bg-dark" onclick="window.location.href='home.html'">
-                <a href="home.html" class="material-icons"
-                    style="color: whitesmoke; text-decoration: unset; font-size: 35px;">home</a>
-                <p style="color: whitesmoke;">Home</p>
-            </div>
-        </div>
-        <div class="bottom-nav-button">
-            <div class="btn bg-dark" onclick="history.back()" style="padding-right:4em">
-                <a class="material-icons" style="color: whitesmoke; text-decoration: unset; font-size: 35px;"
-                    onclick="history.back()">arrow_back</a>
-                <p style="color: whitesmoke;">Back</p>
-            </div>
-        </div>
-
-    </footer>
+  <div class="footerLocation">
+ 
+    </div>
 
     <!-- End of Footer -->
 

@@ -18,178 +18,152 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 
+    <!-- Script to display Navbar and Footer-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/navbar.css">
+    <script src="./javascript/navigation.js"></script>
 </head>
 
-<!-- Nav Bar -->
 
 <body>
-    <div class="pos-f-t">
-        <nav class="navbar navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </nav>
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <h4 class="text-white">Menu</h4>
-                <span class="text-muted">
-                    <ul>
-                        <li><span class="text-muted">Suggestions</span></li>
-                        <li><span class="text-muted">Personal Tools</span></li>
-                    </ul>
-                </span>
+    <main>
 
-            </div>
-        </div>
+    <!--Nav Bar-->
+
+    <div class="navbarLocation">
+ 
     </div>
-
+       
     <!-- Journal Entries Title Page -->
 
 
-    <div class="container col-xxl-8 px-4 py-5">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-            <div class="col-10 col-sm-8 col-lg-6">
-                <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
-                    width="300" height="100" loading="lazy">
-            </div>
-            <div class="col-lg-6">
-                <h1 class="display-5 fw-bold lh-1 mb-3">Journal Entries Page </h1>
-                <p class="lead">Your collection of Journal Entries </p>
-                <a class="btn btn-primary" href="./journal_main_page.html" role="button">Back to Journal Home Page</a>
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                        width="300" height="100" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold lh-1 mb-3">Journal Entries Page </h1>
+                    <p class="lead">Your collection of Journal Entries </p>
+                    <a class="btn btn-primary" href="./journal_main_page.html" role="button">Back to Journal Home
+                        Page</a>
+                </div>
             </div>
         </div>
+
+        <!-------------------------------Journal Entries Presented in Card Format ------------------------------------>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                        width="150" height="75" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">Journal 1 Title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <a href="#" class="btn btn-primary stretched-link">Link to Journal Entry #1</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Small text box for extra info</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                        width="150" height="75" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">Journal 2 Title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.
+                        </p>
+                        <a href="#" class="btn btn-primary stretched-link">Link to Journal Entry #2</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Small text box for extra info</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                        width="150" height="75" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">Journal 3 Title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This card has even longer content than the first to show that equal
+                            height
+                            action.</p>
+                        <a href="#" class="btn btn-primary stretched-link">Link to Journal Entry #3</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Small text box for extra info</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                        width="150" height="75" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">Journal 4 Title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.
+                        </p>
+                        <a href="#" class="btn btn-primary stretched-link">Link to Journal Entry #4</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Small text box for extra info</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                        width="150" height="75" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">Journal 5 Title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.
+                        </p>
+                        <a href="#" class="btn btn-primary stretched-link">Link to Journal Entry #5</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Small text box for extra info</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                        width="150" height="75" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title">Journal 6 Title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.
+                        </p>
+                        <a href="#" class="btn btn-primary stretched-link">Link to Journal Entry #6</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Small text box for extra info</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+     <!-- Footer -->
+
+     <div class="footerLocation">
+ 
     </div>
-
-    <!-------------------------------Journal Entries Presented in Card Format ------------------------------------>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card h-100">
-                <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
-                width="150" height="75" loading="lazy">
-                <div class="card-body">
-                    <h5 class="card-title">Journal 1 Title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <a href="#" class="btn btn-primary stretched-link">Link to Journal Entry #1</a>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Small text box for extra info</small>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card h-100">
-                <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
-                width="150" height="75" loading="lazy">
-                <div class="card-body">
-                    <h5 class="card-title">Journal 2 Title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
-                    <a href="#" class="btn btn-primary stretched-link">Link to Journal Entry #2</a>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Small text box for extra info</small>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card h-100">
-                <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
-                width="150" height="75" loading="lazy">
-                <div class="card-body">
-                    <h5 class="card-title">Journal 3 Title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal height
-                        action.</p>
-                    <a href="#" class="btn btn-primary stretched-link">Link to Journal Entry #3</a>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Small text box for extra info</small>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card h-100">
-                <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
-                width="150" height="75" loading="lazy">
-                <div class="card-body">
-                    <h5 class="card-title">Journal 4 Title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
-                    <a href="#" class="btn btn-primary stretched-link">Link to Journal Entry #4</a>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Small text box for extra info</small>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card h-100">
-                <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
-                width="150" height="75" loading="lazy">
-                <div class="card-body">
-                    <h5 class="card-title">Journal 5 Title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
-                    <a href="#" class="btn btn-primary stretched-link">Link to Journal Entry #5</a>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Small text box for extra info</small>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col">
-            <div class="card h-100">
-                <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
-                width="150" height="75" loading="lazy">
-                <div class="card-body">
-                    <h5 class="card-title">Journal 6 Title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
-                    <a href="#" class="btn btn-primary stretched-link">Link to Journal Entry #6</a>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Small text box for extra info</small>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Footer -->
-
-    <footer class="fixed-bottom navbar justify-content-evenly bg-dark" style="height: 75px; padding: 0px;">
-
-        <div class="bottom-nav-button">
-            <div class="btn bg-dark" onclick="window.location.href='profile.html'" style="padding-left:4em">
-                <a href="profile.html" class="material-icons"
-                    style="color: whitesmoke; text-decoration: unset; font-size: 35px; ">person</a>
-                <p style="color: white;">Profile</p>
-            </div>
-        </div>
-        <div class="bottom-nav-button">
-            <div class="btn bg-dark" onclick="window.location.href='home.html'">
-                <a href="home.html" class="material-icons"
-                    style="color: whitesmoke; text-decoration: unset; font-size: 35px;">home</a>
-                <p style="color: whitesmoke;">Home</p>
-            </div>
-        </div>
-        <div class="bottom-nav-button">
-            <div class="btn bg-dark" onclick="history.back()" style="padding-right:4em">
-                <a class="material-icons" style="color: whitesmoke; text-decoration: unset; font-size: 35px;"
-                    onclick="history.back()">arrow_back</a>
-                <p style="color: whitesmoke;">Back</p>
-            </div>
-        </div>
-
-    </footer>
 
     <!-- End of Footer -->
 

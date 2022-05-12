@@ -17,6 +17,7 @@ function addNavbar() {
                     <ul>
                         <li><span class="text-muted">Suggestions</span></li>
                         <li><span class="text-muted">Personal Tools</span></li>
+                        <li><a class="text-muted" href="./journal_main_page.html">Wellness Journal</a></li>
                     </ul>
                 </span>
 
@@ -27,7 +28,7 @@ function addNavbar() {
 
 function addFooter() {
     $(".footerLocation").append(
-        `       <footer class="fixed-bottom navbar justify-content-evenly bg-dark d--none d-md-none"
+        `       <footer class="fixed-bottom navbar bg-dark d--none d-md-none"
         style="height: 75px; padding: 0px;">
 
         <div class="bottom-nav-button">

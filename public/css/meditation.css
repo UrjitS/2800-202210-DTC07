@@ -86,6 +86,9 @@ h2{
         .bd-placeholder-img-lg {
             font-size: 3.5rem;
           }
+    .card-body p{
+        font-size: small;
+    }
 }
 
 /* meditation */

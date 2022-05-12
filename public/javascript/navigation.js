@@ -27,7 +27,7 @@ function addNavbar() {
 
 function addFooter() {
     $(".footerLocation").append(
-        `       <footer class="fixed-bottom navbar justify-content-evenly bg-dark d--none d-md-none"
+        `       <footer class="fixed-bottom navbar bg-dark d--none d-md-none"
         style="height: 75px; padding: 0px;">
 
         <div class="bottom-nav-button">

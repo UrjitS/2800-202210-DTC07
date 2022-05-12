@@ -106,10 +106,10 @@ app.post("/getuseraccounts", function (req, res) {
 
     const mysql = require("mysql2");
     const connection = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "bridgethegap"
+        host: "us-cdbr-east-05.cleardb.net",
+        user: "b2baee19e53680",
+        password: "d53c023c",
+        database: "heroku_c9a2f09ca67205f"
     });
     connection.connect();
     connection.query("SELECT name, email FROM user",
@@ -126,10 +126,10 @@ app.post("/signup", function (req, res) {
 
     const mysql = require("mysql2");
     const connection = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "bridgethegap"
+        host: "us-cdbr-east-05.cleardb.net",
+        user: "b2baee19e53680",
+        password: "d53c023c",
+        database: "heroku_c9a2f09ca67205f"
     });
     connection.connect();
     let userRecords = "insert into user (name, email, password) values ?";
@@ -153,10 +153,10 @@ function authenticate(email, pwd, callback) {
 
     const mysql = require("mysql2");
     const connection = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "bridgethegap"
+        host: "us-cdbr-east-05.cleardb.net",
+        user: "b2baee19e53680",
+        password: "d53c023c",
+        database: "heroku_c9a2f09ca67205f"
     });
     connection.connect();
     connection.query( // Check for admin account first
@@ -196,13 +196,13 @@ function authenticate(email, pwd, callback) {
 async function init() {
     const mysql = require("mysql2/promise");
     const connection = await mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "",
+        host: "us-cdbr-east-05.cleardb.net",
+        user: "b2baee19e53680",
+        password: "d53c023c",
+        database: "heroku_c9a2f09ca67205f",
         multipleStatements: true
     });
-    const createDBAndTables = `CREATE DATABASE IF NOT EXISTS bridgethegap;
-        use bridgethegap;
+    const createDBAndTables = `
         CREATE TABLE IF NOT EXISTS user (
         ID int NOT NULL AUTO_INCREMENT,
         name varchar(30),

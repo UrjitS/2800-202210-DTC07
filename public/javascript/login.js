@@ -28,6 +28,8 @@ $(document).ready(function () {
         let password = document.getElementById("password");
         let queryString = "email=" + email.value + "&password=" + password.value;
 
+        
+
         if (email.value.length > 0 || password.value.length > 0) {
             ajaxPOST("/login", function (data) {
 

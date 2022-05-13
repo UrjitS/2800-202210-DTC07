@@ -2,22 +2,7 @@ const express = require('express');
 const session = require("express-session");
 const fs = require("fs");
 
-
 const app = express()
-// const mysql = require('mysql');
-
-// const con = mysql.createConnection({
-//     host: 'us-cdbr-east-05.cleardb.net',
-//     user: 'ba23755ea94897',
-//     password: '000cc533',
-//     database: 'heroku_8cd9f1c41e90292'
-// })
-
-// Going to be used for heroku
-let http = require('http');
-let url = require('url');
-const https = require('https');
-
 
 app.set('view engine', 'ejs');
 
@@ -25,7 +10,6 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
-
 
 app.use(express.static('./public'), session({
     secret: "extra text that no one will guess",
@@ -71,6 +55,43 @@ app.get("/logout", function (req, res) {
         });
     }
 });
+
+
+const mysql = require("mysql2");
+
+
+var db_config = {
+    host: "us-cdbr-east-05.cleardb.net",
+    user: "b2baee19e53680",
+    password: "d53c023c",
+    database: "heroku_c9a2f09ca67205f"
+};
+
+var connection;
+
+function handleServerDisconnect() {
+    connection = mysql.createConnection(db_config); 
+
+    connection.connect(function (err) { 
+        if (err) { 
+            console.log('error when connecting to db:', err);
+            setTimeout(handleServerDisconnect, 2000); 
+        } 
+    }); 
+
+    connection.on('error', function (err) {
+        console.log('db error', err);
+        if (err.code === 'PROTOCOL_CONNECTION_LOST') { 
+            handleServerDisconnect();
+        } else { 
+            throw err; 
+        }
+    });
+}
+
+handleServerDisconnect();
+
+
 // Notice that this is a "POST"
 app.post("/login", function (req, res) {
     res.setHeader("Content-Type", "application/json");
@@ -104,33 +125,21 @@ app.post("/login", function (req, res) {
 app.post("/getuseraccounts", function (req, res) {
     res.setHeader("Content-Type", "application/json");
 
-    const mysql = require("mysql2");
-    const connection = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "bridgethegap"
-    });
+
     connection.connect();
     connection.query("SELECT name, email FROM user",
-    function (error, results, fields) {
-        if (error) {
-            console.log(error);
+        function (error, results, fields) {
+            if (error) {
+                console.log(error);
+            }
+            res.send(results);
         }
-        res.send(results);
-    }
-);
+    );
 });
 app.post("/signup", function (req, res) {
     res.setHeader("Content-Type", "application/json");
 
-    const mysql = require("mysql2");
-    const connection = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "bridgethegap"
-    });
+
     connection.connect();
     let userRecords = "insert into user (name, email, password) values ?";
     let recordValues = [
@@ -151,13 +160,7 @@ app.post("/signup", function (req, res) {
 
 function authenticate(email, pwd, callback) {
 
-    const mysql = require("mysql2");
-    const connection = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "bridgethegap"
-    });
+
     connection.connect();
     connection.query( // Check for admin account first
         "SELECT * FROM admin WHERE email = ? AND password = ?", [email, pwd],
@@ -196,13 +199,13 @@ function authenticate(email, pwd, callback) {
 async function init() {
     const mysql = require("mysql2/promise");
     const connection = await mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "",
+        host: "us-cdbr-east-05.cleardb.net",
+        user: "b2baee19e53680",
+        password: "d53c023c",
+        database: "heroku_c9a2f09ca67205f",
         multipleStatements: true
     });
-    const createDBAndTables = `CREATE DATABASE IF NOT EXISTS bridgethegap;
-        use bridgethegap;
+    const createDBAndTables = `
         CREATE TABLE IF NOT EXISTS user (
         ID int NOT NULL AUTO_INCREMENT,
         name varchar(30),
@@ -229,6 +232,7 @@ async function init() {
         ];
         await connection.query(userRecords, [recordValues]);
     }
+
 }
 
 // process.env.PORT is the port Heroku gives

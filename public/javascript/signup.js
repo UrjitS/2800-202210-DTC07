@@ -29,10 +29,9 @@ $(document).ready(function () {
         let password = document.getElementById("password");
         var user_name_input = document.getElementById("user_name")
         let queryString = "email=" + email.value + "&password=" + password.value + "&uname=" + user_name_input.value;
-
-        if (email.value.length > 0 || password.value.length > 0 || user_name_input.value.length > 0) {
+ 
+        if (email.value.length > 0 && password.value.length > 0 && user_name_input.value.length > 0) {
             ajaxPOST("/signup", function (data) {
-
                 if (data) {
                     if (data == "success") {
                         window.location.replace("main.html");

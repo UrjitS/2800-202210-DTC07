@@ -67,30 +67,7 @@ var db_config = {
     database: "heroku_c9a2f09ca67205f"
 };
 
-var connection;
-
-function handleServerDisconnect() {
-    connection = mysql.createConnection(db_config); 
-
-    connection.connect(function (err) { 
-        if (err) { 
-            console.log('error when connecting to db:', err);
-            setTimeout(handleServerDisconnect, 2000); 
-        } 
-    }); 
-
-    connection.on('error', function (err) {
-        console.log('db error', err);
-        if (err.code === 'PROTOCOL_CONNECTION_LOST') { 
-            handleServerDisconnect();
-        } else { 
-            throw err; 
-        }
-    });
-}
-
-handleServerDisconnect();
-
+var connection = mysql.createPool(db_config);
 
 // Notice that this is a "POST"
 app.post("/login", function (req, res) {
@@ -126,7 +103,6 @@ app.post("/getuseraccounts", function (req, res) {
     res.setHeader("Content-Type", "application/json");
 
 
-    connection.connect();
     connection.query("SELECT name, email FROM user",
         function (error, results, fields) {
             if (error) {
@@ -140,7 +116,6 @@ app.post("/signup", function (req, res) {
     res.setHeader("Content-Type", "application/json");
 
 
-    connection.connect();
     let userRecords = "insert into user (name, email, password) values ?";
     let recordValues = [
         [req.body.uname, req.body.email, req.body.password]
@@ -161,7 +136,6 @@ app.post("/signup", function (req, res) {
 function authenticate(email, pwd, callback) {
 
 
-    connection.connect();
     connection.query( // Check for admin account first
         "SELECT * FROM admin WHERE email = ? AND password = ?", [email, pwd],
         function (error, results, fields) {

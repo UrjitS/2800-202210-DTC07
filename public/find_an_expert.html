@@ -37,8 +37,8 @@
     <main>
         <h3>Find an expert</h3>
         <div id="search_bar">
-            <input type="text" placeholder="Type address" name="search">
-            <button type="submit"><i class="fa fa-search"></i> </button>
+            <input type="text" id="address" placeholder="Type address" name="search">
+            <button type="button" id="submit" value="Geocode"><i class="fa fa-search"></i> </button>
         </div>
     </main>
     <!-- map -->
@@ -47,6 +47,7 @@
         <!--The div element for the map -->
         <div id="map"></div>
 
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt4ZrFvWT87Yk7thg35e2aEdokhNAYsHU&callback=initMap&v=weekly"
             defer></script>

@@ -92,7 +92,8 @@ app.post("/login", function (req, res) {
                 } else {
                     res.send({
                         status: "success",
-                        msg: "Logged in."
+                        msg: "Logged in.",
+                        sessionid: userRecord.ID
                     });
                 }
             }

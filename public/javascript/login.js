@@ -39,7 +39,11 @@ $(document).ready(function () {
                         document.getElementById("errorMsg").innerHTML = dataParsed.msg;
                     } else if (dataParsed.status == "admin") {
                         window.location.replace("admin.html");
-                    } else {
+                    } else if (dataParsed.status == "success"){
+                        sessionStorage.setItem("id", dataParsed.sessionid);
+                        // let stre = '{ "meditation": "yes", "yoga": "no"}';
+                        // let parsD = JSON.parse(stre);
+                        // console.log(parsD.yoga);
                         window.location.replace("main.html");
                     }
                 }

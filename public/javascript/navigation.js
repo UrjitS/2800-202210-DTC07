@@ -77,7 +77,7 @@ function addFooter() {
                 </div>
             </div>
             <div class="bottom-nav-button">
-                <div class="btn bg-dark" style="padding-right:4em">
+                <div class="btn bg-dark" style="padding-right:4em" onclick="history.back()">
                     <a class="material-icons"
                         style="color: whitesmoke; text-decoration: unset; font-size: 35px;">arrow_back</a>
                     <p style="color: whitesmoke;">Back</p>

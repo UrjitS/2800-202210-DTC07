@@ -1,7 +1,6 @@
 .container{
     display: flex;
 }
-
 #banner-image{
     max-width: 30%;
     max-height: 30%;
@@ -9,7 +8,7 @@
 }
 .card-title{
     text-align: center;
-    padding-top: 4em;
+    margin-top: 2em;
 }
 
 #fav-box{
@@ -70,5 +69,13 @@
     border-radius: 30px;
 }
 
-
+@media only screen and (max-width: 414px) {
+    #fav-box{
+        gap: 1em;
+    }
+    .card{
+        max-width: 10em;  
+        box-shadow: 0 0 1em gray;
+    }
+  }
 

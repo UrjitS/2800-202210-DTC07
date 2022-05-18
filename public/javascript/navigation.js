@@ -55,6 +55,7 @@ function addNavbar() {
         </div>`);
 }
 
+
 function addFooter() {
     $(".footerLocation").empty();
     $(".footerLocation").append(

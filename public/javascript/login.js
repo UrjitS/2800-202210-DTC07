@@ -6,7 +6,6 @@ $(document).ready(function () {
                 return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
             }
         ).join('&');
-        console.log("params in ajaxPOST", params);
 
         const xhr = new XMLHttpRequest();
         xhr.onload = function () {
@@ -41,8 +40,10 @@ $(document).ready(function () {
                         window.location.replace("admin.html");
                     } else if (dataParsed.status == "success"){
                         sessionStorage.setItem("id", dataParsed.sessionid);
-                        // let stre = '{ "meditation": "yes", "yoga": "no"}';
+                        // let stre = '{ "meditation": "no", "yoga": "no", "journal": "no", "resources": "no", "nutrition": "no", "walks": "no", "exercise": "no", "sleeping-habits": "no"}';
                         // let parsD = JSON.parse(stre);
+                        // console.log(parsD);
+
                         // console.log(parsD.yoga);
                         window.location.replace("main.html");
                     }

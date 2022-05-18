@@ -6,7 +6,6 @@ $(document).ready(function () {
                 return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
             }
         ).join('&');
-        console.log("params in ajaxPOST", params);
 
         const xhr = new XMLHttpRequest();
         xhr.onload = function () {
@@ -33,10 +32,14 @@ $(document).ready(function () {
         if (email.value.length > 0 && password.value.length > 0 && user_name_input.value.length > 0) {
             ajaxPOST("/signup", function (data) {
                 if (data) {
-                    if (data == "success") {
+                    let dataParsed = JSON.parse(data);
+
+                    if (dataParsed.status == "fail") {
+                        document.getElementById("errorMsg").innerHTML = dataParsed.msg;
+
+                    } else if (dataParsed.status == "success"){
+                        sessionStorage.setItem("id", dataParsed.sessionid);
                         window.location.replace("main.html");
-                    } else {
-                        document.getElementById("errorMsg").innerHTML = "Error Could Not Create Account";
                     }
                 }
             }, queryString);

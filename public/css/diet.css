@@ -2,6 +2,11 @@
     box-shadow: 0 0 15px gray ;
     background-color: #06D6A0;
 }
+
+body{
+    font-family: 'Nunito';
+}
+
 .ben-btn {
 background-color: transparent;
 width: 200px;
@@ -23,7 +28,6 @@ box-shadow: 0 0 10px;
 
 .banner-text-container{
     text-align: center;
-    font-family: 'Nunito';
 }
 
 #banner-title{
@@ -40,7 +44,6 @@ box-shadow: 0 0 10px;
 
 h2{
     text-align: center;
-    margin: 2em auto;
 }
 
 #benefits-container{
@@ -51,6 +54,7 @@ h2{
     justify-content: center; 
     flex-wrap: wrap; 
     gap: 15em;
+    margin-bottom: 10em;
 }
 
 .card-img{
@@ -64,15 +68,65 @@ h2{
     align-items: center; 
     align-content: center; 
     justify-content: center; 
-    flex-wrap: wrap; 
-    gap: 16em; 
-    padding-top: 15em;
+    flex-wrap: wrap;  
+    margin: 5em;
 }
 
-#ingredient-title{
+#food-title{
+    padding-top: 2em;
     text-align: center;
+    color: white;
+    font-weight: bold;
 }
 
+#carouselExampleCaptions{
+    width:340px;
+    height:200px;
+}
+
+.carousel-item h5{
+    color: green;
+    font-weight: bold;
+}
+
+.carousel-inner > .carousel-item > img {
+    width: 100%;
+    height: 15vh;
+    object-fit: contain;
+  }
+
+  #intro-par{
+      color: white;
+      text-align:center;
+      font-size: 18px;
+      padding-top: 2em;
+  }
+
+  #food-info-card{
+      background-color: rgb(167, 164, 164);
+      margin-top: 3em;
+      margin-right: 3em;
+      margin-left: 3em;
+      padding-bottom: 4em;
+      padding-right: 3em;
+      padding-left: 3em;
+      border-radius: 23px;
+      box-shadow: 0 0 5px gray;
+      font-weight: bold;
+  }
+
+  #benefits-title{
+      margin-top: 2em;
+      margin-bottom: 2em;
+  }
+
+  #med-dietchart{
+      align-self: center;
+      max-width: 50%;
+      max-height: 30%;
+      border-style: solid;
+      border-color: teal;
+  }
 @media only screen and (max-width: 414px) {
     #banner-title{
         font-size: 45px;
@@ -104,6 +158,7 @@ h2{
         justify-content: center; 
         flex-wrap: wrap; 
         gap: 2em;
+        margin-bottom: 3em;
     }
 
     .card-title{
@@ -118,8 +173,31 @@ h2{
         flex-wrap: wrap; 
     }
 
-    #ingredient-title{
-        font-size: 25px;
+    #intro-par{
+        color: white;
+        text-align:center;
+        font-size: 12px;
+        padding-top: 1em;
     }
-
+    #food-title{
+        padding-top: 1em;
+    }
+    #food-info-card{
+        margin-top: 3em;
+        margin-right: 3em;
+        margin-left: 3em;
+        padding-bottom: 1em;
+        padding-right: 3em;
+        padding-left: 3em;
+        border-radius: 23px;
+        box-shadow: 0 0 5px gray;
+        font-weight: bold;
+    }
+    #med-dietchart{
+        align-self: center;
+        max-width: 100%;
+        max-height: 100%;
+        border-style: solid;
+        border-color: teal;
+    }
   }

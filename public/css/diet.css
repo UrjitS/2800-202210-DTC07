@@ -2,56 +2,16 @@
     box-shadow: 0 0 15px gray ;
     background-color: #06D6A0;
 }
-.flip-card {
+.ben-btn {
 background-color: transparent;
-width: 300px;
+width: 200px;
 height: 200px;
 border: 1px solid #f1f1f1;
 border-radius: 25px;
-perspective: 1000px;
-}
-
-/* Container to position the front and back side */
-.flip-card-inner {
-position: relative;
-width: 100%;
-height: 150%;
-text-align: center;
-transition: transform 0.8s;
-transform-style: preserve-3d;
-}
-
-/*Horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-position: absolute;
-width: 100%;
-height: 100%;
--webkit-backface-visibility: hidden; /* Safari */
-backface-visibility: hidden;
-border-radius: 25px;
-}
-
-/* Front side of card */
-.flip-card-front {
 background-color: #FFD166;
-color: black;
-border-radius: 25px;
 box-shadow: 0 0 10px;
 }
 
-/* Backside of card */
-.flip-card-back {
-background-color: #26547C;
-color: white;
-transform: rotateY(180deg);
-border-radius: 25px;
-box-shadow: 0 0 10px;
-}
 
 .container{
     display: flex; 
@@ -90,7 +50,7 @@ h2{
     align-content: center; 
     justify-content: center; 
     flex-wrap: wrap; 
-    gap: 16em;
+    gap: 15em;
 }
 
 .card-img{
@@ -108,3 +68,58 @@ h2{
     gap: 16em; 
     padding-top: 15em;
 }
+
+#ingredient-title{
+    text-align: center;
+}
+
+@media only screen and (max-width: 414px) {
+    #banner-title{
+        font-size: 45px;
+    }
+    
+    #subhead-1{
+        font-size: 15px;
+    }
+    
+    #subhead-2{
+        font-size: 15px;
+    }
+
+    #benefits-title{
+        font-size: 25px;
+    }
+
+    .ben-btn {
+        width: 25%;
+        height: 25%;
+        }
+
+            
+    #benefits-container{
+        display:flex; 
+        flex-direction: row; 
+        align-items: center; 
+        align-content: center; 
+        justify-content: center; 
+        flex-wrap: wrap; 
+        gap: 2em;
+    }
+
+    .card-title{
+        font-size: 1px;
+    }
+    #suggestions-container{
+        display:flex; 
+        flex-direction: column; 
+        align-items: center; 
+        align-content: center; 
+        justify-content: flex-start; 
+        flex-wrap: wrap; 
+    }
+
+    #ingredient-title{
+        font-size: 25px;
+    }
+
+  }

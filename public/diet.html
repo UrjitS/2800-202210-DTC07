@@ -14,9 +14,10 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=M+PLUS+2:wght@500&family=Nunito:wght@600;700&family=Open+Sans:wght@700&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <link rel="stylesheet" href="./css/navbar.css">
     <script src="./javascript/navigation.js"></script>
@@ -39,60 +40,79 @@
         </div>
     </div>
 
-    <h2> Benefits of Improving your <span> DIET</span></h2>
+    <h2 id="benefits-title"> Benefits of Improving your <span> DIET</span></h2>
     <div id="body-container">
         <div id="benefits-container">
+            <button type="button" class="ben-btn" data-toggle="modal" data-target="#wellModal">
+                <img src="images/happy.png" alt="happy" class="card-img">
+            </button>
+              <div class="modal fade" id="wellModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Mental Health</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="images/happy.png" alt="happy" class="card-img">
-                </div>
-                <div class="flip-card-back">
-                    <h1>Mental Health</h1>
-                    <ul>
-                        <li>Healthy diet can help with symptoms of depression and anxiety</li>
-                        <br>
-                        <li>Highly processed foods that are high in sugar are linked to inflammation which may make symptoms of mental illness worse</li>
-                    </ul>
 
+            <button class="ben-btn" data-toggle="modal" data-target="#brainModal">
+                <img src="images/brain.png" alt="brain" class="card-img">
+            </button>
+            <div class="modal fade" id="brainModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Brain</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
                 </div>
+              </div>
+ 
+            <button class="ben-btn" data-toggle="modal" data-target="#moodModal">
+                <img src="images/mood.png" alt="mood" class="card-img">
+            </button>
+            <div class="modal fade" id="moodModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Mood</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="images/brain.png" alt="brain" class="card-img">
-                </div>
-                <div class="flip-card-back">
-                    <h1>Focus</h1>
-                    <ul>
-                        <li>A balanced diet helps you think clearly and feel more alert</li>
-                        <br>
-                        <li>It can also improve your concentration and attention span</li>
-                    </ul>
-                </div>
-                </div>
-            </div>
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="images/mood.png" alt="mood" class="card-img">
-                </div>
-                <div class="flip-card-back">
-                    <h1>Mood</h1>
-                    <ul>
-                        <li>What you drink or eat can affect your mood. For example, foods high in caffeine make some people irritable and anxious </li>
-                        <br>
-                        <li>Eat regularly as blood sugar level dropping can make you feel tired and bad tempered</li>
-                    </ul>
-                </div>
-                </div>
-            </div>
-        </div>
+              </div>
 
+    </div>
+    <h2 id="ingredient-title"> What should you eat?</h2>
         <div id="suggestions-container" style="display:flex; flex-direction: column; align-items: center; align-content: center; justify-content: center; flex-wrap: wrap; gap: 16em; padding-top: 15em">
-            <h2 style="text-align: center"> Foods That Improve Your Mental Health</h2>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -123,21 +143,8 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="footerLocation"></div>
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

@@ -21,23 +21,31 @@ function getStatus(currentPage) {
                         addFilledContentPageNavbar(currentPage);
                     }
                     break;
-                };
-            case "yoga": {
-                if (dataParsed.yoga == "no") {
-                    addContentPageNavbar(currentPage);
-                } else {
-                    addFilledContentPageNavbar(currentPage);
                 }
-                break;
-            };
-            case "journal": {
-                if (dataParsed.journal == "no") {
-                    addContentPageNavbar(currentPage);
-                } else {
-                    addFilledContentPageNavbar(currentPage);
+                case "yoga": {
+                    if (dataParsed.yoga == "no") {
+                        addContentPageNavbar(currentPage);
+                    } else {
+                        addFilledContentPageNavbar(currentPage);
+                    }
+                    break;
                 }
-                break;
-            };
+                case "journal": {
+                    if (dataParsed.journal == "no") {
+                        addContentPageNavbar(currentPage);
+                    } else {
+                        addFilledContentPageNavbar(currentPage);
+                    }
+                    break;
+                }
+                case "nutrition": {
+                    if (dataParsed.nutrition == "no") {
+                        addContentPageNavbar(currentPage);
+                    } else {
+                        addFilledContentPageNavbar(currentPage);
+                    }
+                    break;
+                }
             };
         }
     });
@@ -56,27 +64,37 @@ function savePage(currentPage) {
                 addContentPageNavbar(currentPage);
             }
             break;
-        };
-    case "yoga": {
-        if (dataParsed.yoga == "no") {
-            dataParsed.yoga = "yes";
-            addFilledContentPageNavbar(currentPage);
-        } else {
-            dataParsed.yoga = "no";
-            addContentPageNavbar(currentPage);
         }
-        break;
-    };
-    case "journal": {
-        if (dataParsed.journal == "no") {
-            dataParsed.journal = "yes";
-            addFilledContentPageNavbar(currentPage);
-        } else {
-            dataParsed.journal = "no";
-            addContentPageNavbar(currentPage);
+        case "yoga": {
+            if (dataParsed.yoga == "no") {
+                dataParsed.yoga = "yes";
+                addFilledContentPageNavbar(currentPage);
+            } else {
+                dataParsed.yoga = "no";
+                addContentPageNavbar(currentPage);
+            }
+            break;
         }
-        break;
-    };
+        case "journal": {
+            if (dataParsed.journal == "no") {
+                dataParsed.journal = "yes";
+                addFilledContentPageNavbar(currentPage);
+            } else {
+                dataParsed.journal = "no";
+                addContentPageNavbar(currentPage);
+            }
+            break;
+        }
+        case "nutrition": {
+            if (dataParsed.nutrition == "no") {
+                dataParsed.nutrition = "yes";
+                addFilledContentPageNavbar(currentPage);
+            } else {
+                dataParsed.nutrition = "no";
+                addContentPageNavbar(currentPage);
+            }
+            break;
+        }
     };
     console.log(JSON.stringify(dataParsed));
     $.ajax({

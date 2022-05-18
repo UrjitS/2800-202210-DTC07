@@ -7,74 +7,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bridge the Gap Main Page</title>
 
-   <!-- Google fonts-->
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=M+PLUS+2:wght@500&family=Nunito:wght@600;700&family=Open+Sans:wght@700&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=M+PLUS+2:wght@500&family=Nunito:wght@600;700&family=Open+Sans:wght@700&family=Yanone+Kaffeesatz&display=swap"
+        rel="stylesheet">
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <script src="./javascript/favoritingpage.js"></script>
     <link rel="stylesheet" href="./css/navbar.css">
     <script src="./javascript/navigation.js"></script>
 
     <style>
-        .jumbotron{
-            box-shadow: 0 0 15px gray ;
+        .jumbotron {
+            box-shadow: 0 0 15px gray;
             background-color: #06D6A0;
         }
+
         .flip-card {
-        background-color: transparent;
-        width: 300px;
-        height: 200px;
-        border: 1px solid #f1f1f1;
-        border-radius: 25px;
-        perspective: 1000px;
+            background-color: transparent;
+            width: 300px;
+            height: 200px;
+            border: 1px solid #f1f1f1;
+            border-radius: 25px;
+            perspective: 1000px;
         }
 
         /* Container to position the front and back side */
         .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 150%;
-        text-align: center;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
+            position: relative;
+            width: 100%;
+            height: 150%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
         }
 
         /*Horizontal flip when you move the mouse over the flip box container */
         .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
+            transform: rotateY(180deg);
         }
 
         /* Position the front and back side */
-        .flip-card-front, .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden; /* Safari */
-        backface-visibility: hidden;
-        border-radius: 25px;
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            /* Safari */
+            backface-visibility: hidden;
+            border-radius: 25px;
         }
 
         /* Front side of card */
         .flip-card-front {
-        background-color: #FFD166;
-        color: black;
-        border-radius: 25px;
-        box-shadow: 0 0 10px;
+            background-color: #FFD166;
+            color: black;
+            border-radius: 25px;
+            box-shadow: 0 0 10px;
         }
 
         /* Backside of card */
         .flip-card-back {
-        background-color: #26547C;
-        color: white;
-        transform: rotateY(180deg);
-        border-radius: 25px;
-        box-shadow: 0 0 10px;
+            background-color: #26547C;
+            color: white;
+            transform: rotateY(180deg);
+            border-radius: 25px;
+            box-shadow: 0 0 10px;
         }
     </style>
 </head>
@@ -83,11 +89,13 @@
     <div class="contentNavbarLocation">
 
     </div>
+
     <div class="jumbotron jumbotron-fluid">
-        <div class="container" style="display: flex; justify-content: center; align-content: center; align-items: center; color: white">
+        <div class="container"
+            style="display: flex; justify-content: center; align-content: center; align-items: center; color: white">
             <div class="banner-text-container" style="text-align: center;font-family: 'Nunito';">
                 <h1 style="font-size: 80px;"> Nutrition</h1>
-                <p style="font-size: 30px"> You are what you eat!</p> 
+                <p style="font-size: 30px"> You are what you eat!</p>
                 <p style="font-size: 25px"> Your diet affects the state of your mind.</p>
             </div>
         </div>
@@ -95,84 +103,94 @@
 
     <h2 style="text-align: center;margin: 2em auto;"> Benefits of Improving your <span> DIET</span></h2>
     <div id="body-container">
-        <div id="benefits-container" style="display:flex; flex-direction: row; align-items: center; align-content: center; justify-content: center; flex-wrap: wrap; gap: 16em">
+        <div id="benefits-container"
+            style="display:flex; flex-direction: row; align-items: center; align-content: center; justify-content: center; flex-wrap: wrap; gap: 16em">
 
             <div class="flip-card">
                 <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="images/happy.png" alt="happy" style="object-fit: cover;width: 100%">
-                </div>
-                <div class="flip-card-back">
-                    <h1>Mental Health</h1>
-                    <ul>
-                        <li>Healthy diet can help with symptoms of depression and anxiety</li>
-                        <br>
-                        <li>Highly processed foods that are high in sugar are linked to inflammation which may make symptoms of mental illness worse</li>
-                    </ul>
+                    <div class="flip-card-front">
+                        <img src="images/happy.png" alt="happy" style="object-fit: cover;width: 100%">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>Mental Health</h1>
+                        <ul>
+                            <li>Healthy diet can help with symptoms of depression and anxiety</li>
+                            <br>
+                            <li>Highly processed foods that are high in sugar are linked to inflammation which may make
+                                symptoms of mental illness worse</li>
+                        </ul>
 
-                </div>
+                    </div>
                 </div>
             </div>
             <div class="flip-card">
                 <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="images/brain.png" alt="brain" style="object-fit: cover;width: 100%">
-                </div>
-                <div class="flip-card-back">
-                    <h1>Focus</h1>
-                    <ul>
-                        <li>A balanced diet helps you think clearly and feel more alert</li>
-                        <br>
-                        <li>It can also improve your concentration and attention span</li>
-                    </ul>
-                </div>
+                    <div class="flip-card-front">
+                        <img src="images/brain.png" alt="brain" style="object-fit: cover;width: 100%">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>Focus</h1>
+                        <ul>
+                            <li>A balanced diet helps you think clearly and feel more alert</li>
+                            <br>
+                            <li>It can also improve your concentration and attention span</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="flip-card">
                 <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="images/mood.png" alt="mood" style="object-fit: cover;width: 100%">
-                </div>
-                <div class="flip-card-back">
-                    <h1>Mood</h1>
-                    <ul>
-                        <li>What you drink or eat can affect your mood. For example, foods high in caffeine make some people irritable and anxious </li>
-                        <br>
-                        <li>Eat regularly as blood sugar level dropping can make you feel tired and bad tempered</li>
-                    </ul>
-                </div>
+                    <div class="flip-card-front">
+                        <img src="images/mood.png" alt="mood" style="object-fit: cover;width: 100%">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>Mood</h1>
+                        <ul>
+                            <li>What you drink or eat can affect your mood. For example, foods high in caffeine make
+                                some people irritable and anxious </li>
+                            <br>
+                            <li>Eat regularly as blood sugar level dropping can make you feel tired and bad tempered
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="suggestions-container" style="display:flex; flex-direction: column; align-items: center; align-content: center; justify-content: center; flex-wrap: wrap; gap: 16em; padding-top: 15em">
+        <div id="suggestions-container"
+            style="display:flex; flex-direction: column; align-items: center; align-content: center; justify-content: center; flex-wrap: wrap; gap: 16em; padding-top: 15em">
             <h2 style="text-align: center"> Foods That Improve Your Mental Health</h2>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="images/brain.png" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                  </div>
+                    <div class="carousel-item active">
+                        <img src="images/brain.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                    </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
                 </button>
-              </div>
+            </div>
 
         </div>
     </div>
@@ -193,14 +211,16 @@
 
     <div class="footerLocation"></div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function () {
+            getStatus("nutrition-Page");
+        });
     </script>
 </body>
 

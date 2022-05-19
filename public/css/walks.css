@@ -24,8 +24,14 @@ box-shadow: 0 0 10px;
     align-content: center; 
     align-items: center; 
     color: white;
+    flex-direction: column;
+    gap: 2em;
 }
 
+#map{
+    width: 50em;
+    height: 50em;
+}
 .banner-text-container{
     text-align: center;
 }
@@ -128,5 +134,13 @@ h2{
         text-align:center;
         font-size: 12px;
         padding-top: 1em;
+    }
+
+    #map{
+        width: 20em;
+        height: 17em;
+    }
+    #container{
+        gap: 1em;
     }
   }

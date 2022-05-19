@@ -1,6 +1,5 @@
 const express = require('express');
 const session = require("express-session");
-const req = require('express/lib/request');
 const fs = require("fs");
 
 const app = express()
@@ -67,19 +66,11 @@ const mysql = require("mysql2");
 //     password: "d53c023c",
 //     database: "heroku_c9a2f09ca67205f"
 // };
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 var db_config = {
     host: "localhost",
     user: "root",
     password: "",
-<<<<<<< Updated upstream
     database: "bridgethegap"
-=======
-    database: "journalentriestest"
->>>>>>> Stashed changes
 };
 var connection = mysql.createPool(db_config);
 
@@ -149,6 +140,46 @@ app.post("/changeUserFavoritePageStatus", function (req, res) {
         }
     );
 });
+
+// ----- Journal Entry feature: Creating a Journal Entry into our journals table -----------------------------
+
+app.post("/createJournalEntry", function (req, res) {
+    //Inserts information into "users" section of journals database
+    let userRecords = "insert into journals (title, entry, user_id) values ?";
+    let recordValues = [
+        [req.body.contentTitle, req.body.contentEntry, req.body.contentUID]
+    ];
+    connection.query(userRecords, [recordValues]);
+    res.send("success");
+});
+
+// ----- Get journals from the journals table -----------------------------
+
+app.post("/readJournalEntry", function (req, res) {
+    connection.query("SELECT ID, title, entry FROM journals WHERE user_id = ?", [req.body.userid],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error);
+            }
+            res.send(results);
+        }
+    );
+});
+
+
+// ----- Delete journals from the journals table -----------------------------
+
+app.post("/deleteJournalEntry", function (req, res) {
+    connection.query("DELETE FROM journals WHERE ID = ?", [req.body.jID],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error);
+            }
+            res.send("success");
+        }
+    );
+});
+
 
 app.post("/signup", function (req, res) {
     res.setHeader("Content-Type", "application/json");
@@ -264,7 +295,6 @@ async function init() {
     //DROP DATABASE IF EXISTS bridgethegap;
 
     const createDBAndTables = `
-<<<<<<< Updated upstream
         CREATE DATABASE IF NOT EXISTS bridgethegap;
         use bridgethegap;
         CREATE TABLE IF NOT EXISTS user (
@@ -273,16 +303,14 @@ async function init() {
         email varchar(30),
         password varchar(30),
         favoritepages varchar(800),
-=======
-    CREATE DATABASE IF NOT EXISTS journals;
-        use journals;
-        CREATE TABLE IF NOT EXISTS user (
-        ID int NOT NULL AUTO_INCREMENT,
-        title varchar(50),
-        entry varchar(250),
-        user_id int, 
->>>>>>> Stashed changes
         PRIMARY KEY (ID)
+        );
+        CREATE TABLE IF NOT EXISTS journals (
+            ID int NOT NULL AUTO_INCREMENT,
+            title varchar(50),
+            entry varchar(800),
+            user_id int, 
+            PRIMARY KEY (ID)
         );
         CREATE TABLE IF NOT EXISTS admin (
             ID int NOT NULL AUTO_INCREMENT,
@@ -293,41 +321,7 @@ async function init() {
             );`;
     await connection.query(createDBAndTables);
 
-    // ----- Journal Entry feature: Creating a Journal Entry into our journals database -----------------------------
-
-    app.post("/createJournalEntry", function (req, res) {
-        const id = req.body.id;
-        const title = req.body.title;
-        const entry = req.body.entry;
-        const user_id = req.body.user_id;
-        
-      // Inserts information into "users" section of journals database
-        connection.query("INSERT INTO journals WHERE users (id, title, entry, user_id"), [id, title, entry, user_id],
-            function (error, results, fields) {
-                if (error) {
-                    console.log(error);
-                }
-                res.send(results);
-            }
-    });
-   // -------Journal Entry feature: Delete a Journal Entry from our journals database-----------------------------
-
-   app.post("/deleteJournalEntry", function (req, res) {
-    const id = req.body.id;
-    const title = req.body.title;
-    const entry = req.body.entry;
-    const user_id = req.body.user_id;
-    
-  // Retireves journal entry information into "users" section of journals database
-    connection.query("DELETE from journals WHERE id= ? AND user id= ? (id, user_id"), [id, user_id],
-        function (error, results, fields) {
-            if (error) {
-                console.log(error);
-            }
-            res.send(results);
-        }
-});
-//-------------------------------------------------------------------------------------------------------------
+    const [rows, fields] = await connection.query("SELECT * FROM admin");
 
     if (rows.length == 0) {
 
@@ -337,8 +331,8 @@ async function init() {
         ];
         await connection.query(userRecords, [recordValues]);
     }
-    console.log("run_test")
+
 }
 
 // process.env.PORT is the port Heroku gives
-app.listen(3000, init);
+app.listen(process.env.PORT || 3000, init);

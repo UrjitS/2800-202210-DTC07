@@ -1,4 +1,4 @@
-//----------------------------Create Journal Entry Function ------------------------------//
+
 function deleteEntry(entryID) {
     console.log(entryID);
     $.ajax({
@@ -9,10 +9,12 @@ function deleteEntry(entryID) {
         },
         success: function (result) {
             console.log(result);
+            window.location.replace("journal_deletion_confirmation_page.html");
         }
     });
 }
 
+//----------------------------Read Journal Entry Function ------------------------------//
 function readJournalEntry() {
     $("#journalRow").empty();
     $.ajax({

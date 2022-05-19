@@ -2,22 +2,7 @@ const express = require('express');
 const session = require("express-session");
 const fs = require("fs");
 
-
 const app = express()
-// const mysql = require('mysql');
-
-// const con = mysql.createConnection({
-//     host: 'us-cdbr-east-05.cleardb.net',
-//     user: 'ba23755ea94897',
-//     password: '000cc533',
-//     database: 'heroku_8cd9f1c41e90292'
-// })
-
-// Going to be used for heroku
-let http = require('http');
-let url = require('url');
-const https = require('https');
-
 
 app.set('view engine', 'ejs');
 
@@ -25,7 +10,6 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
-
 
 app.use(express.static('./public'), session({
     secret: "extra text that no one will guess",
@@ -71,6 +55,25 @@ app.get("/logout", function (req, res) {
         });
     }
 });
+
+
+const mysql = require("mysql2");
+
+
+// var db_config = {
+//     host: "us-cdbr-east-05.cleardb.net",
+//     user: "b2baee19e53680",
+//     password: "d53c023c",
+//     database: "heroku_c9a2f09ca67205f"
+// };
+var db_config = {
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "bridgethegap"
+};
+var connection = mysql.createPool(db_config);
+
 // Notice that this is a "POST"
 app.post("/login", function (req, res) {
     res.setHeader("Content-Type", "application/json");
@@ -94,7 +97,8 @@ app.post("/login", function (req, res) {
                 } else {
                     res.send({
                         status: "success",
-                        msg: "Logged in."
+                        msg: "Logged in.",
+                        sessionid: userRecord.ID
                     });
                 }
             }
@@ -104,61 +108,112 @@ app.post("/login", function (req, res) {
 app.post("/getuseraccounts", function (req, res) {
     res.setHeader("Content-Type", "application/json");
 
-    const mysql = require("mysql2");
-    const connection = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "bridgethegap"
-    });
-    connection.connect();
+
     connection.query("SELECT name, email FROM user",
-    function (error, results, fields) {
-        if (error) {
-            console.log(error);
-        }
-        res.send(results);
-    }
-);
-});
-app.post("/signup", function (req, res) {
-    res.setHeader("Content-Type", "application/json");
-
-    const mysql = require("mysql2");
-    const connection = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "bridgethegap"
-    });
-    connection.connect();
-    let userRecords = "insert into user (name, email, password) values ?";
-    let recordValues = [
-        [req.body.uname, req.body.email, req.body.password]
-    ];
-    connection.query(userRecords, [recordValues]);
-
-    connection.query("SELECT * FROM user",
         function (error, results, fields) {
             if (error) {
                 console.log(error);
             }
-            console.log(results);
+            res.send(results);
         }
     );
-    res.send("success");
+});
+
+app.post("/checkFavoritePageStatus", function (req, res) {
+    connection.query("SELECT favoritepages FROM user WHERE ID = ?", [req.body.userid],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error);
+            }
+            res.send(results);
+        }
+    );
+});
+
+app.post("/changeUserFavoritePageStatus", function (req, res) {
+    connection.query("UPDATE user SET favoritepages = ? WHERE ID = ?", [req.body.newData, req.body.userid],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error);
+            }
+            res.send(results);
+        }
+    );
+});
+
+app.post("/getUserName", function (req, res) {
+    connection.query("SELECT name FROM user WHERE ID = ?", [req.body.userid],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error);
+            }
+            res.send(results);
+        }
+    );
+});
+
+app.post("/signup", function (req, res) {
+    res.setHeader("Content-Type", "application/json");
+
+    let allPages = '{ "meditation": "no", "yoga": "no", "journal": "no", "resources": "no", "nutrition": "no", "walks": "no", "music": "no", "sleeping_habits": "no", "self_assessment_quiz": "no"}';
+    connection.query(
+        "SELECT * FROM user WHERE email = ?", [req.body.email],
+        function (error, results, fields) {
+
+            if (error) {
+                console.log(error);
+            }
+            if (results.length > 0) {
+                // EMAIL ALREADY EXISTS
+                res.send({
+                    status: "fail",
+                    msg: "Email already in use"
+                });
+            } else {
+                let userRecords = "insert into user (name, email, password, favoritepages) values ?";
+                let recordValues = [
+                    [req.body.uname, req.body.email, req.body.password, allPages]
+                ];
+                connection.query(userRecords, [recordValues]);
+                connection.query("SELECT * FROM user",
+                    function (error, results, fields) {
+                        if (error) {
+                            console.log(error);
+                        }
+                        console.log(results);
+                    }
+                );
+                authenticate(req.body.email, req.body.password,
+                    function (userRecord) {
+                        if (userRecord == null) {
+                            res.send({
+                                status: "fail",
+                                msg: "User account not found."
+                            });
+                        } else {
+                            req.session.loggedIn = true;
+                            req.session.email = userRecord.email;
+                            req.session.name = userRecord.name;
+
+                            res.send({
+                                status: "success",
+                                msg: "Logged in.",
+                                sessionid: userRecord.ID
+                            });
+
+                        }
+                    });
+            }
+
+        }
+    );
+
+
 });
 
 function authenticate(email, pwd, callback) {
 
-    const mysql = require("mysql2");
-    const connection = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "bridgethegap"
-    });
-    connection.connect();
+
     connection.query( // Check for admin account first
         "SELECT * FROM admin WHERE email = ? AND password = ?", [email, pwd],
         function (error, results, fields) {
@@ -195,19 +250,30 @@ function authenticate(email, pwd, callback) {
 }
 async function init() {
     const mysql = require("mysql2/promise");
+    // const connection = await mysql.createConnection({
+    //     host: "us-cdbr-east-05.cleardb.net",
+    //     user: "b2baee19e53680",
+    //     password: "d53c023c",
+    //     database: "heroku_c9a2f09ca67205f",
+    //     multipleStatements: true
+    // });
     const connection = await mysql.createConnection({
         host: "localhost",
         user: "root",
         password: "",
         multipleStatements: true
     });
-    const createDBAndTables = `CREATE DATABASE IF NOT EXISTS bridgethegap;
+    //DROP DATABASE IF EXISTS bridgethegap;
+
+    const createDBAndTables = `
+        CREATE DATABASE IF NOT EXISTS bridgethegap;
         use bridgethegap;
         CREATE TABLE IF NOT EXISTS user (
         ID int NOT NULL AUTO_INCREMENT,
         name varchar(30),
         email varchar(30),
         password varchar(30),
+        favoritepages varchar(800),
         PRIMARY KEY (ID)
         );
         CREATE TABLE IF NOT EXISTS admin (
@@ -229,6 +295,7 @@ async function init() {
         ];
         await connection.query(userRecords, [recordValues]);
     }
+
 }
 
 // process.env.PORT is the port Heroku gives

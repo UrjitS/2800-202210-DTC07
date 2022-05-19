@@ -1,0 +1,146 @@
+.jumbotron{
+    box-shadow: 0 0 14px gray ;
+    background-color: #26547C;
+}
+
+body{
+    font-family: 'Nunito';
+}
+
+.ben-btn {
+background-color: transparent;
+width: 200px;
+height: 200px;
+border: 1px solid #f1f1f1;
+border-radius: 25px;
+background-color: #FFD166;
+box-shadow: 0 0 10px;
+}
+
+
+.container{
+    display: flex; 
+    justify-content: center; 
+    align-content: center; 
+    align-items: center; 
+    color: white;
+    flex-direction: column;
+    gap: 2em;
+}
+
+#map{
+    width: 50em;
+    height: 50em;
+}
+.banner-text-container{
+    text-align: center;
+}
+
+#banner-title{
+    font-size: 80px;
+}
+
+#subhead-1{
+    font-size: 30px;
+}
+
+
+
+h2{
+    text-align: center;
+}
+
+#benefits-container{
+    display:flex; 
+    flex-direction: row; 
+    align-items: center; 
+    align-content: center; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 15em;
+    margin-bottom: 10em;
+}
+
+.card-img{
+    object-fit: cover;
+    width: 100%;
+}
+
+#suggestions-container{
+    display:flex; 
+    flex-direction: column; 
+    align-items: center; 
+    align-content: center; 
+    justify-content: center; 
+    flex-wrap: wrap;  
+    margin: 5em;
+}
+
+  #intro-par{
+      color: white;
+      text-align:center;
+      font-size: 18px;
+      padding-top: 2em;
+  }
+
+  #benefits-title{
+      margin-top: 2em;
+      margin-bottom: 2em;
+  }
+@media only screen and (max-width: 640px) {
+    #banner-title{
+        font-size: 45px;
+    }
+    
+    #subhead-1{
+        font-size: 15px;
+    }
+
+    #benefits-title{
+        font-size: 25px;
+    }
+
+    .ben-btn {
+        width: 25%;
+        height: 25%;
+        }
+
+            
+    #benefits-container{
+        display:flex; 
+        flex-direction: row; 
+        align-items: center; 
+        align-content: center; 
+        justify-content: center; 
+        flex-wrap: wrap; 
+        gap: 2em;
+        margin-bottom: 3em;
+    }
+
+    .card-title{
+        font-size: 1px;
+    }
+    #suggestions-container{
+        display:flex; 
+        flex-direction: column; 
+        align-items: center; 
+        align-content: center; 
+        justify-content: flex-start; 
+        flex-wrap: wrap; 
+    }
+
+    #intro-par{
+        color: white;
+        text-align:center;
+        font-size: 12px;
+        padding-top: 1em;
+    }
+
+    #map{
+        width: 20em;
+        height: 17em;
+    }
+    #container{
+        gap: 1em;
+    }
+  }

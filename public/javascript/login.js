@@ -6,7 +6,6 @@ $(document).ready(function () {
                 return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
             }
         ).join('&');
-        console.log("params in ajaxPOST", params);
 
         const xhr = new XMLHttpRequest();
         xhr.onload = function () {
@@ -28,6 +27,8 @@ $(document).ready(function () {
         let password = document.getElementById("password");
         let queryString = "email=" + email.value + "&password=" + password.value;
 
+        
+
         if (email.value.length > 0 || password.value.length > 0) {
             ajaxPOST("/login", function (data) {
 
@@ -37,7 +38,13 @@ $(document).ready(function () {
                         document.getElementById("errorMsg").innerHTML = dataParsed.msg;
                     } else if (dataParsed.status == "admin") {
                         window.location.replace("admin.html");
-                    } else {
+                    } else if (dataParsed.status == "success"){
+                        sessionStorage.setItem("id", dataParsed.sessionid);
+                        // let stre = '{ "meditation": "no", "yoga": "no", "journal": "no", "resources": "no", "nutrition": "no", "walks": "no", "exercise": "no", "sleeping-habits": "no"}';
+                        // let parsD = JSON.parse(stre);
+                        // console.log(parsD);
+
+                        // console.log(parsD.yoga);
                         window.location.replace("main.html");
                     }
                 }

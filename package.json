@@ -1,19 +1,29 @@
 {
-  "name": "demo_w2",
+  "name": "2800-202210-dtc07",
   "version": "1.0.0",
-  "description": "",
+  "description": "Welcome to Bridge the Gap! This is a mobile web application to check and improve your mental health. Complete daily checkups to receive feedback and relavent information about your mood, and receive specialised information to overcome any mental challenges.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UrjitS/2800-202210-DTC07.git"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap-icons": "^1.8.1",
     "ejs": "^3.1.7",
     "express": "^4.18.1",
     "express-session": "^1.17.2",
     "jsdom": "^19.0.0",
+    "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "xmlhttprequest": "^1.8.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/UrjitS/2800-202210-DTC07/issues"
+  },
+  "homepage": "https://github.com/UrjitS/2800-202210-DTC07#readme"
 }

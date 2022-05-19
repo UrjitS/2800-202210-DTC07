@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+    <!-- for popup window -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/navbar.css">
+    <script src="./javascript/navigation.js"></script>
+    <script src="./javascript/favoritingpage.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/meditation.css">
+
+</head>
+
+<body>
+    <!------------------------------>
+    <!-- Your HTML Layout go here -->
+    <!------------------------------>
+
+    <!-- Navigation (Nav) bar -->
+    <div class="contentNavbarLocation">
+
+    </div>
+    <!---End of Navigation Bar-->
+
+    <!-- bootstrap - benefit of meditation -->
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+    <main>
+
+        <h2>Benefits of Meditation</h2>
+
+        <div class="image_box">
+
+
+            <button class="img-container" type="button" data-toggle="modal" data-target="#what"
+                style="border:0ch; background-color: white">
+                <img src="./images/meditation1.png" alt=" Italy">
+                <hr>
+                <p>What is Meditation? </p>
+            </button>
+
+
+            <div class="modal fade" id="what" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle"> What is Meditation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <p class="modal-body" style="font-weight: normal;">
+                            In mindfulness meditation, we’re learning how to pay attention to the breath as it goes in
+                            and out, and notice when the mind wanders from this task. This practice of returning to the
+                            breath builds the muscles of attention and mindfulness.
+                            <br>
+                            <br>
+
+                            When we pay attention to our breath, we are learning how to return to, and remain in, the
+                            present moment—to anchor ourselves in the here and now on purpose, without judgement.
+                            <br>
+                            <br>
+
+                            The idea behind mindfulness seems simple—the practice takes patience. Indeed, renowned
+                            meditation teacher Sharon Salzberg recounts that her first experience with meditation showed
+                            her how quickly the mind gets caught up in other tasks. “I thought, okay, what will it be,
+                            like, 800 breaths before my mind starts to wander? And to my absolute amazement, it was one
+                            breath, and I’d be gone,” says Salzberg.
+                            <br><br>
+
+                            *If you want more information, please click the Find an expert button. <br>
+                            You can find an expert or local facilities near you
+
+
+                        </p>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary"
+                                onclick="document.location='find_an_expert.html'">Find an expert</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <button class="img-container" type="button" data-toggle="modal" data-target="#why"
+                style="border:0ch; background-color: white">
+                <img src="./images/meditation2.png" alt=" Forest">
+                <hr>
+
+                <p>Why Learn to Meditate?</p>
+
+            </button>
+
+
+
+            <div class="modal fade" id="why" tabindex="2" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Why Learn to Meditate?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <p class="modal-body" style="font-weight: normal;">
+                            While meditation isn’t a cure-all, it can certainly provide some much-needed space in your
+                            life. Sometimes, that’s all we need to make better choices for ourselves, our families, and
+                            our communities. And the most important tools you can bring with you to your meditation
+                            practice are a little patience, some kindness for yourself, and a comfortable place to sit.
+
+                            <br>
+                            <br>
+
+                            When we meditate, we inject far-reaching and long-lasting benefits into our lives. And
+                            bonus: you don’t need any extra gear or an expensive membership.
+
+                            <br>
+                            <br>
+
+                            Here are five reasons to meditate:
+                            1.Understanding your pain<br>
+                            2.Lower your stress<br>
+                            3.Connect better<br>
+                            4.Improve focus<br>
+                            5.Reduce brain chatter<br>
+                            <br><br>
+
+                            *If you want more information, please click the Find an expert button. <br>
+                            You can find an expert or local facilities near you
+                        </p>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary"
+                                onclick="document.location='find_an_expert.html'">Find an expert</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <button class="img-container" type="button" data-toggle="modal" data-target="#how"
+                style="border:0ch; background-color: white">
+                <img src="./images/meditation3.png" alt=" Mountains">
+                <hr>
+
+                <p>How to Meditate
+                </p>
+
+            </button>
+
+            <div class="modal fade" id="how" tabindex="3" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">How to Meditate</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <p class="modal-body" style="font-weight: normal;">
+                            Meditation is simpler (and harder) than most people think. Read these steps, make sure
+                            you’re somewhere where you can relax into this process, set a timer, and give it a shot:
+
+
+                            <br>
+                            <br>
+
+                            1) Take a seat<br>
+                            Find place to sit that feels calm and quiet to you.
+                            <br>
+                            <br>
+                            2) Set a time limit<br>
+                            If you’re just beginning, it can help to choose a short time, such as five or 10 minutes.
+                            <br>
+                            <br>
+                            3) Notice your body<br>
+                            You can sit in a chair with your feet on the floor, you can sit loosely cross-legged, you
+                            can kneel—all are fine. Just make sure you are stable and in a position you can stay in for
+                            a while.
+                            <br>
+                            <br>
+                            4) Feel your breath<br>
+                            Follow the sensation of your breath as it goes in and as it goes out.
+                            <br><br>
+                            5) Notice when your mind has wandered<br>
+                            Inevitably, your attention will leave the breath and wander to other places. When you get
+                            around to noticing that your mind has wandered—in a few seconds, a minute, five
+                            minutes—simply return your attention to the breath.
+                            <br><br>
+                            6) Be kind to your wandering mind<br>
+                            Don’t judge yourself or obsess over the content of the thoughts you find yourself lost in.
+                            Just come back.
+                            <br><br>
+                            7) Close with kindness<br>
+                            When you’re ready, gently lift your gaze (if your eyes are closed, open them). Take a moment
+                            and notice any sounds in the environment. Notice how your body feels right now. Notice your
+                            thoughts and emotions.
+                            <br><br>
+                            That’s it! That’s the practice. You focus your attention, your mind wanders, you bring it
+                            back, and you try to do it as kindly as possible (as many times as you need to).
+                            <br>
+                            <br><br>
+
+                            *If you want more information, please click the Find an expert button. <br>
+                            You can find an expert or local facilities near you
+                        </p>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary"
+                                onclick="document.location='find_an_expert.html'">Find an expert</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- meditation method -->
+        <br>
+
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+        <br>
+        <h2>Meditation method</h2>
+
+
+        <!-- <section class="text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <p class="lead text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi debitis
+                        eum iusto possimus fugiat</p>
+
+                </div>
+            </div>
+        </section> -->
+
+        <div class="album py-5">
+            <div class="container">
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                    <!-- 1 method -->
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="50"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em">Mindfulness meditation
+                            </text>
+                        </svg>
+
+                        <div class="card-body">
+                            <p class="card-text">Mindfulness meditation involves focusing on the present. It’s done
+                                by increasing your awareness of your consciousness, breathing, and body.
+
+                                If you notice a thought or emotion, simply observe it, then let it pass without
+                                judging yourself.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                        data-target="#mindfulness">Click!</button>
+                                </div>
+
+                                <small class="text-muted">[Level: Easy]</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="mindfulness" tabindex="1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle"> How to do mindfulness meditation
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <p class="modal-body" style="font-weight: normal;">
+                                    1. Remove all distractions from your room, including your phone. Lie down in a
+                                    comfortable position.
+
+                                    <br>
+                                    <br>
+
+                                    2. Focus on your breathing. Inhale for 10 counts, then hold your breath for 10
+                                    counts. Exhale for 10 counts. Repeat five times.
+
+                                    <br>
+                                    <br>
+
+                                    3. Inhale and tense your body. Pause, relax, and exhale. Repeat five times.
+
+                                    <br>
+                                    <br>
+
+                                    4. Notice your breath and body. If a body part feels tight, consciously relax it.
+                                    <br>
+                                    <br>
+
+                                    5. When a thought comes up, slowly return your focus to just your breathing.
+                                    <br>
+                                    <br>
+
+
+                                    <br><br>
+
+                                    *If you want more information, please click the Find an expert button. <br>
+                                    You can find an expert or local facilities near you
+
+
+                                </p>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary"
+                                        onclick="document.location='find_an_expert.html'">Find an expert</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1 method -->
+
+
+
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="50"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em">Body scan meditation</text>
+                        </svg>
+
+                        <div class="card-body">
+                            <p class="card-text">In body scan meditation, you focus on each part of your body. The
+                                goal is to increase awareness of your physical sensations, including tension and
+                                pain. The act of focusing promotes relaxation, which can help you sleep.
+
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                        data-target="#Bodyscan">Click!</button>
+                                </div>
+
+                                <small class="text-muted">[Level: Easy]</small>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="modal fade" id="Bodyscan" tabindex="1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle"> How to do Body scan meditation
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <p class="modal-body" style="font-weight: normal;">
+                                    1. Remove all distractions from your room, including your phone. Lie down in a
+                                    comfortable position.
+
+                                    <br>
+                                    <br>
+                                    2. Close your eyes and breathe slowly. Notice the weight of your body on the bed.
+
+                                    <br>
+                                    <br>
+                                    3. Focus on your face. Soften your jaw, eyes, and facial muscles.
+
+                                    <br>
+                                    <br>
+                                    4. Move to your neck and shoulders. Relax them.
+
+                                    <br>
+                                    <br>
+                                    5.Continue down your body, moving to your arms and fingers. Continue to your
+                                    stomach, back, hips, legs, and feet. Notice how each part feels.
+
+
+                                    <br>
+                                    <br>
+                                    6.If your mind wanders, slowly shift your focus back to your body. If you like, you
+                                    can repeat in the opposite direction, from your feet to your head.
+
+
+                                    <br>
+                                    <br>
+
+
+                                    *If you want more information, please click the Find an expert button. <br>
+                                    You can find an expert or local facilities near you
+
+
+                                </p>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary"
+                                        onclick="document.location='find_an_expert.html'">Find an expert</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2 method -->
+
+
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="50"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em">Alico’s spiritual meditation
+                            </text>
+                        </svg>
+
+                        <div class="card-body">
+                            <p class="card-text">“I recommend putting a pillow or cushion under your bottom, it’s
+                                much more comfortable!” Alico says.
+
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                        data-target="#Alico">Click!</button>
+                                </div>
+
+                                <small class="text-muted">[Level: Medium]</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="Alico" tabindex="1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle"> Alico’s spiritual meditation
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <p class="modal-body" style="font-weight: normal;">
+                                    1. Place your right hand over your heart center, your left hand just underneath your
+                                    belly button, and gently close your eyes.
+
+                                    <br>
+                                    <br>
+
+                                    2. Start to listen to and connect with your breath. Listen to what it sounds like.
+                                    Feel it as your body moves with every breath. Allow your breath to flow at a
+                                    comfortable pace.
+                                    <br>
+                                    <br>
+
+                                    3. Imagine a light inside of you. Visualize the color and brightness. Feel the
+                                    temperature of it. This light is yours and guides you to a greater power.
+
+                                    <br>
+                                    <br>
+                                    4. Once you feel comfortable with this light, start to follow it as it moves out of
+                                    your body and into the sky. Follow it as it moves through the clouds and into the
+                                    heavens.
+
+                                    <br>
+                                    <br>
+                                    5. Allow yourself to feel safe and connected in the heavens, even looking around and
+                                    exploring. Spend as much time there as you would like, being open to whatever may
+                                    come to you.
+
+                                    <br>
+                                    <br>
+                                    6. When you’re ready, bring your light back down into your body. Start to come back
+                                    to the present moment and your surroundings, wiggling your fingers and your toes.
+
+                                    <br>
+                                    <br>
+
+                                    *If you want more information, please click the Find an expert button. <br>
+                                    You can find an expert or local facilities near you
+
+
+                                </p>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary"
+                                        onclick="document.location='find_an_expert.html'">Find an expert</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 method -->
+
+
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="50"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em">Nisha’s spiritual meditation
+                            </text>
+                        </svg>
+
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural
+                                lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                        data-target="#Nisha">Click!</button>
+                                </div>
+
+                                <small class="text-muted">[Level: Medium]</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="Nisha" tabindex="1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle"> Nisha’s spiritual meditation
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <p class="modal-body" style="font-weight: normal;">
+                                    1. Begin by observing the rhythm of your breathing.
+
+                                    <br>
+                                    <br>
+
+                                    2. As you become more tuned in to your breathing, allow your awareness to tune into
+                                    your heart rate. Feel the rhythm of your heartbeats. It’s OK if your mind gets busy.
+                                    Simply thank your ego for its input and then let it know this is a time it can use
+                                    to rest.
+                                    <br>
+                                    <br>
+
+                                    3. Now let your awareness move into your heart space and simply observe how you feel
+                                    within this space. Is it a welcoming space? Do you feel safe and happy being there?
+                                    Is there any resistance to being there?
+
+
+                                    <br>
+                                    <br>
+                                    4. When you have spent the time you need to in your heart space, allow your
+                                    awareness to focus back on your heartbeat, then your breathing, then come back into
+                                    the room and open your eyes.
+
+
+                                    <br>
+                                    <br>
+                                    5. After your practice, Nisha recommends journaling your experiences and drinking
+                                    plenty of water.
+
+
+                                    <br>
+                                    <br>
+
+                                    *If you want more information, please click the Find an expert button. <br>
+                                    You can find an expert or local facilities near you
+
+
+                                </p>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary"
+                                        onclick="document.location='find_an_expert.html'">Find an expert</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--                     
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                    dy=".3em">Thumbnail</text>
+                            </svg>
+
+                            <div class="card-body">
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Click!</button>
+                                    </div>
+
+                                    <small class="text-muted">[Level: Medium] [7 mins]</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                    dy=".3em">Thumbnail</text>
+                            </svg>
+
+                            <div class="card-body">
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Click!</button>
+                                    </div>
+
+                                    <small class="text-muted">[Level: Hard] [12 mins]</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                    dy=".3em">Thumbnail</text>
+                            </svg>
+
+                            <div class="card-body">
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Click!</button>
+                                    </div>
+
+                                    <small class="text-muted">[Level: Hard] [12 mins]</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+
+
+    <!-- benefits of meditation end -->
+
+
+    <!---- Footer ---->
+
+    <br>
+    <br>
+    <br>
+
+    <div class="footerLocation">
+
+    </div>
+
+    <!----End of Footer ---->
+    <script>
+        $(document).ready(function () {
+            getStatus("meditation-Page");
+        });
+    </script>
+
+
+
+</body>
+
+
+
+</html>

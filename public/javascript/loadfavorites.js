@@ -146,7 +146,7 @@ function displayQuiz() {
     </div>
     <div class="card-body" id="card-body7">
         <a href="./self_assessment_quiz.html">
-            <img id="music-img" src="./images/music.png" alt="placeholder"  class="card-body-img">
+            <img id="music-img" src="./images/quiz.png" alt="placeholder"  class="card-body-img">
         </a>
     </div>
 </div>`);
@@ -160,7 +160,7 @@ function displayWalks() {
     </div>
     <div class="card-body" id="card-body7">
         <a href="./self_assessment_quiz.html">
-            <img id="music-img" src="./images/music.png" alt="placeholder"  class="card-body-img">
+            <img id="music-img" src="./images/walks.png" alt="placeholder"  class="card-body-img">
         </a>
     </div>
 </div>`);

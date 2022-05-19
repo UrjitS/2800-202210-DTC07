@@ -29,7 +29,7 @@
         <!--Nav Bar-->
 
         <div class="navbarLocation">
- 
+
         </div>
 
         <!-- Container that has writing image and Title  -->
@@ -46,26 +46,30 @@
                     <p class="lead">Insert User Input Boxes here. </p>
                 </div>
                 <!-- Container that Users can fill up -->
+
                 <div class="form-container">
                     <form>
                         <div class="form-group">
-                            <label for="exampleFormControlInput1">Title of Journal Entry</label>
-                            <input type="text" class="form-control" id="title" placeholder="Title">
+                            <label for="title">Title of Journal Entry</label>
+                            <input type="text" class="form-control" id="title" name="title"
+                                placeholder="Write title of Journal Entry here">
                         </div><br>
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Write your Journal submission here:</label>
-                            <textarea class="form-control" id="description" rows="6" columns="6"></textarea>
+                            <label for="entry">Write your Journal submission here:</label>
+                            <textarea class="form-control" id="entry" name="entry" rows="6" columns="6"></textarea>
                         </div>
                     </form>
                 </div>
 
                 <div class="Menu button options">
                     <a class="btn btn-success" href="./journal_submission_confirmation_page.html" role="button"
-                        onclick="writeReview()">Submit</a>
+                        value="Submit" id="submit_button" onclick="createJournalEntry()">Submit</a>
+
                     <a class="btn btn-secondary" href="./journal_edit_confirmation_page.html" role="button">Edit</a>
-                    <a class="btn btn-danger" href="./journal_deletion_confirmation_page.html" role="button">Delete</a>
-                    <a class="btn btn-primary" href="./journal_main_page.html" role="button">Back to Journal Home
-                        Page</a>
+                    
+                    <a class="btn btn-danger"  value="Delete" id="delete_button" onclick="deleteJournalEntry() role="button" >Delete</a>
+
+                    <a class="btn btn-primary" href="./journal_main_page.html" role="button">Back to Journal Home Page</a>
                 </div>
             </div>
         </div>
@@ -75,7 +79,7 @@
     <!-- Footer -->
 
     <div class="footerLocation">
- 
+
     </div>
 
     <!-- End of Footer -->

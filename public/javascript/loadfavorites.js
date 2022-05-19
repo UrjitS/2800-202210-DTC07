@@ -23,6 +23,15 @@ function getStatus() {
             if (dataParsed.nutrition == "yes") {
                 displayNutrition();
             }
+            if (dataParsed.resource == "yes") {
+                displayResources();
+            }
+            if (dataParsed.sleep == "yes") {
+                displaySleepHabits();
+            }
+            if (dataParsed.music == "yes") {
+                displayMusic();
+            }
         }
     });
 
@@ -30,12 +39,12 @@ function getStatus() {
 
 function displayMeditation() {
     $("#cardContent").append(`
-    <div class="card bg-light mb-3" style="max-width: 18rem;  box-shadow: 0 0 1em gray; border-radius: 30px;">
-        <div class="card-header border-0" style="background-color: #4df1c6; font-weight: bold;">Meditation
+    <div class="card bg-light mb-3">
+        <div class="card-header border-0">Meditation
         </div>
-        <div class="card-body" style="background-color: #06D6A0">
+        <div class="card-body">
             <a href="./meditation.html">
-                <img src="./images/meditation.png" alt="placeholder" style="object-fit: cover; max-width: 100%">
+                <img src="./images/meditation.png" alt="placeholder">
             </a>
         </div>
     </div>`);
@@ -43,13 +52,12 @@ function displayMeditation() {
 
 function displayJournal() {
     $("#cardContent").append(`
-    <div class="card bg-light mb-3" style="max-width: 18rem;  box-shadow: 0 0 1em gray;">
-        <div class="card-header border-0" style="background-color: hsl(48, 100%, 66%); font-weight: bold;">
+    <div class="card bg-light mb-3">
+        <div class="card-header border-0">
             Journal</div>
-        <div class="card-body" style="background-color: #FFD116">
+        <div class="card-body">
             <a href="./journal_main_page.html">
-                <img src="./images/journal.png" alt="placeholder"
-                style="object-fit: cover; max-width: 100%; border-radius: 30px">
+                <img src="./images/journal.png" alt="placeholder">
             </a>
         </div>
     </div>`);
@@ -57,12 +65,12 @@ function displayJournal() {
 
 function displayYoga() {
     $("#cardContent").append(`
-    <div class="card bg-light mb-3" style="max-width: 18rem;  box-shadow: 0 0 1em gray; border-radius: 30px;">
-        <div class="card-header border-0" style="background-color: #f75e82; font-weight: bold;">Yoga
+    <div class="card bg-light mb-3">
+        <div class="card-header border-0">Yoga
         </div>
-        <div class="card-body" style="background-color: #EF476F">
+        <div class="card-body">
             <a href="./yoga.html">
-                <img src="./images/yoga.png" alt="placeholder" style="object-fit: cover; max-width: 100%">
+                <img src="./images/yoga.png" alt="placeholder">
             </a>
         </div>
     </div>`);
@@ -70,12 +78,12 @@ function displayYoga() {
 
 function displayResources() {
     $("#cardContent").append(`
-    <div class="card bg-light mb-3" style="max-width: 18rem;  box-shadow: 0 0 1em gray; border-radius: 30px;">
-        <div class="card-header border-0" style="background-color: #5f9dd3; font-weight: bold;">Resources
+    <div class="card bg-light mb-3">
+        <div class="card-header border-0">Local Resources
         </div>
-        <div class="card-body" style="background-color: #3e8bce">
-            <a href="">
-                <img src="images/diet.PNG" alt="placeholder" style="object-fit: cover; max-width: 100%">
+        <div class="card-body">
+            <a href="./find_an_expert.html">
+                <img src="images/map.png" alt="placeholder">
             </a>
         </div>
     </div>`);
@@ -83,12 +91,38 @@ function displayResources() {
 
 function displayNutrition() {
     $("#cardContent").append(`
-    <div class="card bg-light mb-3" style="max-width: 18rem;  box-shadow: 0 0 1em gray; border-radius: 30px;">
-        <div class="card-header border-0" style="background-color: #5f9dd3; font-weight: bold;">Nutrition
+    <div class="card bg-light mb-3">
+        <div class="card-header border-0">Nutrition
         </div>
-        <div class="card-body" style="background-color: #3e8bce">
+        <div class="card-body">
             <a href="./diet.html">
-                <img src="images/diet.PNG" alt="placeholder" style="object-fit: cover; max-width: 100%">
+                <img src="images/diet.PNG">
+            </a>
+        </div>
+    </div>`);
+}
+
+function displaySleepHabits() {
+    $("#cardContent").append(`
+    <div class="card bg-light mb-3">
+        <div class="card-header border-0">Sleep Habits
+        </div>
+        <div class="card-body">
+            <a href="....">
+                <img src="images/sleep.png">
+            </a>
+        </div>
+    </div>`);
+}
+
+function displayMusic() {
+    $("#cardContent").append(`
+    <div class="card bg-light mb-3">
+        <div class="card-header border-0">Music
+        </div>
+        <div class="card-body">
+            <a href="....">
+                <img src="images/music.png">
             </a>
         </div>
     </div>`);

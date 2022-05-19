@@ -46,6 +46,46 @@ function getStatus(currentPage) {
                     }
                     break;
                 }
+                case "resources": {
+                    if (dataParsed.resources == "no") {
+                        addContentPageNavbar(currentPage);
+                    } else {
+                        addFilledContentPageNavbar(currentPage);
+                    }
+                    break;
+                }
+                case "walks": {
+                    if (dataParsed.walks == "no") {
+                        addContentPageNavbar(currentPage);
+                    } else {
+                        addFilledContentPageNavbar(currentPage);
+                    }
+                    break;
+                }
+                case "music": {
+                    if (dataParsed.music == "no") {
+                        addContentPageNavbar(currentPage);
+                    } else {
+                        addFilledContentPageNavbar(currentPage);
+                    }
+                    break;
+                }
+                case "sleeping_habits": {
+                    if (dataParsed.sleeping_habits == "no") {
+                        addContentPageNavbar(currentPage);
+                    } else {
+                        addFilledContentPageNavbar(currentPage);
+                    }
+                    break;
+                }
+                case "self_assessment_quiz": {
+                    if (dataParsed.self_assessment_quiz == "no") {
+                        addContentPageNavbar(currentPage);
+                    } else {
+                        addFilledContentPageNavbar(currentPage);
+                    }
+                    break;
+                }
             };
         }
     });
@@ -91,6 +131,56 @@ function savePage(currentPage) {
                 addFilledContentPageNavbar(currentPage);
             } else {
                 dataParsed.nutrition = "no";
+                addContentPageNavbar(currentPage);
+            }
+            break;
+        }
+        case "resources": {
+            if (dataParsed.resources == "no") {
+                dataParsed.resources = "yes";
+                addFilledContentPageNavbar(currentPage);
+            } else {
+                dataParsed.resources = "no";
+                addContentPageNavbar(currentPage);
+            }
+            break;
+        }
+        case "walks": {
+            if (dataParsed.walks == "no") {
+                dataParsed.walks = "yes";
+                addFilledContentPageNavbar(currentPage);
+            } else {
+                dataParsed.walks = "no";
+                addContentPageNavbar(currentPage);
+            }
+            break;
+        }
+        case "music": {
+            if (dataParsed.music == "no") {
+                dataParsed.music = "yes";
+                addFilledContentPageNavbar(currentPage);
+            } else {
+                dataParsed.music = "no";
+                addContentPageNavbar(currentPage);
+            }
+            break;
+        }
+        case "sleeping_habits": {
+            if (dataParsed.sleeping_habits == "no") {
+                dataParsed.sleeping_habits = "yes";
+                addFilledContentPageNavbar(currentPage);
+            } else {
+                dataParsed.sleeping_habits = "no";
+                addContentPageNavbar(currentPage);
+            }
+            break;
+        }
+        case "self_assessment_quiz": {
+            if (dataParsed.self_assessment_quiz == "no") {
+                dataParsed.self_assessment_quiz = "yes";
+                addFilledContentPageNavbar(currentPage);
+            } else {
+                dataParsed.self_assessment_quiz = "no";
                 addContentPageNavbar(currentPage);
             }
             break;

@@ -144,7 +144,7 @@ app.post("/changeUserFavoritePageStatus", function (req, res) {
 app.post("/signup", function (req, res) {
     res.setHeader("Content-Type", "application/json");
 
-    let allPages = '{ "meditation": "no", "yoga": "no", "journal": "no", "resources": "no", "nutrition": "no", "walks": "no", "exercise": "no", "sleeping-habits": "no"}';
+    let allPages = '{ "meditation": "no", "yoga": "no", "journal": "no", "resources": "no", "nutrition": "no", "walks": "no", "music": "no", "sleeping_habits": "no", "self_assessment_quiz": "no"}';
     connection.query(
         "SELECT * FROM user WHERE email = ?", [req.body.email],
         function (error, results, fields) {

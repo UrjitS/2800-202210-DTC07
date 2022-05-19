@@ -33,7 +33,7 @@
     <script src="./javascript/navigation.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./css/sleep_habit.css">
-
+    <script src="./javascript/favoritingpage.js"></script>
 </head>
 
 <body>
@@ -42,7 +42,7 @@
     <!------------------------------>
 
     <!-- Navigation (Nav) bar -->
-    <div class="navbarLocation">
+    <div class="contentNavbarLocation">
 
     </div>
     <!---End of Navigation Bar-->
@@ -673,7 +673,11 @@
     <!----End of Footer ---->
 
 
-
+    <script>
+        $(document).ready(function () {
+            getStatus("sleeping_habits-Page");
+        });
+    </script>
 
 </body>
 

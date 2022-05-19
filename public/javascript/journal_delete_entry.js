@@ -23,7 +23,7 @@ $(document).ready(function () {
         xhr.send(params);
     }
 //----------------------------Delete Journal Entry Function ------------------------------//
-    function createJournalEntry() {
+    function deleteJournalEntry() {
         let id = document.getElementById("id");
         let title = document.getElementById("title");
         let entry = document.getElementById("entry");

@@ -63,13 +63,40 @@
     background-color: #3e8bce;
 }
 
+#card-header5{
+    background-color: #bf4ae9; 
+    font-weight: bold;
+}
+
+#card-body5{
+    background-color: #9a38b7;
+}
+
+#card-header6{
+    background-color: #63fffc; 
+    font-weight: bold;
+}
+
+#card-body6{
+    background-color: #57d8e4;
+}
+#card-header7{
+    background-color: #ff4848; 
+    font-weight: bold;
+}
+
+#card-body7{
+    background-color: #dc4040;
+}
+
 .card-body-img{
     object-fit: cover; 
     max-width: 100%; 
     border-radius: 30px;
 }
 
-@media only screen and (max-width: 414px) {
+
+@media screen and (max-width: 640px) {
     #fav-box{
         gap: 1em;
     }

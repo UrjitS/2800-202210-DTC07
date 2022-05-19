@@ -1,6 +1,13 @@
+const { links, header } = require("express/lib/response");
+
 var dataParsed;
 
 function getStatus() {
+    links.rel = 'stylesheet';
+    links.type = 'text/css';
+    links.href = 'main.css';
+
+head.appendChild(link);
     $.ajax({
         url: "http://localhost:3000/checkFavoritePageStatus",
         type: "post",

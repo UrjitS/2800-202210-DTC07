@@ -141,6 +141,17 @@ app.post("/changeUserFavoritePageStatus", function (req, res) {
     );
 });
 
+app.post("/getUserName", function (req, res) {
+    connection.query("SELECT name FROM user WHERE ID = ?", [req.body.userid],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error);
+            }
+            res.send(results);
+        }
+    );
+});
+
 app.post("/signup", function (req, res) {
     res.setHeader("Content-Type", "application/json");
 

@@ -19,6 +19,8 @@ function createJournalEntry() {
             },
             success: function (result) {
                 console.log(result);
+//------------Takes users to html page that confirms their New Journal Entry Submission ----------------------//
+                window.location.replace("journal_submission_confirmation_page.html");
             }
         });
     } else {

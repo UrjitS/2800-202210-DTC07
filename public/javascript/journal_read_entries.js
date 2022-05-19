@@ -37,7 +37,7 @@ function readJournalEntry() {
                                 <a href="#" class="btn btn-primary stretched-link" onclick="deleteEntry('${result[i].ID}')">Delete</a>
                             </div>
                             <div class="card-footer">
-                                <small class="text-muted">Small text box for extra info</small>
+                                
                             </div>
                         </div>
                     </div>

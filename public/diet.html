@@ -142,14 +142,43 @@
       <h2 id="food-title"> What should you eat?</h2>
       <p id="intro-par"> The mediterranean-style diet is considered a good standard for healthy eating patterns, and nutritious food.
         It has been attributed to <a href="https://www.sciencedirect.com/science/article/pii/B9780128112595000111?via%3Dihub">reducing the rate of dementia, and depression.</a>
-          The diet consists of foods high in vegetables, fruits, whole grains, legumes, nuts, seeds, fish, poultry, eggs, and olive oil. 
+          The diet consists of foods high in vegetables, fruits, whole grains, legumes, nuts, seeds, fish, poultry, eggs, and olive oil. The diet mostly consists of vegetables. Olive oil
+          is the recommended primary added fat, replacing other oils and fats. Other foods naturally containing healthy fats such as avocados, nuts and oily fish like salmon are high in omega-3 fatty acids.
+          Fish is the preferred animal protein that's eaten at least twice weekly. Other animal proteins are eaten in smaller portions.
+          <br>
+          <br>
+          <br>
+          <button id="medbtn" class="btn" data-toggle="modal" data-target="#med-diet"> Click Here</button>
+        <div class="modal fade" id="med-diet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Mediterranean Diet Chart</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img id="med-dietchart" src="./images/meddiet.jpg">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </p>
     </div>
 
 
         <div id="suggestions-container">
+          <!--
           <h3> Chart for Mediterranean Diet Plan</h3>
           <img id="med-dietchart" src="./images/meddiet.jpg">
+
+
+          -->
               
 
         </div>
@@ -168,7 +197,9 @@
     <script>
         $(document).ready(function () {
             getStatus("nutrition-Page");
+            $('.image-link').magnificPopup({type:'image'});
         });
+
     </script>
 </body>
 

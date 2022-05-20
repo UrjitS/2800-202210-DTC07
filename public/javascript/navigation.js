@@ -45,7 +45,6 @@ function addNavbar() {
                     <span class="text-muted">
                         <ul>
                             <li><a href="./suggestions.html"><span style="color: white">Suggestions</span></a></li>
-                            <li><span class="text-muted">Personal Tools</span></li>
                             <li><a class="text-muted" href="./journal_main_page.html">Wellness Journal</a></li>
                         </ul>
                     </span>

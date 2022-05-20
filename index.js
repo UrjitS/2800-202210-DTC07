@@ -60,18 +60,18 @@ app.get("/logout", function (req, res) {
 const mysql = require("mysql2");
 
 
-// var db_config = {
-//     host: "us-cdbr-east-05.cleardb.net",
-//     user: "b2baee19e53680",
-//     password: "d53c023c",
-//     database: "heroku_c9a2f09ca67205f"
-// };
 var db_config = {
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "bridgethegap"
+    host: "us-cdbr-east-05.cleardb.net",
+    user: "b2baee19e53680",
+    password: "d53c023c",
+    database: "heroku_c9a2f09ca67205f"
 };
+// var db_config = {
+//     host: "localhost",
+//     user: "root",
+//     password: "",
+//     database: "bridgethegap"
+// };
 var connection = mysql.createPool(db_config);
 
 // Notice that this is a "POST"
@@ -151,7 +151,44 @@ app.post("/getUserName", function (req, res) {
         }
     );
 });
+// ----- Journal Entry feature: Creating a Journal Entry into our journals table -----------------------------
 
+app.post("/createJournalEntry", function (req, res) {
+    //Inserts information into "users" section of journals database
+    let userRecords = "insert into journals (title, entry, user_id) values ?";
+    let recordValues = [
+        [req.body.contentTitle, req.body.contentEntry, req.body.contentUID]
+    ];
+    connection.query(userRecords, [recordValues]);
+    res.send("success");
+});
+
+// ----- Get journals from the journals table -----------------------------
+
+app.post("/readJournalEntry", function (req, res) {
+    connection.query("SELECT ID, title, entry FROM journals WHERE user_id = ?", [req.body.userid],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error);
+            }
+            res.send(results);
+        }
+    );
+});
+
+
+// ----- Delete journals from the journals table -----------------------------
+
+app.post("/deleteJournalEntry", function (req, res) {
+    connection.query("DELETE FROM journals WHERE ID = ?", [req.body.jID],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error);
+            }
+            res.send("success");
+        }
+    );
+});
 app.post("/signup", function (req, res) {
     res.setHeader("Content-Type", "application/json");
 
@@ -250,24 +287,22 @@ function authenticate(email, pwd, callback) {
 }
 async function init() {
     const mysql = require("mysql2/promise");
-    // const connection = await mysql.createConnection({
-    //     host: "us-cdbr-east-05.cleardb.net",
-    //     user: "b2baee19e53680",
-    //     password: "d53c023c",
-    //     database: "heroku_c9a2f09ca67205f",
-    //     multipleStatements: true
-    // });
     const connection = await mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "",
+        host: "us-cdbr-east-05.cleardb.net",
+        user: "b2baee19e53680",
+        password: "d53c023c",
+        database: "heroku_c9a2f09ca67205f",
         multipleStatements: true
     });
+    // const connection = await mysql.createConnection({
+    //     host: "localhost",
+    //     user: "root",
+    //     password: "",
+    //     multipleStatements: true
+    // });
     //DROP DATABASE IF EXISTS bridgethegap;
 
     const createDBAndTables = `
-        CREATE DATABASE IF NOT EXISTS bridgethegap;
-        use bridgethegap;
         CREATE TABLE IF NOT EXISTS user (
         ID int NOT NULL AUTO_INCREMENT,
         name varchar(30),

@@ -132,7 +132,7 @@ function displayMusic() {
     <div class="card-header border-0" id="card-header7">Music Suggestions
     </div>
     <div class="card-body" id="card-body7">
-        <a href="...">
+        <a href="./music.html">
             <img id="music-img" src="./images/music.png" alt="placeholder"  class="card-body-img">
         </a>
     </div>

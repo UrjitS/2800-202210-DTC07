@@ -159,7 +159,7 @@ function displayWalks() {
     <div class="card-header border-0" id="card-header7">Find local walks
     </div>
     <div class="card-body" id="card-body7">
-        <a href="./self_assessment_quiz.html">
+        <a href="./walks.html">
             <img id="music-img" src="./images/walks.png" alt="placeholder"  class="card-body-img">
         </a>
     </div>

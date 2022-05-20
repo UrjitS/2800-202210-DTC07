@@ -15,6 +15,17 @@ function initMap() {
     lng: -123.0986917
   };
 
+  const place3 = {
+    lat: 49.258706,
+    lng: -122.892925
+  };
+
+  const place4 = {
+    lat: 49.253229,
+    lng: -122.893372
+  };
+
+
   // The map, centered at Uluru
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 13,
@@ -79,6 +90,58 @@ function initMap() {
   marker2.addListener('click', function () {
     infoWindow2.open(map, marker2);
   });
+
+
+
+
+// 3rd place
+
+const marker3 = new google.maps.Marker({
+  position: place3,
+  map: map,
+  title: 'Center A'
+
+});
+
+var infoWindow3 = new google.maps.InfoWindow({
+  content: "<p style='font-weight: bold ;'>Local center 1</p>" +
+    "<p>One of the biggest place where you can mditate</p>" +
+    "<p>Address: 12 xxx St,Vancouver</p>" +
+    "<p>Contact: 778-xxx-xxxx</p>" +
+    "<a href='https://www.bcit.ca/'>Homepage</a>"
+});
+
+
+// Add a click listener to open the info window when the marker is clicked.
+marker3.addListener('click', function () {
+  infoWindow3.open(map, marker3);
+});
+
+//4th place
+
+
+const marker4 = new google.maps.Marker({
+  position: place4,
+  map: map,
+  title: 'Center A'
+
+});
+
+var infoWindow4 = new google.maps.InfoWindow({
+  content: "<p style='font-weight: bold ;'>Local center 2</p>" +
+    "<p>One of the biggest place where you can mditate</p>" +
+    "<p>Address: 12 xxx St,Vancouver</p>" +
+    "<p>Contact: 778-xxx-xxxx</p>" +
+    "<a href='https://www.bcit.ca/'>Homepage</a>"
+});
+
+
+// Add a click listener to open the info window when the marker is clicked.
+marker4.addListener('click', function () {
+  infoWindow4.open(map, marker4);
+});
+
+
 
 
 // ------------------------------------search function-----------------------------

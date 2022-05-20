@@ -66,31 +66,13 @@ var db_config = {
     password: "d53c023c",
     database: "heroku_c9a2f09ca67205f"
 };
-
-var connection;
-
-function handleServerDisconnect() {
-    connection = mysql.createConnection(db_config); 
-
-    connection.connect(function (err) { 
-        if (err) { 
-            console.log('error when connecting to db:', err);
-            setTimeout(handleServerDisconnect, 2000); 
-        } 
-    }); 
-
-    connection.on('error', function (err) {
-        console.log('db error', err);
-        if (err.code === 'PROTOCOL_CONNECTION_LOST') { 
-            handleServerDisconnect();
-        } else { 
-            throw err; 
-        }
-    });
-}
-
-handleServerDisconnect();
-
+// var db_config = {
+//     host: "localhost",
+//     user: "root",
+//     password: "",
+//     database: "bridgethegap"
+// };
+var connection = mysql.createPool(db_config);
 
 // Notice that this is a "POST"
 app.post("/login", function (req, res) {
@@ -115,7 +97,8 @@ app.post("/login", function (req, res) {
                 } else {
                     res.send({
                         status: "success",
-                        msg: "Logged in."
+                        msg: "Logged in.",
+                        sessionid: userRecord.ID
                     });
                 }
             }
@@ -126,7 +109,6 @@ app.post("/getuseraccounts", function (req, res) {
     res.setHeader("Content-Type", "application/json");
 
 
-    connection.connect();
     connection.query("SELECT name, email FROM user",
         function (error, results, fields) {
             if (error) {
@@ -136,32 +118,145 @@ app.post("/getuseraccounts", function (req, res) {
         }
     );
 });
-app.post("/signup", function (req, res) {
-    res.setHeader("Content-Type", "application/json");
 
-
-    connection.connect();
-    let userRecords = "insert into user (name, email, password) values ?";
-    let recordValues = [
-        [req.body.uname, req.body.email, req.body.password]
-    ];
-    connection.query(userRecords, [recordValues]);
-
-    connection.query("SELECT * FROM user",
+app.post("/checkFavoritePageStatus", function (req, res) {
+    connection.query("SELECT favoritepages FROM user WHERE ID = ?", [req.body.userid],
         function (error, results, fields) {
             if (error) {
                 console.log(error);
             }
-            console.log(results);
+            res.send(results);
         }
     );
+});
+
+app.post("/changeUserFavoritePageStatus", function (req, res) {
+    connection.query("UPDATE user SET favoritepages = ? WHERE ID = ?", [req.body.newData, req.body.userid],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error);
+            }
+            res.send(results);
+        }
+    );
+});
+
+app.post("/getUserName", function (req, res) {
+    connection.query("SELECT name FROM user WHERE ID = ?", [req.body.userid],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error);
+            }
+            res.send(results);
+        }
+    );
+});
+// ----- Journal Entry feature: Creating a Journal Entry into our journals table -----------------------------
+
+app.post("/createJournalEntry", function (req, res) {
+    //Inserts information into "users" section of journals database
+    let userRecords = "insert into journals (title, entry, user_id) values ?";
+    let recordValues = [
+        [req.body.contentTitle, req.body.contentEntry, req.body.contentUID]
+    ];
+    connection.query(userRecords, [recordValues]);
     res.send("success");
+});
+
+// ----- Get journals from the journals table -----------------------------
+
+app.post("/readJournalEntry", function (req, res) {
+    connection.query("SELECT ID, title, entry FROM journals WHERE user_id = ?", [req.body.userid],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error);
+            }
+            res.send(results);
+        }
+    );
+});
+
+
+// ----- Delete journals from the journals table -----------------------------
+
+app.post("/deleteJournalEntry", function (req, res) {
+    connection.query("DELETE FROM journals WHERE ID = ?", [req.body.jID],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error);
+            }
+            res.send("success");
+        }
+    );
+});
+app.post("/signup", function (req, res) {
+    res.setHeader("Content-Type", "application/json");
+
+    let allPages = '{ "meditation": "no", "yoga": "no", "journal": "no", "resources": "no", "nutrition": "no", "walks": "no", "music": "no", "sleeping_habits": "no", "self_assessment_quiz": "no"}';
+    connection.query(
+        "SELECT * FROM user WHERE email = ?", [req.body.email],
+        function (error, results, fields) {
+
+            if (error) {
+                console.log(error);
+            }
+            if (results.length > 0) {
+                // EMAIL ALREADY EXISTS
+                res.send({
+                    status: "fail",
+                    msg: "Email already in use"
+                });
+            } else {
+                let userRecords = "insert into user (name, email, password, favoritepages) values ?";
+                let recordValues = [
+                    [req.body.uname, req.body.email, req.body.password, allPages]
+                ];
+                connection.query(userRecords, [recordValues], function (error) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        authenticate(req.body.email, req.body.password,
+                            function (userRecord) {
+                                if (userRecord == null) {
+                                    res.send({
+                                        status: "fail",
+                                        msg: "User account not found."
+                                    });
+                                } else {
+                                    req.session.loggedIn = true;
+                                    req.session.email = userRecord.email;
+                                    req.session.name = userRecord.name;
+
+                                    res.send({
+                                        status: "success",
+                                        msg: "Logged in.",
+                                        sessionid: userRecord.ID
+                                    });
+
+                                }
+                            });
+                    }
+                });
+                connection.query("SELECT * FROM user",
+                    function (error, results, fields) {
+                        if (error) {
+                            console.log(error);
+                        }
+                        console.log(results);
+                    }
+                );
+
+            }
+
+        }
+    );
+
+
 });
 
 function authenticate(email, pwd, callback) {
 
 
-    connection.connect();
     connection.query( // Check for admin account first
         "SELECT * FROM admin WHERE email = ? AND password = ?", [email, pwd],
         function (error, results, fields) {
@@ -205,13 +300,29 @@ async function init() {
         database: "heroku_c9a2f09ca67205f",
         multipleStatements: true
     });
+    // const connection = await mysql.createConnection({
+    //     host: "localhost",
+    //     user: "root",
+    //     password: "",
+    //     multipleStatements: true
+    // });
+    //DROP DATABASE IF EXISTS bridgethegap;
+
     const createDBAndTables = `
         CREATE TABLE IF NOT EXISTS user (
         ID int NOT NULL AUTO_INCREMENT,
         name varchar(30),
         email varchar(30),
         password varchar(30),
+        favoritepages varchar(800),
         PRIMARY KEY (ID)
+        );
+        CREATE TABLE IF NOT EXISTS journals (
+            ID int NOT NULL AUTO_INCREMENT,
+            title varchar(50),
+            entry varchar(800),
+            user_id int, 
+            PRIMARY KEY (ID)
         );
         CREATE TABLE IF NOT EXISTS admin (
             ID int NOT NULL AUTO_INCREMENT,

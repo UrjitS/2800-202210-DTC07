@@ -20,13 +20,15 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script src="./javascript/timer.js"></script>
-
     <link rel="stylesheet" href="./css/navbar.css">
     <script src="./javascript/navigation.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./javascript/favoritingpage.js"></script>
 </head>
 
 <body>
-    <div class="navbarLocation">
+    <div class="contentNavbarLocation">
 
     </div>
 
@@ -254,6 +256,12 @@
 
     </div>
 
+
+    <script>
+        $(document).ready(function () {
+            getStatus("yoga-Page");
+        });
+    </script>
 
 </body>
 

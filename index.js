@@ -211,7 +211,32 @@ app.post("/signup", function (req, res) {
                 let recordValues = [
                     [req.body.uname, req.body.email, req.body.password, allPages]
                 ];
-                connection.query(userRecords, [recordValues]);
+                connection.query(userRecords, [recordValues], function (error) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        authenticate(req.body.email, req.body.password,
+                            function (userRecord) {
+                                if (userRecord == null) {
+                                    res.send({
+                                        status: "fail",
+                                        msg: "User account not found."
+                                    });
+                                } else {
+                                    req.session.loggedIn = true;
+                                    req.session.email = userRecord.email;
+                                    req.session.name = userRecord.name;
+
+                                    res.send({
+                                        status: "success",
+                                        msg: "Logged in.",
+                                        sessionid: userRecord.ID
+                                    });
+
+                                }
+                            });
+                    }
+                });
                 connection.query("SELECT * FROM user",
                     function (error, results, fields) {
                         if (error) {
@@ -220,26 +245,7 @@ app.post("/signup", function (req, res) {
                         console.log(results);
                     }
                 );
-                authenticate(req.body.email, req.body.password,
-                    function (userRecord) {
-                        if (userRecord == null) {
-                            res.send({
-                                status: "fail",
-                                msg: "User account not found."
-                            });
-                        } else {
-                            req.session.loggedIn = true;
-                            req.session.email = userRecord.email;
-                            req.session.name = userRecord.name;
 
-                            res.send({
-                                status: "success",
-                                msg: "Logged in.",
-                                sessionid: userRecord.ID
-                            });
-
-                        }
-                    });
             }
 
         }

@@ -276,6 +276,13 @@ async function init() {
         favoritepages varchar(800),
         PRIMARY KEY (ID)
         );
+        CREATE TABLE IF NOT EXISTS journals (
+            ID int NOT NULL AUTO_INCREMENT,
+            title varchar(50),
+            entry varchar(800),
+            user_id int, 
+            PRIMARY KEY (ID)
+        );
         CREATE TABLE IF NOT EXISTS admin (
             ID int NOT NULL AUTO_INCREMENT,
             name varchar(30),

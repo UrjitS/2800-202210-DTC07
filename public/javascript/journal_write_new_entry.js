@@ -10,7 +10,7 @@ function createJournalEntry() {
     if (title.value.length > 0 && entry.value.length > 0) {
         console.log("dwa");
         $.ajax({
-            url: "http://localhost:3000/createJournalEntry",
+            url: "https://bridge-the-gap.herokuapp.com/createJournalEntry",
             type: "post",
             data: {
                 contentTitle: title.value,

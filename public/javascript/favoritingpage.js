@@ -3,7 +3,7 @@ var dataParsed;
 function getStatus(currentPage) {
     let currentpage = currentPage.split("-")[0];
     $.ajax({
-        url: "http://localhost:3000/checkFavoritePageStatus",
+        url: "https://bridge-the-gap.herokuapp.com/checkFavoritePageStatus",
         type: "post",
         data: {
             userid: sessionStorage.getItem("id"),
@@ -188,7 +188,7 @@ function savePage(currentPage) {
     };
     console.log(JSON.stringify(dataParsed));
     $.ajax({
-        url: "http://localhost:3000/changeUserFavoritePageStatus",
+        url: "https://bridge-the-gap.herokuapp.com/changeUserFavoritePageStatus",
         type: "post",
         data: {
             userid: sessionStorage.getItem("id"),

@@ -37,15 +37,10 @@ $(document).ready(function () {
                     if (dataParsed.status == "fail") {
                         document.getElementById("errorMsg").innerHTML = dataParsed.msg;
                     } else if (dataParsed.status == "admin") {
-                        window.location.replace("admin.html");
+                        window.location.replace("/html/admin.html");
                     } else if (dataParsed.status == "success"){
                         sessionStorage.setItem("id", dataParsed.sessionid);
-                        // let stre = '{ "meditation": "no", "yoga": "no", "journal": "no", "resources": "no", "nutrition": "no", "walks": "no", "exercise": "no", "sleeping-habits": "no"}';
-                        // let parsD = JSON.parse(stre);
-                        // console.log(parsD);
-
-                        // console.log(parsD.yoga);
-                        window.location.replace("main.html");
+                        window.location.replace("/html/main.html");
                     }
                 }
             }, queryString);

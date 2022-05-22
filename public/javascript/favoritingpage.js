@@ -1,9 +1,11 @@
 var dataParsed;
 
 function getStatus(currentPage) {
+    addContentFooter()
     let currentpage = currentPage.split("-")[0];
     $.ajax({
-        url: "https://bridge-the-gap.herokuapp.com/checkFavoritePageStatus",
+        // url: "https://bridge-the-gap.herokuapp.com/checkFavoritePageStatus",
+        url: "http://localhost:3000/checkFavoritePageStatus",
         type: "post",
         data: {
             userid: sessionStorage.getItem("id"),
@@ -188,7 +190,8 @@ function savePage(currentPage) {
     };
     console.log(JSON.stringify(dataParsed));
     $.ajax({
-        url: "https://bridge-the-gap.herokuapp.com/changeUserFavoritePageStatus",
+        // url: "https://bridge-the-gap.herokuapp.com/changeUserFavoritePageStatus",
+        url: "http://localhost:3000/changeUserFavoritePageStatus",
         type: "post",
         data: {
             userid: sessionStorage.getItem("id"),
@@ -217,18 +220,16 @@ function addFilledContentPageNavbar(currentPage) {
             </svg>
         </nav>
         <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <h4 class="text-white">Menu</h4>
-                <span class="text-muted">
-                    <ul>
-                        <li><a href="./suggestions.html"><span style="color: white">Suggestions</span></a></li>
-                        <li><span class="text-muted">Personal Tools</span></li>
-                        <li><a class="text-muted" href="./journal_main_page.html">Wellness Journal</a></li>
-                    </ul>
-                </span>
+                <div class="bg-dark p-4">
+                    <h4 class="text-white">Menu</h4>
+                    <span class="text-muted">
+                        <ul>
+                            <li><a href="../suggestions.html"><span style="color: white">Suggestions</span></a></li>
+                        </ul>
+                    </span>
 
+                </div>  
             </div>
-        </div>
     </div>`);
 }
 
@@ -250,17 +251,46 @@ function addContentPageNavbar(currentPage) {
             </svg>
         </nav>
         <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <h4 class="text-white">Menu</h4>
-                <span class="text-muted">
-                    <ul>
-                        <li><a href="./suggestions.html"><span style="color: white">Suggestions</span></a></li>
-                        <li><span class="text-muted">Personal Tools</span></li>
-                        <li><a class="text-muted" href="./journal_main_page.html">Wellness Journal</a></li>
-                    </ul>
-                </span>
+        <div class="bg-dark p-4">
+            <h4 class="text-white">Menu</h4>
+            <span class="text-muted">
+                <ul>
+                    <li><a href="../suggestions.html"><span style="color: white">Suggestions</span></a></li>
+                </ul>
+            </span>
 
-            </div>
-        </div>
+        </div>  
+    </div>
     </div>`);
+}
+
+function addContentFooter(currentPage) {
+    $(".contentFooterLocation").empty();
+    $(".contentFooterLocation").append(
+        `
+        <footer class="fixed-bottom navbar bg-dark d--none d-md-none" style="height: 75px; padding: 0px;">
+
+            <div class="bottom-nav-button">
+                <div class="btn bg-dark" style="padding-left:4em">
+                    <a href="../main.html" class="material-icons"
+                        style="color: whitesmoke; text-decoration: unset; font-size: 35px; ">person</a>
+                    <p style="color: white;">Profile</p>
+                </div>
+            </div>
+            <div class="bottom-nav-button">
+                <div class="btn bg-dark">
+                    <a href="../main.html" class="material-icons"
+                        style="color: whitesmoke; text-decoration: unset; font-size: 35px;">home</a>
+                    <p style="color: whitesmoke;">Home</p>
+                </div>
+            </div>
+            <div class="bottom-nav-button">
+                <div class="btn bg-dark" style="padding-right:4em" onclick="history.back()">
+                    <a class="material-icons"
+                        style="color: whitesmoke; text-decoration: unset; font-size: 35px;">arrow_back</a>
+                    <p style="color: whitesmoke;">Back</p>
+                </div>
+            </div>
+
+    </footer>`);
 }

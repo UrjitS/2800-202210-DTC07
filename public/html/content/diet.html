@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bridge the Gap Walks Page</title>
+    <title>Bridge the Gap Nutrition Page</title>
 
    <!-- Google fonts-->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -29,33 +29,37 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
    </script>
-   <link rel="stylesheet" href="./css/navbar.css">
-   <script src="./javascript/navigation.js"></script>
 
-   <link rel="stylesheet" href="css/walks.css">
 
-   <script src="./javascript/walks.js"></script>
-   <script src="./javascript/favoritingpage.js"></script>
+   <link rel="stylesheet" href="../../css/navbar.css">
+   <script src="../../javascript/navigation.js"></script>
+
+   <link rel="stylesheet" href="../../css/diet.css">
+
+   <script src="../../javascript/favoritingpage.js"></script>
+
 
 </head>
 
 <body>
-    <div class="contentNavbarLocation"></div>
-    
+    <div class="contentNavbarLocation">
+
+    </div>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <div class="banner-text-container">
-                <h1 id="banner-title"> Mood Walks </h1>
-                <p id="subhead-1"> Good for your BODY and your MIND.</p> 
+                <h1 id="banner-title"> Nutrition</h1>
+                <p id="subhead-1"> You are what you eat!</p> 
+                <p id="subhead-2"> Your diet affects the state of your mind.</p>
             </div>
         </div>
     </div>
 
-    <h2 id="benefits-title"> Benefits of Taking Walks</h2>
+    <h2 id="benefits-title"> Benefits of Improving your <span> DIET </span></h2>
     <div id="body-container">
         <div id="benefits-container">
             <button type="button" class="ben-btn" data-toggle="modal" data-target="#wellModal">
-                <img src="images/happy.png" alt="happy" class="card-img">
+                <img src="../../images/happy.png" alt="happy" class="card-img">
             </button>
               <div class="modal fade" id="wellModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -68,13 +72,11 @@
                     </div>
                     <div class="modal-body">
                       <ul>
-                        <li> Aerobic exercises such as walking have been proved to reduce anxiety, and depression.</li>
-                        <li> Exercise causes an increase in blood circulation to the brain and influences the brain's reaction to stress</li>
-                        <li> Walking can also distract you, or provide opportunities to interact socially. </li>
-                        <li> Alleviates symptoms of low self-esteem and social withdrawal.</li>
-                        <li> Walks in nature was found to be an effective </li>
+                        <li>Studies show a healthy diet reduces the symptoms of mental illnesses</li>
+                        <li>Highly processed foods aggravate, and increase the risk of developing symptoms</li>
+                        <li>It is postulated that modest dietary changes can have an huge impact on reducing mental and neurological diseases</li>
                         <br>
-                        <p>(If you'd like to learn more refer to: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1470658/">this study </a> or <a href="https://news.stanford.edu/2015/06/30/hiking-mental-health-063015/"> this article.</a>)</p>
+                        <p>(If you'd like to learn more refer to: <a href="https://pubmed.ncbi.nlm.nih.gov/28707609/">this study </a> or <a href="https://hr.ubc.ca/working-ubc/news/june-06-2020/eating-your-way-better-mental-health"> this article.)</a></p>
                       </ul>
                     </div>
                     <div class="modal-footer">
@@ -86,7 +88,7 @@
 
 
             <button class="ben-btn" data-toggle="modal" data-target="#brainModal">
-                <img src="images/brain.png" alt="brain" class="card-img">
+                <img src="../../images/brain.png" alt="brain" class="card-img">
             </button>
             <div class="modal fade" id="brainModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -98,11 +100,11 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <li>Exercise can improve your sleep routine by helping you achieve a deeper sleep, and improve your sleep patterns.</li>
-                      <li>The increased blood flow to the brain and body can provide a boost of energy to the person.</li>
-                      <li>The energy boost will enable a person to feel more alert, and</li>
+                      <li>A balanced diet helps you think more quickly and clearly, and allows you to feel more alert.</li>
+                      <li>It improves your concentration and attention span</li>
+                      <li>Eating too much or too little can also interfere with your focus: Too much makes you tired, too little gives you distracting feelings of hunger</li>
                       <br>
-                      <p>(If you'd like to learn more refer to: <a href="https://www.mentalhealth.org.uk/publications/how-to-using-exercise#:~:text=Physical%20activity%20has%20a%20huge,can%20reduce%20stress%20and%20anxiety.">this article </a> or <a href="https://www.health.harvard.edu/healthbeat/foods-linked-to-better-brainpower"> this article.</a>)</p>
+                      <p>(If you'd like to learn more refer to: <a href="https://healthysd.gov/link_brain-foods-that-may-help-you-concentrate/">this article </a> or <a href="https://www.health.harvard.edu/healthbeat/foods-linked-to-better-brainpower"> this article.)</a></p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -112,7 +114,7 @@
               </div>
  
             <button class="ben-btn" data-toggle="modal" data-target="#moodModal">
-                <img src="images/mood.png" alt="mood" class="card-img">
+                <img src="../../images/mood.png" alt="mood" class="card-img">
             </button>
             <div class="modal fade" id="moodModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -124,11 +126,11 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <li>A study found that walks in a natural setting such as a park boosts a person's mood.</li>
-                      <li>Walks in a natural setting reduces the likelihood a person would have negative thoughts about themselves</li>
-                      <li>Mood walks also affected the brain activity in the area associated with mental illness.</li>
+                      <li>Blood sugar levels dropping can make you feel tired and bad tempered.</li>
+                      <li>Improving diet increases the "good" gut bacteria, improving nutrient absorption which boots Serotonin to help mediate your moods.</li>
+                      <li>A good, balanced diet reduces the degree of inflammation, and may protect against depression.</li>
                       <br>
-                      <p>(If you'd like to learn more refer to: <a href="https://www.mentalhealth.org.uk/publications/how-to-using-exercise#:~:text=Physical%20activity%20has%20a%20huge,can%20reduce%20stress%20and%20anxiety.">this article </a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6170050/"> this study.)</a></p>
+                      <p>(If you'd like to learn more refer to: <a href="https://www.health.harvard.edu/blog/gut-feelings-how-food-affects-your-mood-2018120715548">this article </a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6170050/"> this study.)</a></p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -136,32 +138,55 @@
                   </div>
                 </div>
               </div>
+
+    </div>
+    <div id="food-info-card">
+      <h2 id="food-title"> What should you eat?</h2>
+      <p id="intro-par"> The mediterranean-style diet is considered a good standard for healthy eating patterns, and nutritious food.
+        It has been attributed to <a href="https://www.sciencedirect.com/science/article/pii/B9780128112595000111?via%3Dihub">reducing the rate of dementia, and depression.</a>
+          The diet consists of foods high in vegetables, fruits, whole grains, legumes, nuts, seeds, fish, poultry, eggs, and olive oil. The diet mostly consists of vegetables. Olive oil
+          is the recommended primary added fat, replacing other oils and fats. Other foods naturally containing healthy fats such as avocados, nuts and oily fish like salmon are high in omega-3 fatty acids.
+          Fish is the preferred animal protein that's eaten at least twice weekly. Other animal proteins are eaten in smaller portions.
+          <br>
+          <br>
+          <br>
+          <button id="medbtn" class="btn" data-toggle="modal" data-target="#med-diet"> Click Here</button>
+        <div class="modal fade" id="med-diet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Mediterranean Diet Chart</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img id="med-dietchart" src="../../images/meddiet.jpg">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </p>
     </div>
 
 
-    <div class="container">
-      <h2 style="color: black">Search for a park near you </h2>
-          <!-- Search Bar -->
+        <div id="suggestions-container">
+          <!--
+          <h3> Chart for Mediterranean Diet Plan</h3>
+          <img id="med-dietchart" src="./images/meddiet.jpg">
 
 
-          <input id="input" class="controls" type="text" placeholder="Enter a Park for Walks..." onfocus="this.value=''">
-  
-          
-          <!-- Google Map -->
-            <div id="map"></div>
-  
+          -->
+              
 
+        </div>
     </div>
 
-
-    <br>
-    <br>
-    <br>
-    <footer>
-      copyright
-    </footer>
-
-    <div class="footerLocation"></div>
+    <div class="contentFooterLocation"></div>
 
 
 
@@ -171,12 +196,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt4ZrFvWT87Yk7thg35e2aEdokhNAYsHU&libraries=places&callback=initMap"></script>
     <script>
         $(document).ready(function () {
-            getStatus("walks-Page");
+            getStatus("nutrition-Page");
         });
+
     </script>
 </body>
 

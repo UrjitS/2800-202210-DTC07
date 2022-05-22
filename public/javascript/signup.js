@@ -39,7 +39,7 @@ $(document).ready(function () {
 
                     } else if (dataParsed.status == "success"){
                         sessionStorage.setItem("id", dataParsed.sessionid);
-                        window.location.replace("main.html");
+                        window.location.replace("/html/main.html");
                     }
                 }
             }, queryString);

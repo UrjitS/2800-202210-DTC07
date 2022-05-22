@@ -4,41 +4,50 @@ const fs = require("fs");
 
 const app = express()
 
-app.set('view engine', 'ejs');
-
 app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
-
-app.use(express.static('./public'), session({
+app.use(session({
     secret: "extra text that no one will guess",
     name: "wazaSessionID",
     resave: false,
     saveUninitialized: true
 }));
-app.get("/main", function (req, res) {
-    if (!req.session.loggedIn) {
-        res.redirect("/");
-    }
 
-});
-app.get("/admin", function (req, res) {
-    if (!req.session.loggedIn) {
-        res.redirect("/");
+function auth(req, res, next) {
+    if (req.session.loggedIn) {
+        next()
+    } else {
+        res.redirect('/index.html');
+    }
+}
+
+app.get(/^\/html\//i, auth);
+app.get("/html/admin.html", auth, function (req, res, next) {
+    console.log(req.session.name);
+    if (req.session.name != 'Admin') {
+        res.redirect('/html/main.html');
+    } else {
+        next();
     }
 });
+
 app.get("/loginpage", function (req, res) {
-    let profile = fs.readFileSync("./public/login.html", "utf8");
-
-    res.send(profile);
-
+    if (req.session.loggedIn) {
+        res.redirect('/html/main.html');
+    } else {
+        let profile = fs.readFileSync("./public/login.html", "utf8");
+        res.send(profile);
+    }
 });
 app.get("/signup", function (req, res) {
-    let profile = fs.readFileSync("./public/signup.html", "utf8");
-
-    res.send(profile);
-
+    if (req.session.loggedIn) {
+        res.redirect('/html/main.html');
+    } else {
+        let profile = fs.readFileSync("./public/signup.html", "utf8");
+        res.send(profile);
+    }
 });
 app.get("/logout", function (req, res) {
 
@@ -345,6 +354,6 @@ async function init() {
     }
 
 }
-
+app.use(express.static('./public'));
 // process.env.PORT is the port Heroku gives
 app.listen(process.env.PORT || 3000, init);

@@ -37,7 +37,7 @@ function addNavbar() {
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <h3 id="appName" class="" style="display: inline-block; margin: 0 auto">Bridge the Gap</h3>
-                <img src="images/navlogo.png" onclick="activateEasterEgg()" style="max-width: 70px; max-height: 70px">
+                <img src="../images/navlogo.png" onclick="activateEasterEgg()" style="max-width: 70px; max-height: 70px">
             </nav>
             <div class="collapse" id="navbarToggleExternalContent">
                 <div class="bg-dark p-4">
@@ -45,7 +45,6 @@ function addNavbar() {
                     <span class="text-muted">
                         <ul>
                             <li><a href="./suggestions.html"><span style="color: white">Suggestions</span></a></li>
-                            <li><a class="text-muted" href="./journal_main_page.html">Wellness Journal</a></li>
                         </ul>
                     </span>
 

@@ -20,9 +20,9 @@
 
     <!-- Script to display Navbar and Footer-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="./css/navbar.css">
-    <script src="./javascript/navigation.js"></script>
-    <script src="./javascript/journal_read_entries.js"></script>
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <script src="../../javascript/navigation.js"></script>
+    <script src="../../javascript/journal_read_entries.js"></script>
 </head>
 
 
@@ -31,8 +31,28 @@
 
     <!--Nav Bar-->
 
-    <div class="navbarLocation">
- 
+    <div class="pos-f-t">
+        <nav class="navbar navbar-dark bg-white">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <h3 id="appName" class="" style="display: inline-block; margin: 0 auto">Bridge the Gap</h3>
+            <img src="../../images/navlogo.png" onclick="activateEasterEgg()"
+                style="max-width: 70px; max-height: 70px">
+        </nav>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h4 class="text-white">Menu</h4>
+                <span class="text-muted">
+                    <ul>
+                        <li><a href="../suggestions.html"><span style="color: white">Suggestions</span></a></li>
+                    </ul>
+                </span>
+
+            </div>
+        </div>
     </div>
        
     <!-- Journal Entries Title Page -->
@@ -41,7 +61,7 @@
         <div class="container col-xxl-8 px-4 py-5">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                 <div class="col-10 col-sm-8 col-lg-6">
-                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                    <img src="../../images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
                         width="300" height="100" loading="lazy">
                 </div>
                 <div class="col-lg-6">
@@ -57,7 +77,7 @@
         <div id="journalRow" class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
                 <div class="card h-100">
-                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                    <img src="../../images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
                         width="150" height="75" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">Journal 1 Title</h5>
@@ -73,7 +93,7 @@
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                    <img src="../../images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
                         width="150" height="75" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">Journal 2 Title</h5>
@@ -90,7 +110,7 @@
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                    <img src="../../images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
                         width="150" height="75" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">Journal 3 Title</h5>
@@ -108,7 +128,7 @@
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                    <img src="../../images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
                         width="150" height="75" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">Journal 4 Title</h5>
@@ -125,7 +145,7 @@
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                    <img src="../../images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
                         width="150" height="75" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">Journal 5 Title</h5>
@@ -142,7 +162,7 @@
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="./images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                    <img src="../../images/Journal_logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
                         width="150" height="75" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">Journal 6 Title</h5>
@@ -164,9 +184,31 @@
     <br>
      <!-- Footer -->
 
-     <div class="footerLocation">
- 
-    </div>
+     <footer class="fixed-bottom navbar bg-dark d--none d-md-none" style="height: 75px; padding: 0px;">
+
+        <div class="bottom-nav-button">
+            <div class="btn bg-dark" style="padding-left:4em">
+                <a href="../main.html" class="material-icons"
+                    style="color: whitesmoke; text-decoration: unset; font-size: 35px; ">person</a>
+                <p style="color: white;">Profile</p>
+            </div>
+        </div>
+        <div class="bottom-nav-button">
+            <div class="btn bg-dark">
+                <a href="../main.html" class="material-icons"
+                    style="color: whitesmoke; text-decoration: unset; font-size: 35px;">home</a>
+                <p style="color: whitesmoke;">Home</p>
+            </div>
+        </div>
+        <div class="bottom-nav-button">
+            <div class="btn bg-dark" style="padding-right:4em" onclick="history.back()">
+                <a class="material-icons"
+                    style="color: whitesmoke; text-decoration: unset; font-size: 35px;">arrow_back</a>
+                <p style="color: whitesmoke;">Back</p>
+            </div>
+        </div>
+
+    </footer>
 
     <!-- End of Footer -->
 

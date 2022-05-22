@@ -1,9 +1,10 @@
 const express = require('express');
 const session = require("express-session");
+const mysql = require("mysql2");
 const fs = require("fs");
-
 const app = express()
 
+// ----- Middle ware -----------------------------
 app.use(express.json());
 app.use(express.urlencoded({
     extended: true
@@ -23,10 +24,12 @@ function auth(req, res, next) {
     }
 }
 
-app.get(/^\/html\//i, auth);
+// ----- Routes -----------------------------
+app.get(/^\/html\//i, auth); // Check all links containing /html/ to make sure users logged in.
+
 app.get("/html/admin.html", auth, function (req, res, next) {
     console.log(req.session.name);
-    if (req.session.name != 'Admin') {
+    if (req.session.name != 'Admin') { // Ensure only admin is viewing this site and block users from typing url.
         res.redirect('/html/main.html');
     } else {
         next();
@@ -34,7 +37,7 @@ app.get("/html/admin.html", auth, function (req, res, next) {
 });
 
 app.get("/loginpage", function (req, res) {
-    if (req.session.loggedIn) {
+    if (req.session.loggedIn) { // Check if users are already logged in.
         res.redirect('/html/main.html');
     } else {
         let profile = fs.readFileSync("./public/login.html", "utf8");
@@ -42,7 +45,7 @@ app.get("/loginpage", function (req, res) {
     }
 });
 app.get("/signup", function (req, res) {
-    if (req.session.loggedIn) {
+    if (req.session.loggedIn) { // Check if users are already logged in.
         res.redirect('/html/main.html');
     } else {
         let profile = fs.readFileSync("./public/signup.html", "utf8");
@@ -50,7 +53,6 @@ app.get("/signup", function (req, res) {
     }
 });
 app.get("/logout", function (req, res) {
-
     if (req.session) {
         req.session.destroy(function (error) {
             if (error) {
@@ -58,7 +60,6 @@ app.get("/logout", function (req, res) {
             } else {
                 // session deleted, redirect to home
                 let profile = fs.readFileSync("./public/signedout.html", "utf8");
-
                 res.send(profile);
             }
         });
@@ -66,9 +67,7 @@ app.get("/logout", function (req, res) {
 });
 
 
-const mysql = require("mysql2");
-
-
+// ----- Database Configuration -----------------------------
 var db_config = {
     host: "us-cdbr-east-05.cleardb.net",
     user: "b2baee19e53680",
@@ -83,13 +82,13 @@ var db_config = {
 // };
 var connection = mysql.createPool(db_config);
 
-// Notice that this is a "POST"
+// ----- Post Methods -----------------------------
 app.post("/login", function (req, res) {
     res.setHeader("Content-Type", "application/json");
-
+    // Check if user exists in the database
     authenticate(req.body.email, req.body.password,
         function (userRecord, isadmin) {
-            if (userRecord == null) {
+            if (userRecord == null) { //Not found users email/password
                 res.send({
                     status: "fail",
                     msg: "User account not found."
@@ -98,13 +97,13 @@ app.post("/login", function (req, res) {
                 req.session.loggedIn = true;
                 req.session.email = userRecord.email;
                 req.session.name = userRecord.name;
-                if (isadmin) {
+                if (isadmin) { // Account matches admin credentials
                     res.send({
                         status: "admin",
                         msg: "Logged in."
                     });
                 } else {
-                    res.send({
+                    res.send({ // Regular user account
                         status: "success",
                         msg: "Logged in.",
                         sessionid: userRecord.ID
@@ -114,10 +113,12 @@ app.post("/login", function (req, res) {
         });
 
 });
+
+/**
+ * Sends the email and name of users for the admin page
+ */
 app.post("/getuseraccounts", function (req, res) {
     res.setHeader("Content-Type", "application/json");
-
-
     connection.query("SELECT name, email FROM user",
         function (error, results, fields) {
             if (error) {
@@ -127,7 +128,9 @@ app.post("/getuseraccounts", function (req, res) {
         }
     );
 });
-
+/**
+ * Sends the specified users' favorited list from database
+ */
 app.post("/checkFavoritePageStatus", function (req, res) {
     connection.query("SELECT favoritepages FROM user WHERE ID = ?", [req.body.userid],
         function (error, results, fields) {
@@ -138,7 +141,9 @@ app.post("/checkFavoritePageStatus", function (req, res) {
         }
     );
 });
-
+/**
+ * Sets the specified users' favorited list to database
+ */
 app.post("/changeUserFavoritePageStatus", function (req, res) {
     connection.query("UPDATE user SET favoritepages = ? WHERE ID = ?", [req.body.newData, req.body.userid],
         function (error, results, fields) {
@@ -149,7 +154,9 @@ app.post("/changeUserFavoritePageStatus", function (req, res) {
         }
     );
 });
-
+/**
+ * Sends the specified users' name to be displayed on main page
+ */
 app.post("/getUserName", function (req, res) {
     connection.query("SELECT name FROM user WHERE ID = ?", [req.body.userid],
         function (error, results, fields) {
@@ -160,8 +167,9 @@ app.post("/getUserName", function (req, res) {
         }
     );
 });
-// ----- Journal Entry feature: Creating a Journal Entry into our journals table -----------------------------
-
+/**
+ * Inserts a new journal entry into the journals table
+ */
 app.post("/createJournalEntry", function (req, res) {
     //Inserts information into "users" section of journals database
     let userRecords = "insert into journals (title, entry, user_id) values ?";
@@ -171,9 +179,9 @@ app.post("/createJournalEntry", function (req, res) {
     connection.query(userRecords, [recordValues]);
     res.send("success");
 });
-
-// ----- Get journals from the journals table -----------------------------
-
+/**
+ * Sends the specified users' journal entries
+ */
 app.post("/readJournalEntry", function (req, res) {
     connection.query("SELECT ID, title, entry FROM journals WHERE user_id = ?", [req.body.userid],
         function (error, results, fields) {
@@ -184,10 +192,9 @@ app.post("/readJournalEntry", function (req, res) {
         }
     );
 });
-
-
-// ----- Delete journals from the journals table -----------------------------
-
+/**
+ * Removes the specified journal entry from journal table
+ */
 app.post("/deleteJournalEntry", function (req, res) {
     connection.query("DELETE FROM journals WHERE ID = ?", [req.body.jID],
         function (error, results, fields) {
@@ -198,6 +205,9 @@ app.post("/deleteJournalEntry", function (req, res) {
         }
     );
 });
+/**
+ * Adds new user to users table
+ */
 app.post("/signup", function (req, res) {
     res.setHeader("Content-Type", "application/json");
 
@@ -205,7 +215,6 @@ app.post("/signup", function (req, res) {
     connection.query(
         "SELECT * FROM user WHERE email = ?", [req.body.email],
         function (error, results, fields) {
-
             if (error) {
                 console.log(error);
             }
@@ -224,7 +233,7 @@ app.post("/signup", function (req, res) {
                     if (error) {
                         console.log(error);
                     } else {
-                        authenticate(req.body.email, req.body.password,
+                        authenticate(req.body.email, req.body.password, //Double check to ensure new user was inserted into the user table
                             function (userRecord) {
                                 if (userRecord == null) {
                                     res.send({
@@ -246,30 +255,20 @@ app.post("/signup", function (req, res) {
                             });
                     }
                 });
-                connection.query("SELECT * FROM user",
-                    function (error, results, fields) {
-                        if (error) {
-                            console.log(error);
-                        }
-                        console.log(results);
-                    }
-                );
-
             }
-
         }
     );
-
-
 });
-
+/**
+ * Checks the email and password to find a match in the users table
+ * @param {String} email Email to be checked
+ * @param {String} pwd Password to be checked
+ * @param {Function} callback Callback function to send results to
+ */
 function authenticate(email, pwd, callback) {
-
-
     connection.query( // Check for admin account first
         "SELECT * FROM admin WHERE email = ? AND password = ?", [email, pwd],
         function (error, results, fields) {
-
             if (error) {
                 console.log(error);
             }
@@ -279,7 +278,6 @@ function authenticate(email, pwd, callback) {
                 connection.query(
                     "SELECT * FROM user WHERE email = ? AND password = ?", [email, pwd],
                     function (error, results, fields) {
-
                         if (error) {
                             console.log(error);
                         }
@@ -294,12 +292,13 @@ function authenticate(email, pwd, callback) {
                     }
                 );
             }
-
         }
     );
-
-
 }
+
+/**
+ * Initializes the user,admin,jounal tables in the database
+ */
 async function init() {
     const mysql = require("mysql2/promise");
     const connection = await mysql.createConnection({

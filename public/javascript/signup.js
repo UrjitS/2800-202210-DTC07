@@ -1,5 +1,12 @@
 $(document).ready(function () {
 
+    /**
+     * Sends post request to specified url using XMLHttp request
+     * @param {String} url Url to send post request to
+     * @param {Function} callback Function callback to handle response after post
+     * @param {*} data Data to be included with request
+
+    */
     function ajaxPOST(url, callback, data) {
         let params = typeof data == 'string' ? data : Object.keys(data).map(
             function (k) {
@@ -22,13 +29,15 @@ $(document).ready(function () {
         xhr.send(params);
     }
 
-   
+    /**
+     * Initiates post requset and includes users' inputted email, password, and user name
+     */
     function beginPostSignUp() {
         let email = document.getElementById("login_email");
         let password = document.getElementById("password");
         var user_name_input = document.getElementById("user_name")
         let queryString = "email=" + email.value + "&password=" + password.value + "&uname=" + user_name_input.value;
- 
+
         if (email.value.length > 0 && password.value.length > 0 && user_name_input.value.length > 0) {
             ajaxPOST("/signup", function (data) {
                 if (data) {
@@ -37,7 +46,7 @@ $(document).ready(function () {
                     if (dataParsed.status == "fail") {
                         document.getElementById("errorMsg").innerHTML = dataParsed.msg;
 
-                    } else if (dataParsed.status == "success"){
+                    } else if (dataParsed.status == "success") {
                         sessionStorage.setItem("id", dataParsed.sessionid);
                         window.location.replace("/html/main.html");
                     }
@@ -47,13 +56,17 @@ $(document).ready(function () {
             document.getElementById("errorMsg").innerHTML = "Please fill out the Fields";
         }
     }
-
+    /**
+     * Creates on click listener on the login button to trigger beginPostSignUp function
+     */
     document.querySelector("#login_button").addEventListener("click", function (e) {
         e.preventDefault();
         beginPostSignUp();
     });
 
-
+    /**
+     * Creates on click listener on the sign up button to load login page
+     */
     document.querySelector("#sign_up").addEventListener("click", function (e) {
         window.location.replace("login.html");
     });

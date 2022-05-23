@@ -1,6 +1,8 @@
 clickCounter = 0;
 easterEggActive = false;
-
+/**
+ * Activates or DeActivates the easter egg when logo is clicked 3 times
+ */
 function activateEasterEgg() {
     clickCounter++;
     if (clickCounter == 3 && easterEggActive) {
@@ -25,7 +27,9 @@ function activateEasterEgg() {
         }
     }
 }
-
+/**
+ * Adds the top navbar to the html page
+ */
 function addNavbar() {
     $(".navbarLocation").empty();
     $(".navbarLocation").append(
@@ -52,8 +56,9 @@ function addNavbar() {
             </div>
         </div>`);
 }
-
-
+/**
+ * Adds the bottom footer to the html page
+ */
 function addFooter() {
     $(".footerLocation").empty();
     $(".footerLocation").append(
@@ -84,7 +89,9 @@ function addFooter() {
 
     </footer>`);
 }
-
+/**
+ * Initiates the addNavbar and addFooter functions
+ */
 function setup() {
     addNavbar();
     addFooter();

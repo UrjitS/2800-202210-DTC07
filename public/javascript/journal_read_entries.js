@@ -1,4 +1,7 @@
-
+/**
+ * Deletes the journal with the matching specified ID
+ * @param {String} entryID 
+ */
 function deleteEntry(entryID) {
     console.log(entryID);
     $.ajax({
@@ -16,6 +19,9 @@ function deleteEntry(entryID) {
 }
 
 //----------------------------Read Journal Entry Function ------------------------------//
+/**
+ * Sends ajax request to read journals of the current user and displays them to journalRow
+ */
 function readJournalEntry() {
     $("#journalRow").empty();
     $.ajax({
@@ -55,5 +61,3 @@ function readJournalEntry() {
 
 
 }
-
-

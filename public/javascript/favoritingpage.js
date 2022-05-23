@@ -1,5 +1,8 @@
 var dataParsed;
-
+/**
+ * Sends ajax request to get the users favorited pages list
+ * @param {String} currentPage Name of the current page loaded
+ */
 function getStatus(currentPage) {
     addContentFooter()
     let currentpage = currentPage.split("-")[0];
@@ -93,7 +96,10 @@ function getStatus(currentPage) {
     });
 
 }
-
+/**
+ * Updates the users favorited pages list
+ * @param {String} currentPage Name of the current page loaded
+ */
 function savePage(currentPage) {
     let currentpage = currentPage.split("-")[0];
     switch (currentpage) {
@@ -202,7 +208,10 @@ function savePage(currentPage) {
         }
     });
 }
-
+/**
+ * Adds the top navbar with a filled star
+ * @param {String} currentPage Name of the current loaded page
+ */
 function addFilledContentPageNavbar(currentPage) {
     $(".contentNavbarLocation").empty();
     $(".contentNavbarLocation").append(
@@ -232,7 +241,10 @@ function addFilledContentPageNavbar(currentPage) {
             </div>
     </div>`);
 }
-
+/**
+ * Adds the top navbar with a un-filled star
+ * @param {String} currentPage Name of the current loaded page
+ */
 function addContentPageNavbar(currentPage) {
     $(".contentNavbarLocation").empty();
     $(".contentNavbarLocation").append(
@@ -263,7 +275,10 @@ function addContentPageNavbar(currentPage) {
     </div>
     </div>`);
 }
-
+/**
+ * Adds the bottom footer
+ * @param {String} currentPage Name of the current loaded page
+ */
 function addContentFooter(currentPage) {
     $(".contentFooterLocation").empty();
     $(".contentFooterLocation").append(

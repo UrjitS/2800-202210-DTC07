@@ -60,16 +60,6 @@ function initMap() {
 
   });
 
-
-
-
-
-
-
-
-
-
-
   const marker2 = new google.maps.Marker({
     position: center1,
     map: map,
@@ -91,122 +81,97 @@ function initMap() {
     infoWindow2.open(map, marker2);
   });
 
+  // 3rd place
 
+  const marker3 = new google.maps.Marker({
+    position: place3,
+    map: map,
+    title: 'Center A'
 
-
-// 3rd place
-
-const marker3 = new google.maps.Marker({
-  position: place3,
-  map: map,
-  title: 'Center A'
-
-});
-
-var infoWindow3 = new google.maps.InfoWindow({
-  content: "<p style='font-weight: bold ;'>Local center 1</p>" +
-    "<p>One of the biggest place where you can mditate</p>" +
-    "<p>Address: 12 xxx St,Vancouver</p>" +
-    "<p>Contact: 778-xxx-xxxx</p>" +
-    "<a href='https://www.bcit.ca/'>Homepage</a>"
-});
-
-
-// Add a click listener to open the info window when the marker is clicked.
-marker3.addListener('click', function () {
-  infoWindow3.open(map, marker3);
-});
-
-//4th place
-
-
-const marker4 = new google.maps.Marker({
-  position: place4,
-  map: map,
-  title: 'Center A'
-
-});
-
-var infoWindow4 = new google.maps.InfoWindow({
-  content: "<p style='font-weight: bold ;'>Local center 2</p>" +
-    "<p>One of the biggest place where you can mditate</p>" +
-    "<p>Address: 12 xxx St,Vancouver</p>" +
-    "<p>Contact: 778-xxx-xxxx</p>" +
-    "<a href='https://www.bcit.ca/'>Homepage</a>"
-});
-
-
-// Add a click listener to open the info window when the marker is clicked.
-marker4.addListener('click', function () {
-  infoWindow4.open(map, marker4);
-});
-
-
-
-
-// ------------------------------------search function-----------------------------
-var geocoder = new google.maps.Geocoder();
-
-
-// Search for the address when click the search button
-document.getElementById('submit').addEventListener('click', function () {
-  console.log('submit 버튼 클릭 이벤트 실행');
-  geocodeAddress(geocoder, map);
-});
-
-
-// change the coordinate on map
-function geocodeAddress(geocoder, resultMap) {
-  console.log('geocodeAddress 함수 실행');
-
-  // 주소 설정
-  var address = document.getElementById('address').value;
-
-  /**
-   * 입력받은 주소로 좌표에 맵 마커를 찍는다.
-   * 1번째 파라미터 : 주소 등 여러가지. 
-   *      ㄴ 참고 : https://developers.google.com/maps/documentation/javascript/geocoding#GeocodingRequests
-   * 
-   * 2번째 파라미터의 함수
-   *      ㄴ result : 결과값
-   *      ㄴ status : 상태. OK가 나오면 정상.
-   */
-  geocoder.geocode({
-    'address': address,
-     componentRestrictions: {
-      locality: 'Vancouver',
-    }
-  
-
-  }, function (result, status) {
-    console.log(result);
-    console.log(status);
-
-    if (status === 'OK') {
-      // 맵의 중심 좌표를 설정한다.
-      resultMap.setCenter(result[0].geometry.location);
-      // 맵의 확대 정도를 설정한다.
-      resultMap.setZoom(13);
-      // 맵 마커
-      var marker = new google.maps.Marker({
-        map: resultMap,
-        position: result[0].geometry.location
-      });
-
-      // 위도
-      console.log('(latitude) : ' + marker.position.lat());
-      // 경도
-      console.log('(longitude) : ' + marker.position.lng());
-    } else {
-      alert('Error : ' + status);
-    }
   });
-}
+
+  var infoWindow3 = new google.maps.InfoWindow({
+    content: "<p style='font-weight: bold ;'>Local center 1</p>" +
+      "<p>One of the biggest place where you can mditate</p>" +
+      "<p>Address: 12 xxx St,Vancouver</p>" +
+      "<p>Contact: 778-xxx-xxxx</p>" +
+      "<a href='https://www.bcit.ca/'>Homepage</a>"
+  });
 
 
+  // Add a click listener to open the info window when the marker is clicked.
+  marker3.addListener('click', function () {
+    infoWindow3.open(map, marker3);
+  });
+
+  //4th place
+
+
+  const marker4 = new google.maps.Marker({
+    position: place4,
+    map: map,
+    title: 'Center A'
+
+  });
+
+  var infoWindow4 = new google.maps.InfoWindow({
+    content: "<p style='font-weight: bold ;'>Local center 2</p>" +
+      "<p>One of the biggest place where you can mditate</p>" +
+      "<p>Address: 12 xxx St,Vancouver</p>" +
+      "<p>Contact: 778-xxx-xxxx</p>" +
+      "<a href='https://www.bcit.ca/'>Homepage</a>"
+  });
+
+
+  // Add a click listener to open the info window when the marker is clicked.
+  marker4.addListener('click', function () {
+    infoWindow4.open(map, marker4);
+  });
+
+
+  // ------------------------------------search function-----------------------------
+  var geocoder = new google.maps.Geocoder();
+
+
+  // Search for the address when click the search button
+  document.getElementById('submit').addEventListener('click', function () {
+    console.log('submit 버튼 클릭 이벤트 실행');
+    geocodeAddress(geocoder, map);
+  });
+
+
+  // change the coordinate on map
+  function geocodeAddress(geocoder, resultMap) {
+    console.log('geocodeAddress 함수 실행');
+
+    var address = document.getElementById('address').value;
+
+    geocoder.geocode({
+      'address': address,
+      componentRestrictions: {
+        locality: 'Vancouver',
+      }
+
+
+    }, function (result, status) {
+      console.log(result);
+      console.log(status);
+
+      if (status === 'OK') {
+        resultMap.setCenter(result[0].geometry.location);
+        resultMap.setZoom(13);
+        var marker = new google.maps.Marker({
+          map: resultMap,
+          position: result[0].geometry.location
+        });
+
+        console.log('(latitude) : ' + marker.position.lat());
+        console.log('(longitude) : ' + marker.position.lng());
+      } else {
+        alert('Error : ' + status);
+      }
+    });
+  }
 }
 
 window.initMap = initMap;
-
-
-

@@ -1,108 +1,111 @@
-.container{
+.container {
     display: flex;
 }
-#banner-image{
+
+#banner-image {
     max-width: 30%;
     max-height: 30%;
     object-fit: contain;
 }
-.card-title{
+
+.card-title {
     text-align: center;
     margin-top: 2em;
 }
 
-#fav-box{
-    display: flex; 
-    flex-direction: row; 
-    margin: auto; 
-    justify-content: center; 
-    align-content: center; 
-    gap: 10em; 
-    flex-wrap: wrap; 
+#fav-box {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+    gap: 10em;
+    flex-wrap: wrap;
     padding-top: 4em;
 }
 
-.card{
-    max-width: 15rem;  
+.card {
+    max-width: 15rem;
     box-shadow: 0 0 1em gray;
 }
 
-#card-header1{
-    background-color: hsl(48, 100%, 66%); 
+#card-header1 {
+    background-color: hsl(48, 100%, 66%);
     font-weight: bold;
 }
 
-#card-body1{
+#card-body1 {
     background-color: #FFD116;
 }
 
-#card-header2{
-    background-color: #4df1c6; 
+#card-header2 {
+    background-color: #4df1c6;
     font-weight: bold;
 }
 
-#card-body2{
+#card-body2 {
     background-color: #06D6A0;
 }
 
-#card-header3{
-    background-color: #f75e82; 
+#card-header3 {
+    background-color: #f75e82;
     font-weight: bold;
 }
 
-#card-body3{
+#card-body3 {
     background-color: #EF476F;
 }
 
-#card-header4{
-    background-color: #5f9dd3; 
+#card-header4 {
+    background-color: #5f9dd3;
     font-weight: bold;
 }
 
-#card-body4{
+#card-body4 {
     background-color: #3e8bce;
 }
 
-#card-header5{
-    background-color: #bf4ae9; 
+#card-header5 {
+    background-color: #bf4ae9;
     font-weight: bold;
 }
 
-#card-body5{
+#card-body5 {
     background-color: #9a38b7;
 }
 
-#card-header6{
-    background-color: #63fffc; 
+#card-header6 {
+    background-color: #63fffc;
     font-weight: bold;
 }
 
-#card-body6{
+#card-body6 {
     background-color: #57d8e4;
 }
-#card-header7{
-    background-color: #ff4848; 
+
+#card-header7 {
+    background-color: #ff4848;
     font-weight: bold;
 }
 
-#card-body7{
+#card-body7 {
     background-color: #dc4040;
 }
 
-.card-body-img{
-    object-fit: cover; 
-    max-width: 100%; 
+.card-body-img {
+    object-fit: cover;
+    max-width: 100%;
     border-radius: 30px;
 }
 
 
 @media screen and (max-width: 640px) {
-    #fav-box{
+    #fav-box {
         gap: 1em;
     }
-    .card{
-        max-width: 10em;  
+
+    .card {
+        max-width: 10em;
         box-shadow: 0 0 1em gray;
     }
-  }
-
+}

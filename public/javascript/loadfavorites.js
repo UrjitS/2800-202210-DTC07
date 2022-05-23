@@ -1,5 +1,7 @@
 var dataParsed;
-
+/**
+ * Sends ajax request to get the users favorited pages list
+ */
 function getStatus() {
 
     $.ajax({
@@ -44,7 +46,9 @@ function getStatus() {
     });
 
 }
-
+/**
+ * Displays the meditation sticky note
+ */
 function displayMeditation() {
     $("#fav-box").append(`
     <div class="card bg-light mb-3">
@@ -56,7 +60,9 @@ function displayMeditation() {
         </div>
     </div>`);
 }
-
+/**
+ * Displays the journal sticky note
+ */
 function displayJournal() {
     $("#fav-box").append(`         
     <div class="card bg-light mb-3">
@@ -67,7 +73,9 @@ function displayJournal() {
         </div>
     </div>`);
 }
-
+/**
+ * Displays the yoga sticky note
+ */
 function displayYoga() {
     $("#fav-box").append(`
     <div class="card bg-light mb-3">
@@ -79,7 +87,9 @@ function displayYoga() {
         </div>
     </div>`);
 }
-
+/**
+ * Displays the resources sticky note
+ */
 function displayResources() {
     $("#fav-box").append(`
     <div class="card bg-light mb-3">
@@ -91,7 +101,9 @@ function displayResources() {
         </div>
     </div>`);
 }
-
+/**
+ * Displays the nutrition sticky note
+ */
 function displayNutrition() {
     $("#fav-box").append(`
     <div class="card bg-light mb-3">
@@ -103,7 +115,9 @@ function displayNutrition() {
             </div>
     </div>`);
 }
-
+/**
+ * Displays the sleeping habits sticky note
+ */
 function displaySleepHabits() {
     $("#fav-box").append(`
     <div class="card bg-light mb-3">
@@ -115,7 +129,9 @@ function displaySleepHabits() {
         </div>
     </div>`);
 }
-
+/**
+ * Displays the music sticky note
+ */
 function displayMusic() {
     $("#fav-box").append(`
     <div class="card bg-light mb-3">
@@ -127,6 +143,9 @@ function displayMusic() {
         </div>
     </div>`);
 }
+/**
+ * Displays the quiz sticky note
+ */
 function displayQuiz() {
     $("#fav-box").append(`
     <div class="card bg-light mb-3">
@@ -138,7 +157,9 @@ function displayQuiz() {
         </div>
     </div>`);
 }
-
+/**
+ * Displays the walks sticky note
+ */
 function displayWalks() {
     $("#fav-box").append(`
     <div class="card bg-light mb-3">

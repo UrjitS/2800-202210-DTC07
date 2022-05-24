@@ -2,7 +2,7 @@ const express = require('express');
 const session = require("express-session");
 const mysql = require("mysql2");
 const fs = require("fs");
-const app = express()
+const app = express();
 
 // ----- Middle ware -----------------------------
 app.use(express.json());
@@ -18,7 +18,7 @@ app.use(session({
 
 function auth(req, res, next) {
     if (req.session.loggedIn) {
-        next()
+        next();
     } else {
         res.redirect('/index.html');
     }
@@ -353,6 +353,12 @@ async function init() {
     }
 
 }
+
 app.use(express.static('./public'));
+app.use(function (req, res, next) {
+    res.status(404);
+
+    res.redirect('/404.html');
+});
 // process.env.PORT is the port Heroku gives
 app.listen(process.env.PORT || 3000, init);

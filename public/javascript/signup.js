@@ -28,7 +28,16 @@ $(document).ready(function () {
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send(params);
     }
-
+    /**
+     * Checks the given string to ensure it matches the regular expression of an email
+     * @param {String} email 
+     * @returns True if email matches regex
+     */
+    const validateEmail = (email) => {
+        return email.match(
+            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+    };
     /**
      * Initiates post requset and includes users' inputted email, password, and user name
      */
@@ -39,19 +48,24 @@ $(document).ready(function () {
         let queryString = "email=" + email.value + "&password=" + password.value + "&uname=" + user_name_input.value;
 
         if (email.value.length > 0 && password.value.length > 0 && user_name_input.value.length > 0) {
-            ajaxPOST("/signup", function (data) {
-                if (data) {
-                    let dataParsed = JSON.parse(data);
+            if (validateEmail(email.value)) {
+                ajaxPOST("/signup", function (data) {
+                    if (data) {
+                        let dataParsed = JSON.parse(data);
 
-                    if (dataParsed.status == "fail") {
-                        document.getElementById("errorMsg").innerHTML = dataParsed.msg;
+                        if (dataParsed.status == "fail") {
+                            document.getElementById("errorMsg").innerHTML = dataParsed.msg;
 
-                    } else if (dataParsed.status == "success") {
-                        sessionStorage.setItem("id", dataParsed.sessionid);
-                        window.location.replace("/html/main.html");
+                        } else if (dataParsed.status == "success") {
+                            sessionStorage.setItem("id", dataParsed.sessionid);
+                            window.location.replace("/html/main.html");
+                        }
                     }
-                }
-            }, queryString);
+                }, queryString);
+            } else {
+                document.getElementById("errorMsg").innerHTML = "Email Not Valid";
+            }
+
         } else {
             document.getElementById("errorMsg").innerHTML = "Please fill out the Fields";
         }
@@ -63,7 +77,6 @@ $(document).ready(function () {
         e.preventDefault();
         beginPostSignUp();
     });
-
     /**
      * Creates on click listener on the sign up button to load login page
      */

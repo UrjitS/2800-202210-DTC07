@@ -135,7 +135,7 @@ function displaySleepHabits() {
 function displayMusic() {
     $("#fav-box").append(`
     <div class="card bg-light mb-3">
-        <div class="card-header border-0" id="card-header7">Music Suggestions</div>
+        <div class="card-header border-0" id="card-header7">Music</div>
         <div class="card-body" id="card-body7">
             <a href="./content/music.html">
                 <img id="music-img" src="../images/music.png" alt="placeholder"  class="card-body-img">
@@ -149,8 +149,8 @@ function displayMusic() {
 function displayQuiz() {
     $("#fav-box").append(`
     <div class="card bg-light mb-3">
-        <div class="card-header border-0" id="card-header7">Self Assessing Quiz </div>
-        <div class="card-body" id="card-body7">
+        <div class="card-header border-0" id="card-header8"> Mood Quiz </div>
+        <div class="card-body" id="card-body8">
             <a href="./content/self_assessment_quiz.html">
                 <img id="music-img" src="../images/quiz.png" alt="placeholder"  class="card-body-img">
             </a>
@@ -163,8 +163,8 @@ function displayQuiz() {
 function displayWalks() {
     $("#fav-box").append(`
     <div class="card bg-light mb-3">
-        <div class="card-header border-0" id="card-header7">Find local walks </div>
-        <div class="card-body" id="card-body7">
+        <div class="card-header border-0" id="card-header9">Local Walks </div>
+        <div class="card-body" id="card-body9">
             <a href="./content/walks.html">
                 <img id="music-img" src="../images/walks.png" alt="placeholder"  class="card-body-img">
             </a>

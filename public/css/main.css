@@ -92,6 +92,25 @@
     background-color: #dc4040;
 }
 
+#card-header8 {
+    background-color: #e496ca;
+    font-weight: bold;
+}
+
+#card-body8 {
+    background-color: #de8bd3;
+}
+
+#card-header9 {
+    background-color: #9efda9;
+    font-weight: bold;
+}
+
+#card-body9 {
+    background-color: #8eeba2;
+}
+
+
 .card-body-img {
     object-fit: cover;
     max-width: 100%;

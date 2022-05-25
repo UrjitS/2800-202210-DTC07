@@ -12,7 +12,6 @@ function initMap() {
     }
 
     if (navigator.geolocation) {
-        console.log('Here is the user location');
 
         navigator.geolocation.getCurrentPosition((loc) => {
                 location.lat = loc.coords.latitude;
@@ -21,7 +20,6 @@ function initMap() {
                 map = new google.maps.Map(document.getElementById("map"), options);
             },
             (err) => {
-                console.log("User declined :(");
                 map = new google.maps.Map(document.getElementById("map"), options);
             })
     } else {

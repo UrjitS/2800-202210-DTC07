@@ -3,7 +3,6 @@
  * @param {String} entryID 
  */
 function deleteEntry(entryID) {
-    console.log(entryID);
     $.ajax({
         url: "https://bridge-the-gap.herokuapp.com/deleteJournalEntry",
         // url: "http://localhost:3000/deleteJournalEntry",
@@ -12,7 +11,6 @@ function deleteEntry(entryID) {
             jID: entryID
         },
         success: function (result) {
-            console.log(result);
             window.location.replace("journal_deletion_confirmation_page.html");
         }
     });
@@ -33,7 +31,6 @@ function readJournalEntry() {
         },
         success: function (result) {
             // Here you will get the entries and display them in the page
-            console.log(result);
             for (i = 0; i < result.length; i++) {
                 $("#journalRow").append(
                     `
@@ -53,8 +50,6 @@ function readJournalEntry() {
                     </div>
                     `
                 );
-                console.log(result[i].title);
-                console.log(result[i].entry);
             }
         }
     });

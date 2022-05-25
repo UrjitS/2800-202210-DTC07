@@ -11,7 +11,6 @@ $(document).ready(function () {
                 callback(this.responseText);
 
             } else {
-                console.log(this.status);
             }
         }
         xhr.open("POST", url);
@@ -28,7 +27,6 @@ $(document).ready(function () {
     function buildUsers(email, name, currentIndex) {
         var temp = document.getElementsByTagName("template")[0];
         var cloneNode = temp.content.cloneNode(true);
-        console.log(cloneNode.getElementById("email_field").innerHTML);
         cloneNode.getElementById("usertempid").innerHTML = "New User " + currentIndex;
         cloneNode.getElementById("email_field").innerHTML = "Email: " + email;
         cloneNode.getElementById("name_field").innerHTML = "Name: " + name;

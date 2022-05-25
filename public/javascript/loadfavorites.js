@@ -14,7 +14,6 @@ function getStatus() {
         },
         success: function (result) {
             dataParsed = JSON.parse(result[0].favoritepages);
-            console.log(dataParsed);
             if (dataParsed.yoga == "yes") {
                 displayYoga();
             }

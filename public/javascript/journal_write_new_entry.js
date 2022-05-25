@@ -9,8 +9,8 @@ function createJournalEntry() {
 
     if (title.value.length > 0 && entry.value.length > 0) {
         $.ajax({
-            // url: "https://bridge-the-gap.herokuapp.com/createJournalEntry",
-            url: "http://localhost:3000/createJournalEntry",
+            url: "https://bridge-the-gap.herokuapp.com/createJournalEntry",
+            // url: "http://localhost:3000/createJournalEntry",
             type: "post",
             data: {
                 contentTitle: title.value,

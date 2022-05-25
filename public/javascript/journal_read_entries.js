@@ -5,8 +5,8 @@
 function deleteEntry(entryID) {
     console.log(entryID);
     $.ajax({
-        // url: "https://bridge-the-gap.herokuapp.com/deleteJournalEntry",
-        url: "http://localhost:3000/deleteJournalEntry",
+        url: "https://bridge-the-gap.herokuapp.com/deleteJournalEntry",
+        // url: "http://localhost:3000/deleteJournalEntry",
         type: "post",
         data: {
             jID: entryID
@@ -25,8 +25,8 @@ function deleteEntry(entryID) {
 function readJournalEntry() {
     $("#journalRow").empty();
     $.ajax({
-        // url: "https://bridge-the-gap.herokuapp.com/readJournalEntry",
-        url: "http://localhost:3000/readJournalEntry",
+        url: "https://bridge-the-gap.herokuapp.com/readJournalEntry",
+        // url: "http://localhost:3000/readJournalEntry",
         type: "post",
         data: {
             userid: sessionStorage.getItem("id")

@@ -1,0 +1,101 @@
+#banner-title {
+    font-size: 80px;
+}
+
+#subhead-1 {
+    font-size: 30px;
+}
+
+.jumbotron {
+    box-shadow: 0 0 14px gray;
+    background-color: #EF476F;
+}
+
+body {
+    font-family: 'Nunito';
+}
+
+.banner-text-container {
+    text-align: center;
+}
+
+#banner-title {
+    font-size: 80px;
+}
+
+#subhead-1 {
+    font-size: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+}
+
+#benefits-title {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#benefits-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15em;
+    margin-bottom: 10em;
+}
+
+.ben-btn {
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    border-radius: 25px;
+    background-color: #FFD166;
+    box-shadow: 0 0 10px;
+}
+
+
+@media only screen and (max-width: 640px) {
+    #banner-title {
+        font-size: 45px;
+    }
+
+    #subhead-1 {
+        font-size: 15px;
+    }
+
+    #subhead-2 {
+        font-size: 15px;
+    }
+
+    #benefits-title {
+        font-size: 25px;
+    }
+
+    #benefits-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2em;
+        margin-bottom: 3em;
+    }
+    
+    .ben-btn {
+        width: 25%;
+        height: 25%;
+    }
+}

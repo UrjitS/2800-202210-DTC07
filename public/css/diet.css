@@ -79,22 +79,6 @@ h2 {
     font-weight: bold;
 }
 
-#carouselExampleCaptions {
-    width: 340px;
-    height: 200px;
-}
-
-.carousel-item h5 {
-    color: green;
-    font-weight: bold;
-}
-
-.carousel-inner>.carousel-item>img {
-    width: 100%;
-    height: 15vh;
-    object-fit: contain;
-}
-
 #intro-par {
     color: white;
     text-align: center;

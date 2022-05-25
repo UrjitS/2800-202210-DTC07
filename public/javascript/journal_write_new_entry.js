@@ -23,7 +23,7 @@ function createJournalEntry() {
             }
         });
     } else {
-        document.getElementById("errorMsg").innerHTML = "Please fill out the Fields";
+        alert("Please fill out the Fields");
     }
 
 }

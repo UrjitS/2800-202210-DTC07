@@ -339,8 +339,6 @@ function initMap() {
 
 
     }, function (result, status) {
-      console.log(result);
-      console.log(status);
 
       if (status === 'OK') {
         resultMap.setCenter(result[0].geometry.location);
@@ -350,8 +348,6 @@ function initMap() {
           position: result[0].geometry.location
         });
 
-        console.log('(latitude) : ' + marker.position.lat());
-        console.log('(longitude) : ' + marker.position.lng());
       } else {
         alert('Error : ' + status);
       }

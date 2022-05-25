@@ -18,7 +18,6 @@ $(document).ready(function () {
                 callback(this.responseText);
 
             } else {
-                console.log(this.status);
             }
         }
         xhr.open("POST", url);

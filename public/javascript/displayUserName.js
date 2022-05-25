@@ -10,7 +10,6 @@ $(document).ready(function () {
             userid: sessionStorage.getItem("id")
         },
         success: function (result) {
-            console.log(result);
             $("#nameTag").text("Hello, " + result[0].name + "!");
         }
     });

@@ -16,8 +16,6 @@ function getStatus(currentPage) {
         },
         success: function (result) {
             dataParsed = JSON.parse(result[0].favoritepages);
-            console.log(dataParsed);
-            // console.log(dataParsed.temText);
             switch (currentpage) {
                 case "meditation": {
                     if (dataParsed.meditation == "no") {
@@ -194,7 +192,6 @@ function savePage(currentPage) {
             break;
         }
     };
-    console.log(JSON.stringify(dataParsed));
     $.ajax({
         url: "https://bridge-the-gap.herokuapp.com/changeUserFavoritePageStatus",
         // url: "http://localhost:3000/changeUserFavoritePageStatus",

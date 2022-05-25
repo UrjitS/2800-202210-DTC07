@@ -266,9 +266,10 @@ function addContentPageNavbar(currentPage) {
         <div class="bg-dark p-4">
             <h4 class="text-white">Menu</h4>
             <span class="text-muted">
-                <ul>
-                    <li><a href="../suggestions.html"><span style="color: white">Suggestions</span></a></li>
-                </ul>
+            <ul>
+                <li><a href="./main.html"><span style="color: white">Home</span></a></li>
+                <li><a href="./suggestions.html"><span style="color: white">Suggestions</span></a></li>
+            </ul>
             </span>
 
         </div>  
@@ -284,28 +285,28 @@ function addContentFooter(currentPage) {
     $(".contentFooterLocation").append(
         `
         <footer class="fixed-bottom navbar bg-dark d--none d-md-none" style="height: 75px; padding: 0px;">
-
-            <div class="bottom-nav-button">
-                <div class="btn bg-dark" style="padding-left:4em">
-                    <a href="../main.html" class="material-icons"
-                        style="color: whitesmoke; text-decoration: unset; font-size: 35px; ">person</a>
-                    <p style="color: white;">Profile</p>
+            <div style="display: flex; flex-direction: row; justify-content: space-around; gap: 4em; margin: auto;">
+                <div class="bottom-nav-button">
+                    <div class="btn bg-dark"">
+                        <a href="../suggestions.html" class="material-icons"
+                            style="color: whitesmoke; text-decoration: unset; font-size: 35px; ">tips_and_updates</a>
+                        <p style="color: white;">Activies</p>
+                    </div>
+                </div>
+                <div class="bottom-nav-button">
+                    <div class="btn bg-dark">
+                        <a href="../main.html" class="material-icons"
+                            style="color: whitesmoke; text-decoration: unset; font-size: 35px;">home</a>
+                        <p style="color: whitesmoke;">Home</p>
+                    </div>
+                </div>
+                <div class="bottom-nav-button">
+                    <div class="btn bg-dark"onclick="history.back()">
+                        <a class="material-icons"
+                            style="color: whitesmoke; text-decoration: unset; font-size: 35px;">arrow_back</a>
+                        <p style="color: whitesmoke;">Back</p>
+                    </div>
                 </div>
             </div>
-            <div class="bottom-nav-button">
-                <div class="btn bg-dark">
-                    <a href="../main.html" class="material-icons"
-                        style="color: whitesmoke; text-decoration: unset; font-size: 35px;">home</a>
-                    <p style="color: whitesmoke;">Home</p>
-                </div>
-            </div>
-            <div class="bottom-nav-button">
-                <div class="btn bg-dark" style="padding-right:4em" onclick="history.back()">
-                    <a class="material-icons"
-                        style="color: whitesmoke; text-decoration: unset; font-size: 35px;">arrow_back</a>
-                    <p style="color: whitesmoke;">Back</p>
-                </div>
-            </div>
-
     </footer>`);
 }

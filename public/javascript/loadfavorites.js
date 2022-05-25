@@ -5,8 +5,8 @@ var dataParsed;
 function getStatus() {
 
     $.ajax({
-        // url: "https://bridge-the-gap.herokuapp.com/checkFavoritePageStatus",
-        url: "http://localhost:3000/checkFavoritePageStatus",
+        url: "https://bridge-the-gap.herokuapp.com/checkFavoritePageStatus",
+        // url: "http://localhost:3000/checkFavoritePageStatus",
         type: "post",
         data: {
             userid: sessionStorage.getItem("id"),

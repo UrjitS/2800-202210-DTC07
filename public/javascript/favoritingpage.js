@@ -7,8 +7,8 @@ function getStatus(currentPage) {
     addContentFooter()
     let currentpage = currentPage.split("-")[0];
     $.ajax({
-        // url: "https://bridge-the-gap.herokuapp.com/checkFavoritePageStatus",
-        url: "http://localhost:3000/checkFavoritePageStatus",
+        url: "https://bridge-the-gap.herokuapp.com/checkFavoritePageStatus",
+        // url: "http://localhost:3000/checkFavoritePageStatus",
         type: "post",
         data: {
             userid: sessionStorage.getItem("id"),
@@ -196,8 +196,8 @@ function savePage(currentPage) {
     };
     console.log(JSON.stringify(dataParsed));
     $.ajax({
-        // url: "https://bridge-the-gap.herokuapp.com/changeUserFavoritePageStatus",
-        url: "http://localhost:3000/changeUserFavoritePageStatus",
+        url: "https://bridge-the-gap.herokuapp.com/changeUserFavoritePageStatus",
+        // url: "http://localhost:3000/changeUserFavoritePageStatus",
         type: "post",
         data: {
             userid: sessionStorage.getItem("id"),

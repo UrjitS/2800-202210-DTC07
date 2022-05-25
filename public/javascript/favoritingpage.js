@@ -191,7 +191,7 @@ function savePage(currentPage) {
             }
             break;
         }
-    };
+    };1
     $.ajax({
         url: "https://bridge-the-gap.herokuapp.com/changeUserFavoritePageStatus",
         // url: "http://localhost:3000/changeUserFavoritePageStatus",
@@ -273,6 +273,37 @@ function addContentPageNavbar(currentPage) {
         </div>  
     </div>
     </div>`);
+}
+/**
+ * Adds top navbar for content pages
+ */
+ function addContentNavbar() {
+    $(".navbarLocation").empty();
+    $(".navbarLocation").append(
+        `
+        <div class="pos-f-t">
+            <nav class="navbar navbar-dark bg-white">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <h3 id="appName" class="" style="display: inline-block; margin: 0 auto">Bridge the Gap</h3>
+                <img src="../../images/navlogo.png" onclick="activateEasterEgg()" style="max-width: 70px; max-height: 70px">
+            </nav>
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                    <h4 class="text-white">Menu</h4>
+                    <span class="text-muted">
+                        <ul>
+                            <li><a href="../main.html"><span style="color: white">Home</span></a></li>
+                            <li><a href="../suggestions.html"><span style="color: white">Suggestions</span></a></li>
+                        </ul>
+                    </span>
+
+                </div>  
+            </div>
+        </div>`);
 }
 /**
  * Adds the bottom footer

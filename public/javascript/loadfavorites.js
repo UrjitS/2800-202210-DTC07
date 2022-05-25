@@ -148,7 +148,7 @@ function displayMusic() {
 function displayQuiz() {
     $("#fav-box").append(`
     <div class="card bg-light mb-3">
-        <div class="card-header border-0" id="card-header8"> Mood Quiz </div>
+        <div class="card-header border-0" id="card-header8"> Self Assessment Quiz </div>
         <div class="card-body" id="card-body8">
             <a href="./content/self_assessment_quiz.html">
                 <img id="music-img" src="../images/quiz.png" alt="placeholder"  class="card-body-img">

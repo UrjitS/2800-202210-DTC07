@@ -267,8 +267,8 @@ function addContentPageNavbar(currentPage) {
             <h4 class="text-white">Menu</h4>
             <span class="text-muted">
             <ul>
-                <li><a href="./main.html"><span style="color: white">Home</span></a></li>
-                <li><a href="./suggestions.html"><span style="color: white">Suggestions</span></a></li>
+                <li><a href="../main.html"><span style="color: white">Home</span></a></li>
+                <li><a href="../suggestions.html"><span style="color: white">Suggestions</span></a></li>
             </ul>
             </span>
 

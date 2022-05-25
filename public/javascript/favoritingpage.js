@@ -319,7 +319,7 @@ function addContentFooter(currentPage) {
                     <div class="btn bg-dark"">
                         <a href="../suggestions.html" class="material-icons"
                             style="color: whitesmoke; text-decoration: unset; font-size: 35px; ">tips_and_updates</a>
-                        <p style="color: white;">Activies</p>
+                        <p style="color: white;">Activities</p>
                     </div>
                 </div>
                 <div class="bottom-nav-button">

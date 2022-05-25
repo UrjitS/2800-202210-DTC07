@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 
 	// MUSIC INFORMATION
-	let songArray = ['Reduce_stress', 'Improve_focus', 'Calm_the_mind', 'Fall_a_Sleep_Fast(1)', 'Fall_a_Sleep_Fast(2)'];
+	let songArray = ['Reduce_stress', 'Improve_focus', 'Calm_the_mind', 'Fall_a_Sleep_Fast', 'Fall_a_Sleep_deeper'];
 	let artistArray = ['This meditation music can help you relieve stress', 'This meditation music can improve your concentration', 'This meditation music helps to relax the mind', 'This meditation music helps to sleep', 'This meditation music helps to sleep'];
 
 	// SET INTIAL SONG NUMBER + LOAD IN ANIMATION

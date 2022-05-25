@@ -232,9 +232,10 @@ function addFilledContentPageNavbar(currentPage) {
                 <div class="bg-dark p-4">
                     <h4 class="text-white">Menu</h4>
                     <span class="text-muted">
-                        <ul>
-                            <li><a href="../suggestions.html"><span style="color: white">Suggestions</span></a></li>
-                        </ul>
+                    <ul>
+                        <li><a href="../main.html"><span style="color: white">Home</span></a></li>
+                        <li><a href="../suggestions.html"><span style="color: white">Suggestions</span></a></li>
+                    </ul>
                     </span>
 
                 </div>  

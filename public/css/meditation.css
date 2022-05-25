@@ -4,6 +4,7 @@
 
 body {
     margin: 0px;
+    font-family: 'Nunito';
 }
 
 .image_box {
@@ -16,6 +17,11 @@ body {
         gap: 10px
 
 
+}
+
+#method-flex{
+    gap: 13em; 
+    justify-content: center;
 }
 
 .methods {
@@ -58,7 +64,52 @@ h2 {
     width: 100px;
     height: 100px
 }
-@media screen and (max-width: 700px) {
+
+#banner-title {
+    font-size: 80px;
+    color: white;
+}
+
+#subhead-1 {
+    font-size: 30px;
+    color: white;
+}
+
+.jumbotron {
+    box-shadow: 0 0 14px gray;
+    background-color: #06D6A0;
+}
+
+.banner-text-container {
+    text-align: center;
+}
+
+#banner-title {
+    font-size: 80px;
+}
+
+#subhead-1 {
+    font-size: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+}
+@media screen and (max-width: 640px) {
+    #banner-title {
+        font-size: 45px;
+    }
+
+    #subhead-1 {
+        font-size: 15px;
+    }
 
     .image_box {
         display: flex;
@@ -89,7 +140,10 @@ h2 {
         font-size: small;
         font-weight: bold;
     }
-
+    #method-flex{
+        gap: 13em; 
+        justify-content: center;
+    }
     .methods {
         display: flex;
         flex-direction: row;
@@ -110,6 +164,11 @@ h2 {
     .card-body p {
         font-size: small;
     }
+
+    #method-flex{
+        gap: 3em; 
+        justify-content: center;
+    }
 }
 
 /* meditation */
@@ -120,7 +179,6 @@ h2 {
     -moz-user-select: none;
     user-select: none;
 }
-
 /* .a{
     display: flex;
     justify-content: space-between;

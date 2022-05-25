@@ -28,11 +28,8 @@ function initMap() {
         console.log('Geolocation not supported :(');
         map = new google.maps.Map(document.getElementById("map"), options);
     }
-    var cityBounds = new google.maps.LatLngBounds(
-        new google.maps.LatLng(49.246292, -123.116226) //Limit search to city of Vancouver
-    )
+
     autocomplete = new google.maps.places.Autocomplete(document.getElementById("input"), {
-        bounds: 'cityBounds',
         componentRestrictions: {
             'country': ['CA']
         },
@@ -57,5 +54,3 @@ function initMap() {
         bounds.extend(markers[i]);
     }
 }
-
-map.fitBounds(bounds);

@@ -132,3 +132,9 @@ input[type=password] {
 a.nav-link {
   font-size: 18px;
 }
+
+@media only screen and (max-width: 640px) {
+  body{
+    background-size: 130%;
+  }
+}

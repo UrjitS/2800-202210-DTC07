@@ -3,7 +3,7 @@ var dataParsed;
  * Sends ajax request to get the users favorited pages list
  */
 function getStatus() {
-
+    $("#fav-box").empty();
     $.ajax({
         url: "https://bridge-the-gap.herokuapp.com/checkFavoritePageStatus",
         // url: "http://localhost:3000/checkFavoritePageStatus",
@@ -172,6 +172,3 @@ function displayWalks() {
 }
 
 
-$(document).ready(
-    getStatus
-)

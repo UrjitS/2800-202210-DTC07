@@ -168,6 +168,8 @@ It has the following subfolders and files:
 * <a href="https://fonts.google.com/specimen/"> Google Fonts </a>
 * <a href="https://www.themediterraneandish.com/mediterranean-diet-2/"> Mediterranean Diet Chart </a>
 * <a href="https://stock.adobe.com/ca/search?k=yoga+pose&search_type=recentsearch&asset_id=310191182"> Yoga Poses </a>
+* <a href="https://jessegallagher.bandcamp.com/"> Sample Music </a>
+* <a href="https://screening.mhanational.org/screening-tools/"> Self Assessment Tool </a>
 
 * Stock Images and Art:
   * <a href="https://www.vectorstock.com"> Vector Stock </a>

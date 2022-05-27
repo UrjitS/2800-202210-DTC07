@@ -11,7 +11,7 @@ function getStatus(currentPage) {
         // url: "http://localhost:3000/checkFavoritePageStatus",
         type: "post",
         data: {
-            userid: sessionStorage.getItem("id"),
+            userid: localStorage.getItem("id"),
             page: currentpage
         },
         success: function (result) {
@@ -197,7 +197,7 @@ function savePage(currentPage) {
         // url: "http://localhost:3000/changeUserFavoritePageStatus",
         type: "post",
         data: {
-            userid: sessionStorage.getItem("id"),
+            userid: localStorage.getItem("id"),
             newData: JSON.stringify(dataParsed)
         },
         success: function (result) {

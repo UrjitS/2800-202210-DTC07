@@ -5,7 +5,7 @@
 function createJournalEntry() {
     let title = document.getElementById("title");
     let entry = document.getElementById("entry");
-    let user_id = sessionStorage.getItem("id");
+    let user_id = localStorage.getItem("id");
 
     if (title.value.length > 0 && entry.value.length > 0) {
         $.ajax({

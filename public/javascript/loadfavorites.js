@@ -9,7 +9,7 @@ function getStatus() {
         // url: "http://localhost:3000/checkFavoritePageStatus",
         type: "post",
         data: {
-            userid: sessionStorage.getItem("id"),
+            userid: localStorage.getItem("id"),
             page: "null"
         },
         success: function (result) {

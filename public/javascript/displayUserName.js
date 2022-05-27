@@ -7,7 +7,7 @@ $(document).ready(function () {
         // url: "http://localhost:3000/getUserName",
         type: "post",
         data: {
-            userid: sessionStorage.getItem("id")
+            userid: localStorage.getItem("id")
         },
         success: function (result) {
             $("#nameTag").text("Hello, " + result[0].name + "!");

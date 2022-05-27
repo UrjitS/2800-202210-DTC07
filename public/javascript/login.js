@@ -42,7 +42,7 @@ $(document).ready(function () {
                     } else if (dataParsed.status == "admin") {
                         window.location.replace("/html/admin.html");
                     } else if (dataParsed.status == "success") {
-                        sessionStorage.setItem("id", dataParsed.sessionid);
+                        localStorage.setItem("id", dataParsed.sessionid);
                         window.location.replace("/html/main.html");
                     }
                 }

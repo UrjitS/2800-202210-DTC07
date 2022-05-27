@@ -27,7 +27,7 @@ function readJournalEntry() {
         // url: "http://localhost:3000/readJournalEntry",
         type: "post",
         data: {
-            userid: sessionStorage.getItem("id")
+            userid: localStorage.getItem("id")
         },
         success: function (result) {
             // Here you will get the entries and display them in the page

@@ -56,7 +56,7 @@ $(document).ready(function () {
                             document.getElementById("errorMsg").innerHTML = dataParsed.msg;
 
                         } else if (dataParsed.status == "success") {
-                            sessionStorage.setItem("id", dataParsed.sessionid);
+                            localStorage.setItem("id", dataParsed.sessionid);
                             window.location.replace("/html/main.html");
                         }
                     }

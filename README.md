@@ -13,6 +13,9 @@ Technologies used for this project:
 * Node.js
 
 ## Sources
-Icons can be found [here](https://icons.getbootstrap.com/)
+Icons can be found [here](https://icons.getbootstrap.com/) and .[here](https://www.flaticon.com/free-icons/)
 
 Yoga poses can be found [here](https://stock.adobe.com/ca/search?k=yoga+pose&search_type=recentsearch&asset_id=310191182) made by Tom
+
+Stock Images used were taken from [here](https://www.vectorstock.com/) and .[here](https://www.istockphoto.com)
+

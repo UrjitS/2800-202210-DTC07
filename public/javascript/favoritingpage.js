@@ -191,7 +191,8 @@ function savePage(currentPage) {
             }
             break;
         }
-    };1
+    };
+    1
     $.ajax({
         url: "https://bridge-the-gap.herokuapp.com/changeUserFavoritePageStatus",
         // url: "http://localhost:3000/changeUserFavoritePageStatus",
@@ -277,7 +278,7 @@ function addContentPageNavbar(currentPage) {
 /**
  * Adds top navbar for content pages
  */
- function addContentNavbar() {
+function addContentNavbar() {
     $(".navbarLocation").empty();
     $(".navbarLocation").append(
         `

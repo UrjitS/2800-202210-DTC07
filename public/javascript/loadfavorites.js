@@ -170,5 +170,3 @@ function displayWalks() {
         </div>
     </div>`);
 }
-
-

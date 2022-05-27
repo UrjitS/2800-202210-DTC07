@@ -16,6 +16,7 @@ main {
   align-items: center;
   /* padding-top: 30px; */
 }
+
 #banner-title {
   font-size: 80px;
   color: white;
@@ -45,10 +46,10 @@ main {
 
 @media screen and (max-width: 640px) {
   #banner-title {
-      font-size: 45px;
+    font-size: 45px;
   }
 
   #subhead-1 {
-      font-size: 15px;
+    font-size: 15px;
   }
 }

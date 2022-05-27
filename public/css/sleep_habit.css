@@ -14,8 +14,6 @@ body {
 
     font-size: small;
     gap: 10px
-
-
 }
 
 #banner-title {
@@ -47,8 +45,8 @@ body {
 
 .methods {
     display: flex;
-        flex-direction: row;
-        gap: 30px;
+    flex-direction: row;
+    gap: 30px;
 
 }
 
@@ -58,6 +56,7 @@ main {
     align-items: center;
 
 }
+
 .image_box img {
     /* border-radius: 2em; */
     /* padding-bottom: 10px; */
@@ -104,6 +103,7 @@ h2 {
     #subhead-1 {
         font-size: 15px;
     }
+
     .image_box {
         display: flex;
         flex-direction: row;

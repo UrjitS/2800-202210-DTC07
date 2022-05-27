@@ -1,5 +1,5 @@
 /* eslint-disable */
-playing =false
+playing = false
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	function nextSong() {
 		if (songNumber == 4) {
 			var audio = document.getElementById(`${songArray[songNumber]}`);
-			if(audio.paused){
+			if (audio.paused) {
 				playing = false
 
-			}else{
+			} else {
 
 				playing = true
 				audio.pause()
@@ -64,10 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 		} else {
 			var audio = document.getElementById(`${songArray[songNumber]}`);
-			if(audio.paused){
+			if (audio.paused) {
 				playing = false
 
-			}else{
+			} else {
 
 				playing = true
 				audio.pause()
@@ -90,10 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			// DO NOTHING WHEN PREV IS CLICKED AT BEGINNING OF LIST
 		} else {
 			var audio = document.getElementById(`${songArray[songNumber]}`);
-			if(audio.paused){
+			if (audio.paused) {
 				playing = false
 
-			}else{
+			} else {
 
 				playing = true
 				audio.pause()
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-		
+
 	}
 
 	// SET SONG INFORMATION AND COVER
@@ -135,9 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			audio.play()
 			audio.currentTime = 0
 
-			
-			
-		} 
+
+
+		}
 	}
 
 	function scaleCoverDownNext() {

@@ -195,13 +195,14 @@ html {
 
 @media only screen and (max-width: 640px) {
   #banner-title {
-      font-size: 45px;
+    font-size: 45px;
   }
 
   #subhead-1 {
-      font-size: 15px;
+    font-size: 15px;
   }
 
   #subhead-2 {
-      font-size: 15px;
+    font-size: 15px;
   }
+}

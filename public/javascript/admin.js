@@ -10,8 +10,7 @@ $(document).ready(function () {
             if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
                 callback(this.responseText);
 
-            } else {
-            }
+            } else {}
         }
         xhr.open("POST", url);
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');

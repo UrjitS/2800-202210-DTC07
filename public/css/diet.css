@@ -1,202 +1,193 @@
-.jumbotron{
-    box-shadow: 0 0 14px gray ;
+.jumbotron {
+    box-shadow: 0 0 14px gray;
     background-color: #06D6A0;
 }
 
-body{
+body {
     font-family: 'Nunito';
 }
 
 .ben-btn {
-background-color: transparent;
-width: 200px;
-height: 200px;
-border: 1px solid #f1f1f1;
-border-radius: 25px;
-background-color: #FFD166;
-box-shadow: 0 0 10px;
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    border-radius: 25px;
+    background-color: #FFD166;
+    box-shadow: 0 0 10px;
 }
 
 
-.container{
-    display: flex; 
-    justify-content: center; 
-    align-content: center; 
-    align-items: center; 
+.container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
     color: white;
 }
 
-.banner-text-container{
+.banner-text-container {
     text-align: center;
 }
 
-#banner-title{
+#banner-title {
     font-size: 80px;
 }
 
-#subhead-1{
+#subhead-1 {
     font-size: 30px;
 }
 
-#subhead-2{
+#subhead-2 {
     font-size: 25px;
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
-#benefits-container{
-    display:flex; 
-    flex-direction: row; 
-    align-items: center; 
-    align-content: center; 
-    justify-content: center; 
-    flex-wrap: wrap; 
+#benefits-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 15em;
     margin-bottom: 10em;
 }
 
-.card-img{
+.card-img {
     object-fit: cover;
     width: 100%;
 }
 
-#suggestions-container{
-    display:flex; 
-    flex-direction: column; 
-    align-items: center; 
-    align-content: center; 
-    justify-content: center; 
-    flex-wrap: wrap;  
+#suggestions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
     margin: 5em;
 }
 
-#food-title{
+#food-title {
     padding-top: 2em;
     text-align: center;
     color: white;
     font-weight: bold;
 }
 
-#carouselExampleCaptions{
-    width:340px;
-    height:200px;
+#intro-par {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 2em;
 }
 
-.carousel-item h5{
-    color: green;
+a {
+    color: rgb(250, 82, 82);
+}
+
+a:hover {
+    color: white;
+}
+
+#food-info-card {
+    background-color: #26547C;
+    margin-top: 3em;
+    margin-right: 10em;
+    margin-left: 10em;
+    padding-bottom: 4em;
+    padding-right: 3em;
+    padding-left: 3em;
+    border-radius: 23px;
+    box-shadow: 0 0 5px gray;
     font-weight: bold;
 }
 
-.carousel-inner > .carousel-item > img {
-    width: 100%;
-    height: 15vh;
-    object-fit: contain;
-  }
+#medbtn {
+    padding: 1em;
+    box-shadow: 0 0 12px #EF476F;
+    background-color: #EF476F;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
 
-  #intro-par{
-      color: white;
-      text-align:center;
-      font-size: 18px;
-      padding-top: 2em;
-  }
+#benefits-title {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
 
-  a{
-      color: rgb(250, 82, 82);
-  }
-  a:hover{
-      color: white;
-  }
-  #food-info-card{
-      background-color: #26547C;
-      margin-top: 3em;
-      margin-right: 10em;
-      margin-left: 10em;
-      padding-bottom: 4em;
-      padding-right: 3em;
-      padding-left: 3em;
-      border-radius: 23px;
-      box-shadow: 0 0 5px gray;
-      font-weight: bold;
-  }
+#med-dietchart {
+    align-self: center;
+    max-width: 100%;
+    max-height: 100%;
+    border-style: solid;
+    border-color: teal;
+}
 
-  #medbtn{
-      padding: 1em;
-      box-shadow: 0 0 12px #EF476F;
-      background-color: #EF476F; 
-      font-size: 20px;
-      color: white;
-      font-weight: bold;
-  }
-  #benefits-title{
-      margin-top: 2em;
-      margin-bottom: 2em;
-  }
-
-  #med-dietchart{
-      align-self: center;
-      max-width: 100%;
-      max-height: 100%;
-      border-style: solid;
-      border-color: teal;
-  }
 @media only screen and (max-width: 640px) {
-    #banner-title{
+    #banner-title {
         font-size: 45px;
     }
-    
-    #subhead-1{
-        font-size: 15px;
-    }
-    
-    #subhead-2{
+
+    #subhead-1 {
         font-size: 15px;
     }
 
-    #benefits-title{
+    #subhead-2 {
+        font-size: 15px;
+    }
+
+    #benefits-title {
         font-size: 25px;
     }
 
     .ben-btn {
         width: 25%;
         height: 25%;
-        }
+    }
 
-            
-    #benefits-container{
-        display:flex; 
-        flex-direction: row; 
-        align-items: center; 
-        align-content: center; 
-        justify-content: center; 
-        flex-wrap: wrap; 
+
+    #benefits-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 2em;
         margin-bottom: 3em;
     }
 
-    .card-title{
+    .card-title {
         font-size: 1px;
     }
-    #suggestions-container{
-        display:flex; 
-        flex-direction: column; 
-        align-items: center; 
-        align-content: center; 
-        justify-content: flex-start; 
-        flex-wrap: wrap; 
+
+    #suggestions-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
 
-    #intro-par{
+    #intro-par {
         color: white;
-        text-align:center;
+        text-align: center;
         font-size: 12px;
         padding-top: 1em;
     }
-    #food-title{
+
+    #food-title {
         padding-top: 1em;
     }
-    #food-info-card{
+
+    #food-info-card {
         margin-top: 3em;
         margin-right: 3em;
         margin-left: 3em;
@@ -207,19 +198,21 @@ h2{
         box-shadow: 0 0 5px gray;
         font-weight: bold;
     }
-    #med-dietchart{
+
+    #med-dietchart {
         align-self: center;
         max-width: 100%;
         max-height: 100%;
         border-style: solid;
         border-color: gray;
     }
-    #medbtn{
+
+    #medbtn {
         padding: 1em;
         box-shadow: 0 0 12px #EF476F;
-        background-color: #EF476F; 
+        background-color: #EF476F;
         font-size: 12px;
         color: white;
         font-weight: bold;
     }
-  }
+}

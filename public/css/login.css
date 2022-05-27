@@ -3,10 +3,11 @@ html {
 }
 
 body {
-  font-family: 'Oswald', sans-serif;
-  font-family: 'Roboto Condensed', sans-serif;
   height: 100vh;
-  background-color: #f3f0f0fb;
+  background-image: url("../images/bgpattern.png");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  font-family: Nunito;
 }
 
 a {
@@ -42,14 +43,14 @@ button {
 
 #login_div {
   border-radius: 10px 10px 10px 10px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.6);
   padding: 30px;
   width: 90%;
-  max-width: 450px;
+  max-width: 650px;
   position: relative;
   padding: 0px;
-  box-shadow: 0 5px 20px 0 #076b96;
   text-align: center;
+  box-shadow: 0 0 15px gray;
 }
 
 #forgot_password {
@@ -65,7 +66,6 @@ button {
 }
 
 input[type=button],
-#login_button,
 input[type=reset] {
   background-color: rgb(17, 97, 126);
   border: none;
@@ -88,7 +88,6 @@ input[type=reset]:hover {
 }
 
 input[type=text_area],
-#login_button,
 input[type=password] {
   background-color: #e0d8d8;
   border: none;
@@ -104,6 +103,21 @@ input[type=password] {
   width: 85%;
   border: 2px solid #f6f6f6;
   border-radius: 5px 5px 5px 5px;
+
+}
+
+#sign_up {
+  padding: 10px 15px 10px;
+  background-color: #a36ec7;
+  color: white;
+  font-size: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px gray;
+}
+
+#login_button {
+  font-size: 15px;
+  border-radius: 25px;
 }
 
 input[type=text_area]:focus,
@@ -119,4 +133,10 @@ input[type=password] {
 
 a.nav-link {
   font-size: 18px;
+}
+
+@media only screen and (max-width: 640px) {
+  body {
+    background-size: 130%;
+  }
 }

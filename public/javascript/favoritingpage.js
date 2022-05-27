@@ -1,18 +1,21 @@
 var dataParsed;
-
+/**
+ * Sends ajax request to get the users favorited pages list
+ * @param {String} currentPage Name of the current page loaded
+ */
 function getStatus(currentPage) {
+    addContentFooter()
     let currentpage = currentPage.split("-")[0];
     $.ajax({
         url: "https://bridge-the-gap.herokuapp.com/checkFavoritePageStatus",
+        // url: "http://localhost:3000/checkFavoritePageStatus",
         type: "post",
         data: {
-            userid: sessionStorage.getItem("id"),
+            userid: localStorage.getItem("id"),
             page: currentpage
         },
         success: function (result) {
             dataParsed = JSON.parse(result[0].favoritepages);
-            console.log(dataParsed);
-            // console.log(dataParsed.temText);
             switch (currentpage) {
                 case "meditation": {
                     if (dataParsed.meditation == "no") {
@@ -91,7 +94,10 @@ function getStatus(currentPage) {
     });
 
 }
-
+/**
+ * Updates the users favorited pages list
+ * @param {String} currentPage Name of the current page loaded
+ */
 function savePage(currentPage) {
     let currentpage = currentPage.split("-")[0];
     switch (currentpage) {
@@ -186,12 +192,13 @@ function savePage(currentPage) {
             break;
         }
     };
-    console.log(JSON.stringify(dataParsed));
+    1
     $.ajax({
         url: "https://bridge-the-gap.herokuapp.com/changeUserFavoritePageStatus",
+        // url: "http://localhost:3000/changeUserFavoritePageStatus",
         type: "post",
         data: {
-            userid: sessionStorage.getItem("id"),
+            userid: localStorage.getItem("id"),
             newData: JSON.stringify(dataParsed)
         },
         success: function (result) {
@@ -199,7 +206,10 @@ function savePage(currentPage) {
         }
     });
 }
-
+/**
+ * Adds the top navbar with a filled star
+ * @param {String} currentPage Name of the current loaded page
+ */
 function addFilledContentPageNavbar(currentPage) {
     $(".contentNavbarLocation").empty();
     $(".contentNavbarLocation").append(
@@ -217,21 +227,23 @@ function addFilledContentPageNavbar(currentPage) {
             </svg>
         </nav>
         <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <h4 class="text-white">Menu</h4>
-                <span class="text-muted">
+                <div class="bg-dark p-4">
+                    <h4 class="text-white">Menu</h4>
+                    <span class="text-muted">
                     <ul>
-                        <li><a href="./suggestions.html"><span style="color: white">Suggestions</span></a></li>
-                        <li><span class="text-muted">Personal Tools</span></li>
-                        <li><a class="text-muted" href="./journal_main_page.html">Wellness Journal</a></li>
+                        <li><a href="../main.html"><span style="color: white">Home</span></a></li>
+                        <li><a href="../suggestions.html"><span style="color: white">Suggestions</span></a></li>
                     </ul>
-                </span>
+                    </span>
 
+                </div>  
             </div>
-        </div>
     </div>`);
 }
-
+/**
+ * Adds the top navbar with a un-filled star
+ * @param {String} currentPage Name of the current loaded page
+ */
 function addContentPageNavbar(currentPage) {
     $(".contentNavbarLocation").empty();
     $(".contentNavbarLocation").append(
@@ -250,17 +262,81 @@ function addContentPageNavbar(currentPage) {
             </svg>
         </nav>
         <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <h4 class="text-white">Menu</h4>
-                <span class="text-muted">
-                    <ul>
-                        <li><a href="./suggestions.html"><span style="color: white">Suggestions</span></a></li>
-                        <li><span class="text-muted">Personal Tools</span></li>
-                        <li><a class="text-muted" href="./journal_main_page.html">Wellness Journal</a></li>
-                    </ul>
-                </span>
+        <div class="bg-dark p-4">
+            <h4 class="text-white">Menu</h4>
+            <span class="text-muted">
+            <ul>
+                <li><a href="../main.html"><span style="color: white">Home</span></a></li>
+                <li><a href="../suggestions.html"><span style="color: white">Suggestions</span></a></li>
+            </ul>
+            </span>
 
-            </div>
-        </div>
+        </div>  
+    </div>
     </div>`);
+}
+/**
+ * Adds top navbar for content pages
+ */
+function addContentNavbar() {
+    $(".navbarLocation").empty();
+    $(".navbarLocation").append(
+        `
+        <div class="pos-f-t">
+            <nav class="navbar navbar-dark bg-white">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <h3 id="appName" class="" style="display: inline-block; margin: 0 auto">Bridge the Gap</h3>
+                <img src="../../images/navlogo.png" onclick="activateEasterEgg()" style="max-width: 70px; max-height: 70px">
+            </nav>
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                    <h4 class="text-white">Menu</h4>
+                    <span class="text-muted">
+                        <ul>
+                            <li><a href="../main.html"><span style="color: white">Home</span></a></li>
+                            <li><a href="../suggestions.html"><span style="color: white">Suggestions</span></a></li>
+                        </ul>
+                    </span>
+
+                </div>  
+            </div>
+        </div>`);
+}
+/**
+ * Adds the bottom footer
+ * @param {String} currentPage Name of the current loaded page
+ */
+function addContentFooter(currentPage) {
+    $(".contentFooterLocation").empty();
+    $(".contentFooterLocation").append(
+        `
+        <footer class="fixed-bottom navbar bg-dark d--none d-md-none" style="height: 75px; padding: 0px;">
+            <div style="display: flex; flex-direction: row; justify-content: space-around; gap: 4em; margin: auto;">
+                <div class="bottom-nav-button">
+                    <div class="btn bg-dark"">
+                        <a href="../suggestions.html" class="material-icons"
+                            style="color: whitesmoke; text-decoration: unset; font-size: 35px; ">tips_and_updates</a>
+                        <p style="color: white;">Activities</p>
+                    </div>
+                </div>
+                <div class="bottom-nav-button">
+                    <div class="btn bg-dark">
+                        <a href="../main.html" class="material-icons"
+                            style="color: whitesmoke; text-decoration: unset; font-size: 35px;">home</a>
+                        <p style="color: whitesmoke;">Home</p>
+                    </div>
+                </div>
+                <div class="bottom-nav-button">
+                    <div class="btn bg-dark"onclick="history.back()">
+                        <a class="material-icons"
+                            style="color: whitesmoke; text-decoration: unset; font-size: 35px;">arrow_back</a>
+                        <p style="color: whitesmoke;">Back</p>
+                    </div>
+                </div>
+            </div>
+    </footer>`);
 }

@@ -28,12 +28,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- Imported Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=M+PLUS+2:wght@500&family=Nunito:wght@600;700&family=Open+Sans:wght@700&family=Yanone+Kaffeesatz&display=swap"
+        rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="./css/navbar.css">
-    <script src="./javascript/navigation.js"></script>
-    <script src="./javascript/favoritingpage.js"></script>
+
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <script src="../../javascript/navigation.js"></script>
+    <script src="../../javascript/favoritingpage.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./css/meditation.css">
+    <link rel="stylesheet" href="../../css/meditation.css">
 
 </head>
 
@@ -48,8 +54,15 @@
     </div>
     <!---End of Navigation Bar-->
 
-    <!-- bootstrap - benefit of meditation -->
-    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    <!-- Banner -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="banner-text-container">
+                <h1 id="banner-title"> Meditation</h1>
+                <p id="subhead-1"> Relief through mindfulness.</p>
+            </div>
+        </div>
+    </div>
 
     <main>
 
@@ -60,7 +73,7 @@
 
             <button class="img-container" type="button" data-toggle="modal" data-target="#what"
                 style="border:0ch; background-color: white">
-                <img src="./images/meditation1.png" alt=" Italy">
+                <img src="../../images/meditation1.png" alt=" Italy">
                 <hr>
                 <p>What is Meditation? </p>
             </button>
@@ -119,7 +132,7 @@
 
             <button class="img-container" type="button" data-toggle="modal" data-target="#why"
                 style="border:0ch; background-color: white">
-                <img src="./images/meditation2.png" alt=" Forest">
+                <img src="../../images/meditation2.png" alt=" Forest">
                 <hr>
 
                 <p>Why Learn to Meditate?</p>
@@ -177,7 +190,7 @@
 
             <button class="img-container" type="button" data-toggle="modal" data-target="#how"
                 style="border:0ch; background-color: white">
-                <img src="./images/meditation3.png" alt=" Mountains">
+                <img src="../../images/meditation3.png" alt=" Mountains">
                 <hr>
 
                 <p>How to Meditate
@@ -275,7 +288,7 @@
         <div class="album py-5">
             <div class="container">
 
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="method-flex">
 
                     <!-- 1 method -->
                     <div class="card shadow-sm">
@@ -712,9 +725,10 @@
     <br>
     <br>
 
-    <div class="footerLocation">
 
-    </div>
+    <div class="contentFooterLocation"></div>
+
+
 
     <!----End of Footer ---->
     <script>

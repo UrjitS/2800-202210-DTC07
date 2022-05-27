@@ -16,18 +16,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 
-    <link rel="stylesheet" href="./css/navbar.css">
-    <script src="./javascript/navigation.js"></script>
-    <script src="./javascript/loadfavorites.js"></script>
-    <script src="./javascript/displayUserName.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <script src="../javascript/navigation.js"></script>
+    <script src="../javascript/loadfavorites.js"></script>
+    <script src="../javascript/displayUserName.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
 
 </head>
 
 <body>
-    <div class="navbarLocation">
-
-    </div>
+    <div class="navbarLocation"></div>
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -41,7 +39,7 @@
                 </form>
 
             </div>
-            <img id="banner-image" src="images/happy_banner.png">
+            <img id="banner-image" src="../images/happy_banner.png">
         </div>
     </div>
 
@@ -50,12 +48,8 @@
 
         <div id="fav-box">
 
-
-
-
-
-
         </div>
+
     </main>
 
 
@@ -69,12 +63,16 @@
     </div>
 
 
-
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(
+            getStatus()
+        )
     </script>
 </body>
 

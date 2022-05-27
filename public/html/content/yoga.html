@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga Page</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Imported Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=M+PLUS+2:wght@500&family=Nunito:wght@600;700&family=Open+Sans:wght@700&family=Yanone+Kaffeesatz&display=swap"
+    rel="stylesheet">
+
+  <!-- Javascript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+
+  <script src="../../javascript/timer.js"></script>
+  <link rel="stylesheet" href="../../css/navbar.css">
+  <script src="../../javascript/navigation.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="../../javascript/favoritingpage.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/yoga.css">
+</head>
+
+<body>
+  <!-- Top Navbar -->
+  <div class="contentNavbarLocation"></div>
+
+  <!-- Banner -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div class="banner-text-container">
+        <h1 id="banner-title"> Yoga </h1>
+        <p id="subhead-1"> Achieve mental clarity and calmness. </p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <h2 id="benefits-title"> Benefits of Yoga</h2>
+    <div id="benefits-container">
+      <button type="button" class="ben-btn" data-toggle="modal" data-target="#wellModal">
+        <img src="../../images/happy.png" alt="happy" class="card-img">
+      </button>
+      <div class="modal fade" id="wellModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Health</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              "One of yoga’s clearest benefits to the heart is its ability to relax the body and mind.
+              Emotional stress can cause a cascade of physical effects, including the release of hormones
+              like cortisol and adrenaline, which narrow your arteries and increase blood pressure."
+              <a href="https://www.hopkinsmedicine.org/health/wellness-and-prevention/the-yoga-heart-connection#:~:text=One%20of%20yoga's%20clearest%20benefits,arteries%20and%20increase%20blood%20pressure."
+                target="_blank">More Information</a>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="ben-btn" data-toggle="modal" data-target="#brainModal">
+        <img src="../../images/brain.png" alt="brain" class="card-img">
+      </button>
+      <div class="modal fade" id="brainModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Brainpower</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              "Regular yoga practice creates mental clarity and calmness; increases body awareness;
+              relieves chronic stress patterns; relaxes the mind; centers attention; and sharpens
+              concentration"
+              <a href="https://osteopathic.org/what-is-osteopathic-medicine/benefits-of-yoga/#:~:text=Yoga's%20incorporation%20of%20meditation%20and,Nevins."
+                target="_blank">More Information</a>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="ben-btn" data-toggle="modal" data-target="#moodModal">
+        <img src="../../images/mood.png" alt="mood" class="card-img">
+      </button>
+      <div class="modal fade" id="moodModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Mood and Emotions</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              "Yoga can affect mood by elevating levels of a brain chemical called gamma-aminobutyric acid
+              (GABA), which is associated with better mood and decreased anxiety."
+              <a href="https://www.health.harvard.edu/staying-healthy/yoga-for-better-mental-health#:~:text=Improved%20mood&text=But%20yoga%20may%20have%20additional,the%20brain%20dedicated%20to%20emotions."
+                target="_blank">More Information</a>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="card" style="margin-top: 70px;">
+      <div class="card-header">
+        <b> Get Started</b>
+      </div>
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <img src="../../images/yoga/cobraPose.png" alt="" style="width: 50%; height: auto">
+
+          <div style="margin-top: 20%;">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cobraPose">
+              Start
+            </button>
+
+            <div class="modal fade" id="cobraPose" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Cobra Pose</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="./images/yoga/cobraPose.png" alt="" style="width: 80%; height: auto">
+                    <p>Start the timer and then Enter the Position</p>
+                    <h2 id="cobraPoseTimer" style="color: red;"></h2>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="createTimer(70, 'cobraPoseTimer')">Start
+                      Timer</button>
+
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                      onclick="stopTimer('cobraPoseTimer')">Close Timer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <img src="../../images/yoga/warrior.png" alt="" style="width: 50%; height: auto">
+
+          <div style="margin-top: 20%;">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#warriorPose">
+              Start
+            </button>
+
+            <div class="modal fade" id="warriorPose" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Warrior Pose</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="./images/yoga/warrior.png" alt="" style="width: 80%; height: auto">
+                    <p>Start the timer and then Enter the Position</p>
+                    <h2 id="warriorPoseTimer" style="color: red;"></h2>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="createTimer(70, 'warriorPoseTimer')">Start
+                      Timer</button>
+
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                      onclick="stopTimer('warriorPoseTimer')">Close Timer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <img src="../../images/yoga/downward.png" alt="" style="width: 50%; height: auto">
+
+          <div style="margin-top: 20%;">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#downwardPose">
+              Start
+            </button>
+
+            <div class="modal fade" id="downwardPose" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Downward Pose</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="./images/yoga/downward.png" alt="" style="width: 80%; height: auto">
+                    <p>Start the timer and then Enter the Position</p>
+                    <h2 id="downwardPoseTimer" style="color: red;"></h2>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="createTimer(5, 'downwardPoseTimer')">Start
+                      Timer</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                      onclick="stopTimer('downwardPoseTimer')">Close Timer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </main>
+
+  <br>
+  <br>
+  <br>
+
+
+  <div class="contentFooterLocation"></div>
+
+
+
+
+  <script>
+    $(document).ready(function () {
+      getStatus("yoga-Page");
+    });
+  </script>
+
+</body>
+
+</html>

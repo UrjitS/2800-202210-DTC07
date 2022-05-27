@@ -15,18 +15,19 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Nav and Footer -->
-    <link rel="stylesheet" href="./css/navbar.css">
-    <script src="./javascript/navigation.js"></script>
     <!-- Search Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/find_an_expert.css">
 
 
     <!-- Map -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <link rel="stylesheet" type="text/css" href="./css/navbar.css" />
-    <script type="module" src="./javascript/find_an_expert.js"></script>
-    <script src="./javascript/favoritingpage.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/navbar.css" />
+    <script type="module" src="../../javascript/find_an_expert.js"></script>
+    <script src="../../javascript/favoritingpage.js"></script>
+    <link rel="stylesheet" href="../../css/find_an_expert.css">
+
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <script src="../../javascript/navigation.js"></script>
 </head>
 
 <body>
@@ -34,8 +35,18 @@
     <div class="contentNavbarLocation">
 
     </div>
+
+    <!-- Banner -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="banner-text-container">
+                <h1 id="banner-title"> Local Resources</h1>
+                <p id="subhead-1"> Find a local clinic or professional to help you.</p>
+            </div>
+        </div>
+    </div>
+
     <main>
-        <h3>Local Resources</h3>
         <div id="search_bar">
             <input type="text" id="address" placeholder="Type address" name="search">
             <button type="button" id="submit" value="Geocode"><i class="fa fa-search"></i> </button>
@@ -62,8 +73,10 @@
 
 
     <!-- Footer -->
-    <div class="footerLocation">
-    </div>
+
+    <div class="contentFooterLocation"></div>
+
+
 
 
 

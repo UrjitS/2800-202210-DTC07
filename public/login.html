@@ -9,11 +9,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/login.css">
+
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Condensed:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=M+PLUS+2:wght@500&family=Nunito:wght@600;700&family=Open+Sans:wght@700&family=Yanone+Kaffeesatz&display=swap"
         rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Login Page</title>
@@ -26,13 +30,14 @@
                 <img src="./images/logo.PNG" id="icon" alt="User Icon" />
             </div>
             <form>
-                <input type="text_area" id="login_email" style="font-size:large;" placeholder="Email">
-                <input type="text_area" id="user_name" placeholder="Name" style="display: none; font-size:large;">
-                <input type="password" id="password" style="font-size:large;" placeholder="Password">
-                <input type="button" value="Log In" id="login_button">
+                <input type="text_area" id="login_email" style="font-size:large;" placeholder="Email Required(*)">
+                <input type="text_area" id="user_name" placeholder="*Name Required"
+                    style="display: none; font-size:large;">
+                <input type="password" id="password" style="font-size:large;" placeholder="Password Required(*)">
+                <input type="button" value="Log In" id="login_button" style="display: block; margin: 3em auto;">
             </form>
             <div id="forgot_password">
-                <button id="sign_up" style="font-size:large;">Sign Up?</button>
+                <button id="sign_up">Sign Up</button>
             </div>
             <div style="color:red;" id="errorMsg"></div>
         </div>

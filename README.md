@@ -160,10 +160,15 @@ It has the following subfolders and files:
 |---|---|
 |Test|Test|
 
+
 ## Credits
 Icons can be found [here](https://icons.getbootstrap.com/)
 
 Yoga poses can be found [here](https://stock.adobe.com/ca/search?k=yoga+pose&search_type=recentsearch&asset_id=310191182) made by Tom
+
+* <a href="https://developers.google.com/maps/documentation/directions"> Google Map API Instructions </a>
+* <a href="https://getbootstrap.com/"> Bootstrap </a>
+* <a href="https://developer.mozilla.org/en-US/docs/Web/CSS)/"> CSS Resource </a>
 
 * Stock Images and Art:
   * <a href="https://www.vectorstock.com"> Vector Stock </a>
@@ -177,6 +182,9 @@ Yoga poses can be found [here](https://stock.adobe.com/ca/search?k=yoga+pose&sea
 
 * Banner Clipart:
   * <a href="https://de.123rf.com"> 123RF </a>
+
+* Background:
+  * <a href="https://biorender.com"> Biorender </a>
 
 * Background:
   * <a href="https://biorender.com"> Biorender </a>

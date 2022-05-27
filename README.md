@@ -156,6 +156,10 @@ It has the following subfolders and files:
 
 ## Features
 
+|Feature|Description|
+|---|---|
+|Test|Test|
+
 ## Credits
 Icons can be found [here](https://icons.getbootstrap.com/)
 

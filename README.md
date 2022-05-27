@@ -162,13 +162,12 @@ It has the following subfolders and files:
 
 
 ## Credits
-Icons can be found [here](https://icons.getbootstrap.com/)
-
-Yoga poses can be found [here](https://stock.adobe.com/ca/search?k=yoga+pose&search_type=recentsearch&asset_id=310191182) made by Tom
-
 * <a href="https://developers.google.com/maps/documentation/directions"> Google Map API Instructions </a>
 * <a href="https://getbootstrap.com/"> Bootstrap </a>
 * <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/"> CSS Resource </a>
+* <a href="https://fonts.google.com/specimen/"> Google Fonts </a>
+* <a href="https://www.themediterraneandish.com/mediterranean-diet-2/"> Mediterranean Diet Chart </a>
+* <a href="https://stock.adobe.com/ca/search?k=yoga+pose&search_type=recentsearch&asset_id=310191182"> Yoga Poses </a>
 
 * Stock Images and Art:
   * <a href="https://www.vectorstock.com"> Vector Stock </a>

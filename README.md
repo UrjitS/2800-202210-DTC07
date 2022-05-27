@@ -168,7 +168,7 @@ Yoga poses can be found [here](https://stock.adobe.com/ca/search?k=yoga+pose&sea
 
 * <a href="https://developers.google.com/maps/documentation/directions"> Google Map API Instructions </a>
 * <a href="https://getbootstrap.com/"> Bootstrap </a>
-* <a href="https://developer.mozilla.org/en-US/docs/Web/CSS)/"> CSS Resource </a>
+* <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/"> CSS Resource </a>
 
 * Stock Images and Art:
   * <a href="https://www.vectorstock.com"> Vector Stock </a>
@@ -186,5 +186,3 @@ Yoga poses can be found [here](https://stock.adobe.com/ca/search?k=yoga+pose&sea
 * Background:
   * <a href="https://biorender.com"> Biorender </a>
 
-* Background:
-  * <a href="https://biorender.com"> Biorender </a>

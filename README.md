@@ -158,7 +158,23 @@ It has the following subfolders and files:
 
 |Feature|Description|
 |---|---|
-|Test|Test|
+|Landing page|You can create an account and log in to access the homepage.|
+|Home|A home page for your favourite features, which can be customized.|
+|Nutrition|This page provides information about the diet|
+|Walks|This page provides information on the benefits of taking walks and maps to search the park|
+|Journal|You can write your thoughts, emotions, and anything you wish to relect on this page and read what you wrote.|
+|Meditation|This page provides information on the benefits of meditation and how to meditate.|
+|Yoga|This page provides information on the benefits and posture of yoga and includes a timer function for yoga.|
+|SleepingHabits|This page provides information about the benefits of a good night's sleep and tips for a good night's sleep.|
+|Local Resources|You can check the map for information about the reliable experts and facilities we select
+|
+|Music|This page contains a music player to improve your concentration, relieve stress and sleep.|
+|Self Assessment Quiz|You have access to 13 reliable questionnaires to test your mental health.|
+
+|Favourites Collection|You can display your preferred feature in the Favorites collection section in order to use it quickly.|
+
+
+
 
 ## Credits
 Icons can be found [here](https://icons.getbootstrap.com/)

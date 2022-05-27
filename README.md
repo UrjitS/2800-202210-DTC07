@@ -26,6 +26,18 @@ API:
 
 ## Installation
 
+### How to Run
+1.	Clone the repository to local machine
+2.	Open repository in [Visual Studio Code](https://code.visualstudio.com/Download) (Ver 1.67 or above)
+3.	Open a new terminal in VS Code and type `npm install` to install all dependencies
+4.	On the current open terminal type `node index.js` to start the server at port 3000
+
+### How to Contribute
+1.	Clone the repository to local machine 
+2.	Make a new feature branch that branches of dev
+3.	Push any new commits to the new feature branch
+4.	Once ready switch branch to dev and merge the newly created feature branch into dev
+5.	Create pull request to main for new edits to be reviewed
 
 ## Files
 ```

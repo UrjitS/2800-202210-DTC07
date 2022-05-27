@@ -160,3 +160,19 @@ It has the following subfolders and files:
 Icons can be found [here](https://icons.getbootstrap.com/)
 
 Yoga poses can be found [here](https://stock.adobe.com/ca/search?k=yoga+pose&search_type=recentsearch&asset_id=310191182) made by Tom
+
+* Stock Images and Art:
+  * <a href="https://www.vectorstock.com"> Vector Stock </a>
+  * <a href="https://www.istockphoto.com"> iStock Photo </a>
+  
+* Icons:
+  * <a href="https://dreamstime.com"> DreamsTime </a>
+  * <a href="https://icons.getbootstrap.com/"> Bootstrap </a>
+  * <a href="https://flaticon.com/"> Flaticon </a>
+  * <a href="https://www.vectorstock.com"> Vector Stock </a>
+
+* Banner Clipart:
+  * <a href="https://de.123rf.com"> 123RF </a>
+
+* Background:
+  * <a href="https://biorender.com"> Biorender </a>
